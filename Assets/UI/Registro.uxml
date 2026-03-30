@@ -1,0 +1,23 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Registro.uss?fileID=7433441132597879392&amp;guid=3ec40926d86b640cbb5dc3d59ffca571&amp;type=3#Registro"/>
+    <ui:VisualElement name="MenuRegistro" style="flex-grow: 1;">
+        <ui:VisualElement name="ColsReg" style="flex-grow: 1; flex-direction: row; width: 100%; height: 65%; align-items: stretch; justify-content: flex-start; align-content: flex-start; position: relative;">
+            <ui:VisualElement name="ColDer" class="fondos" style="flex-grow: 1; flex-direction: column;">
+                <ui:TextField label="Nombre Completo" placeholder-text="" name="Nombre" class="inputs" style="overflow: hidden;"/>
+                <ui:TextField label="apodo" placeholder-text="" name="Apodo" class="inputs"/>
+                <ui:TextField label="contraseña" placeholder-text="" name="Contrasena" class="inputs"/>
+                <ui:TextField label="alcaldía" placeholder-text="" name="Alcaldia" class="inputs"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="ColIzq" class="fondos" style="flex-grow: 1;">
+                <ui:DropdownField label="¿realizas alguna actividad?" name="Actividad" index="2" choices="SI,NO" class="inputs"/>
+                <ui:TextField label="edad" placeholder-text="" name="Edad" class="inputs"/>
+                <ui:TextField label="¿QUe actividad realizas?" placeholder-text="" name="QueAct" class="inputs" style="margin-top: 35px; margin-bottom: 35px;"/>
+                <ui:DropdownField label="genero" name="Genero" choices="Hombre,Mujer" class="inputs"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Botones" style="flex-grow: 1; flex-direction: row; justify-content: space-between; width: 100%; height: 1px;">
+            <ui:Button text="VOLVER" name="BotonVolver" class="boton" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;); font-size: 54px; letter-spacing: 10px;"/>
+            <ui:Button text="" name="BotonJugar" icon-image="" class="boton" style="font-size: 14px; -unity-text-align: middle-center;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
