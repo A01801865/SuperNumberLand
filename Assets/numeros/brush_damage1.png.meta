@@ -1,0 +1,1196 @@
+fileFormatVersion: 2
+guid: 37abad5e2f7b2b345a974f85157dfed3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3070383948304221557
+    second: brush_damage1_0
+  - first:
+      213: 6852944201242927236
+    second: brush_damage1_1
+  - first:
+      213: 8764421207692332677
+    second: brush_damage1_2
+  - first:
+      213: 4822382265221061480
+    second: brush_damage1_3
+  - first:
+      213: -6949807629428914489
+    second: brush_damage1_4
+  - first:
+      213: -6572654761072205975
+    second: brush_damage1_5
+  - first:
+      213: -3689184878912997775
+    second: brush_damage1_6
+  - first:
+      213: 1193974244604754863
+    second: brush_damage1_7
+  - first:
+      213: 8659495283429396302
+    second: brush_damage1_8
+  - first:
+      213: -4912116895562961916
+    second: brush_damage1_9
+  - first:
+      213: -7748355475791932214
+    second: brush_damage1_10
+  - first:
+      213: 8371956259116967966
+    second: brush_damage1_11
+  - first:
+      213: -901966060513151935
+    second: brush_damage1_12
+  - first:
+      213: -3616833923210760208
+    second: brush_damage1_13
+  - first:
+      213: 2430891584687473249
+    second: brush_damage1_14
+  - first:
+      213: -5713989675454173245
+    second: brush_damage1_15
+  - first:
+      213: -4494215754704484623
+    second: brush_damage1_16
+  - first:
+      213: 6380036576399541631
+    second: brush_damage1_17
+  - first:
+      213: 7593408367270494708
+    second: brush_damage1_18
+  - first:
+      213: 7036076561418576567
+    second: brush_damage1_19
+  - first:
+      213: 7420103623016839081
+    second: brush_damage1_20
+  - first:
+      213: -317390654750184916
+    second: brush_damage1_21
+  - first:
+      213: -7968749146842318595
+    second: brush_damage1_22
+  - first:
+      213: 6422729271093858363
+    second: brush_damage1_23
+  - first:
+      213: 2543175386445114289
+    second: brush_damage1_24
+  - first:
+      213: -5701131799420738486
+    second: brush_damage1_25
+  - first:
+      213: -378295475507302248
+    second: brush_damage1_26
+  - first:
+      213: -6681369595800483227
+    second: brush_damage1_27
+  - first:
+      213: 3834575122955294803
+    second: brush_damage1_28
+  - first:
+      213: -3949158052123587767
+    second: brush_damage1_29
+  - first:
+      213: 6565005549694550332
+    second: brush_damage1_30
+  - first:
+      213: -8359877898716642697
+    second: brush_damage1_31
+  - first:
+      213: -2790835328376775476
+    second: brush_damage1_32
+  - first:
+      213: 138868270181299970
+    second: brush_damage1_33
+  - first:
+      213: 4524315963472140345
+    second: brush_damage1_34
+  - first:
+      213: -4106843752519311705
+    second: brush_damage1_35
+  - first:
+      213: -6610577835324643444
+    second: brush_damage1_36
+  - first:
+      213: -1583919292639994781
+    second: brush_damage1_37
+  - first:
+      213: 1618456968472380255
+    second: brush_damage1_38
+  - first:
+      213: 3137130918786089824
+    second: brush_damage1_39
+  - first:
+      213: -2827982570882202322
+    second: brush_damage1_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: brush_damage1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 101
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5750cb2fee13c9a20800000000000000
+      internalID: 3070383948304221557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 537
+        width: 51
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48068ac417c8a1f50800000000000000
+      internalID: 6852944201242927236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 536
+        width: 85
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ec66a07aa71a970800000000000000
+      internalID: 8764421207692332677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 537
+        width: 89
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b15a1ce1b8ce240800000000000000
+      internalID: 4822382265221061480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_4
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 540
+        width: 98
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6079e58c25d8f90800000000000000
+      internalID: -6949807629428914489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_5
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 538
+        width: 81
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fd207715d39c4a0800000000000000
+      internalID: -6572654761072205975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_6
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 539
+        width: 90
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176f5a516e16dccc0800000000000000
+      internalID: -3689184878912997775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_7
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 537
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fabb1a0ef39d19010800000000000000
+      internalID: 1193974244604754863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_8
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 540
+        width: 89
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4fcafe8415bc2870800000000000000
+      internalID: 8659495283429396302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_9
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 540
+        width: 92
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c66c085b7a4dbb0800000000000000
+      internalID: -4912116895562961916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 407
+        width: 101
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac418ff4fbf487490800000000000000
+      internalID: -7748355475791932214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 404
+        width: 51
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1866c37cd92f2470800000000000000
+      internalID: 8371956259116967966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_12
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 403
+        width: 85
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144b7a395a29b73f0800000000000000
+      internalID: -901966060513151935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_13
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 403
+        width: 89
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ffa07ba5bc6ecdc0800000000000000
+      internalID: -3616833923210760208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_14
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 406
+        width: 98
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16288c054034cb120800000000000000
+      internalID: 2430891584687473249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_15
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 405
+        width: 81
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfed480aa4d3b0b0800000000000000
+      internalID: -5713989675454173245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_16
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 406
+        width: 90
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f600ec159651a1c0800000000000000
+      internalID: -4494215754704484623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_17
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 404
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f754b4e96717a8850800000000000000
+      internalID: 6380036576399541631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_18
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 406
+        width: 89
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f103adada4316960800000000000000
+      internalID: 7593408367270494708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_19
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 406
+        width: 92
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b26ec79a5a25a160800000000000000
+      internalID: 7036076561418576567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273
+        width: 101
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7f1868ee089f660800000000000000
+      internalID: 7420103623016839081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_21
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 271
+        width: 51
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a269091e6689bf0800000000000000
+      internalID: -317390654750184916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_22
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 269
+        width: 85
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df834460fd0596190800000000000000
+      internalID: -7968749146842318595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_23
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 270
+        width: 89
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b309d043e3e122950800000000000000
+      internalID: 6422729271093858363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_24
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 273
+        width: 98
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bbe3962a8c2b4320800000000000000
+      internalID: 2543175386445114289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_25
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 271
+        width: 81
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44e7d595d281e0b0800000000000000
+      internalID: -5701131799420738486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_26
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 272
+        width: 90
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 890ff32f44600caf0800000000000000
+      internalID: -378295475507302248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_27
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 270
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a873580c10743a0800000000000000
+      internalID: -6681369595800483227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_28
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 273
+        width: 89
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358dc4402c5273530800000000000000
+      internalID: 3834575122955294803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_29
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 273
+        width: 92
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bcc45dca5c139c0800000000000000
+      internalID: -3949158052123587767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 101
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31030ab3c59b1b50800000000000000
+      internalID: 6565005549694550332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_31
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 137
+        width: 51
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7720b59f75fbbfb80800000000000000
+      internalID: -8359877898716642697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_32
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 136
+        width: 85
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cccdd792e06f449d0800000000000000
+      internalID: -2790835328376775476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_33
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 137
+        width: 89
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207babab4fb5de100800000000000000
+      internalID: 138868270181299970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_34
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 140
+        width: 98
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938d26ed56999ce30800000000000000
+      internalID: 4524315963472140345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_35
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 138
+        width: 81
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aedd07bd5f8107c0800000000000000
+      internalID: -4106843752519311705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_36
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 139
+        width: 90
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87676dab728244a0800000000000000
+      internalID: -6610577835324643444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_37
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 137
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c1e499bc9c40ae0800000000000000
+      internalID: -1583919292639994781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_38
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 139
+        width: 89
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f534d02b90ae57610800000000000000
+      internalID: 1618456968472380255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_39
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 140
+        width: 92
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 063c32c03f3598b20800000000000000
+      internalID: 3137130918786089824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brush_damage1_40
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 9
+        width: 265
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e250297c5dcf0c8d0800000000000000
+      internalID: -2827982570882202322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      brush_damage1_0: 3070383948304221557
+      brush_damage1_1: 6852944201242927236
+      brush_damage1_10: -7748355475791932214
+      brush_damage1_11: 8371956259116967966
+      brush_damage1_12: -901966060513151935
+      brush_damage1_13: -3616833923210760208
+      brush_damage1_14: 2430891584687473249
+      brush_damage1_15: -5713989675454173245
+      brush_damage1_16: -4494215754704484623
+      brush_damage1_17: 6380036576399541631
+      brush_damage1_18: 7593408367270494708
+      brush_damage1_19: 7036076561418576567
+      brush_damage1_2: 8764421207692332677
+      brush_damage1_20: 7420103623016839081
+      brush_damage1_21: -317390654750184916
+      brush_damage1_22: -7968749146842318595
+      brush_damage1_23: 6422729271093858363
+      brush_damage1_24: 2543175386445114289
+      brush_damage1_25: -5701131799420738486
+      brush_damage1_26: -378295475507302248
+      brush_damage1_27: -6681369595800483227
+      brush_damage1_28: 3834575122955294803
+      brush_damage1_29: -3949158052123587767
+      brush_damage1_3: 4822382265221061480
+      brush_damage1_30: 6565005549694550332
+      brush_damage1_31: -8359877898716642697
+      brush_damage1_32: -2790835328376775476
+      brush_damage1_33: 138868270181299970
+      brush_damage1_34: 4524315963472140345
+      brush_damage1_35: -4106843752519311705
+      brush_damage1_36: -6610577835324643444
+      brush_damage1_37: -1583919292639994781
+      brush_damage1_38: 1618456968472380255
+      brush_damage1_39: 3137130918786089824
+      brush_damage1_4: -6949807629428914489
+      brush_damage1_40: -2827982570882202322
+      brush_damage1_5: -6572654761072205975
+      brush_damage1_6: -3689184878912997775
+      brush_damage1_7: 1193974244604754863
+      brush_damage1_8: 8659495283429396302
+      brush_damage1_9: -4912116895562961916
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
