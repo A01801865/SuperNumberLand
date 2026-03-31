@@ -1,0 +1,35 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UITemas.uss?fileID=7433441132597879392&amp;guid=c88723d7ee58f4bc88b3c78d36e4c8d1&amp;type=3#UITemas"/>
+    <ui:VisualElement name="Menu" style="flex-grow: 1;">
+        <ui:VisualElement name="ParteArriba" style="flex-grow: 1; width: 100%; height: 100px; flex-direction: column; justify-content: center; align-items: center;">
+            <ui:VisualElement name="Titulo" style="flex-grow: 1; justify-content: center; align-items: center; width: 500px; height: 100px; background-image: url(&quot;project://database/Assets/SunnyLand%20Artwork/Sprites/Fx/enemy-death/enemy-death-4.png?fileID=21300000&amp;guid=662dde2f5e71c4d47aadb2a90334c7c8&amp;type=3#enemy-death-4&quot;); -unity-background-image-tint-color: rgb(255, 255, 255);">
+                <ui:Label text="Super " style="font-size: 100px; -unity-text-align: upper-center; color: rgb(255, 253, 0); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&amp;guid=2fd92e0f1a30cfd40b90cb5ca04a9372&amp;type=3#ARCADECLASSIC&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0); -unity-text-outline-width: 3.5px; margin-bottom: 0; padding-bottom: 0; justify-content: flex-end; -unity-font-style: normal; -unity-text-outline-color: rgb(0, 0, 0); height: 106px; width: 266px;"/>
+                <ui:Label text="Number Land" style="font-size: 100px; -unity-text-align: upper-center; color: rgb(253, 0, 0); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&amp;guid=2fd92e0f1a30cfd40b90cb5ca04a9372&amp;type=3#ARCADECLASSIC&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0); border-top-width: 0; margin-top: 0; padding-top: 0; justify-content: flex-start; -unity-text-outline-width: 3.5px; -unity-text-outline-color: rgb(0, 0, 0);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Temas" style="flex-grow: 1; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; width: 100%; height: 20px; align-items: center;">
+            <ui:Button text="" name="BotonSuma" class="boton">
+                <ui:Label text="Suma" class="textos"/>
+                <ui:Label text="+" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+            </ui:Button>
+            <ui:Button text="" name="BotonResta" class="boton">
+                <ui:Label text="resta" class="textos"/>
+                <ui:Label text="-" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+            </ui:Button>
+            <ui:Button text="" name="BotonMult" class="boton">
+                <ui:Label text="multiplicacion" class="textos" style="font-size: 35px; -unity-font-style: normal;"/>
+                <ui:Label text="x" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+            </ui:Button>
+            <ui:Button text="" name="BotonDiv" class="boton">
+                <ui:Label text="division" class="textos"/>
+                <ui:Label text="÷" name="Label" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="ParteAbajo" style="flex-grow: 1; width: 100%; height: 50px; align-items: center; justify-content: center;">
+            <ui:Button text="Volver" name="BotonVolver" class="boton" style="font-size: 55px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); background-color: rgba(56, 56, 56, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1648770155842974369&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_199&quot;); color: rgb(255, 255, 255); width: 300px; height: 150px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="User" style="flex-grow: 1; position: absolute; flex-direction: column; align-items: flex-end; width: 100%;">
+        <ui:Label text="Apodo" style="background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-6745462981750161228&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_202&quot;); width: 200px; height: 100px; margin-top: 30px; margin-right: 30px; margin-bottom: 30px; margin-left: 30px; -unity-text-align: middle-center; font-size: 45px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); color: rgb(255, 255, 255); text-overflow: clip; white-space: nowrap;"/>
+    </ui:VisualElement>
+</ui:UXML>
