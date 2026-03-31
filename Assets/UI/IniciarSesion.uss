@@ -9,15 +9,15 @@
     justify-content: space-around;
 }
 
-#unity-text-input { 
-    background-color: rgba(123, 43, 0, 0); 
-    border-left-color: rgba(0, 0, 0, 0); 
-    border-right-color: rgba(0, 0, 0, 0); 
-    border-top-color: rgba(0, 0, 0, 0); 
-    border-bottom-color: rgba(0, 0, 0, 0); 
-    background-image: url("project://database/Assets/2D%20Casual%20UI/Sprite/GUI.png?fileID=21300020&guid=1eaee135ce037439d925cee5e41ce026&type=3#GUI_10"); 
-    -unity-background-image-tint-color: rgb(123, 43, 0); 
-    color: rgb(255, 255, 255); 
-    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Fonts/Bangers.ttf?fileID=12800000&guid=5dd49b3eacc540408c98eee0de38e0f1&type=3#Bangers"); 
-    font-size: 44px; 
-    }
+#unity-text-input {
+    background-color: rgba(123, 43, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_205");
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
+    font-size: 44px;
+}

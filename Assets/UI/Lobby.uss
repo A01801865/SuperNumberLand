@@ -1,0 +1,49 @@
+:root {
+}
+
+.Lobby {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boton {
+    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_205");
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    font-size: 54px;
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.textos {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-style: bold;
+}
+
+.unity-base-field__input {
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(123, 43, 0, 0);
+    border-right-color: rgba(123, 43, 0, 0);
+    border-top-color: rgba(123, 43, 0, 0);
+    border-bottom-color: rgba(123, 43, 0, 0);
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
+    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_205");
+    font-size: 54px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    position: absolute;
+    width: 300px;
+    height: auto;
+}

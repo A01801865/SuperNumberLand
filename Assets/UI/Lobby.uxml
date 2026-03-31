@@ -1,9 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ui:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ui="UnityEngine.UIElements"
-    xmlns:uie="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
->
-    
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Lobby.uss?fileID=7433441132597879392&amp;guid=16af4bd8eea119c479501e50d0b1d3f4&amp;type=3#Lobby"/>
+    <ui:VisualElement name="ColumIzq" style="flex-grow: 1; align-self: flex-start; width: 640px; height: 1080px; justify-content: flex-start; align-items: center;"/>
+    <ui:VisualElement name="ColumCent" style="flex-grow: 1; align-self: center; align-items: center; width: 640px; height: 100000px;"/>
+    <ui:VisualElement name="ColumDer" style="flex-grow: 1; align-self: flex-end; width: 640px; height: 100000px; align-items: center;">
+        <ui:VisualElement name="Perfil" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1030360415000174041&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_206&quot;); position: absolute; height: 100px; width: 100px; top: -391px; left: 348px;">
+            <ui:Label text="Perfil" name="Perfil" class="textos" style="top: 95px; left: 11px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Monedas" style="flex-grow: 1; width: 100px; height: 100px; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-2470168268043156923&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_204&quot;); position: absolute; top: -390px; left: 470px;">
+            <ui:Label text="0&#10;" name="NumMonedas" style="font-size: 55px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); -unity-text-align: middle-center; position: absolute; top: 27px; left: 23px; height: 35px; width: 53px; color: rgb(255, 255, 255); -unity-font-style: bold;"/>
+            <ui:Label text="Monedas" name="Monedas" class="textos" style="top: 94px; left: -1px;"/>
+            <ui:Image name="Moneda" style="position: absolute; width: 60px; height: 60px; background-image: url(&quot;project://database/Assets/Monedas/coin3_16x16.png?fileID=7717009168347922525&amp;guid=c0ac2887a513d7245bfa14c87f5ccf6e&amp;type=3#coin3_16x16_0&quot;); top: -10px; left: 64px;"/>
+        </ui:VisualElement>
+        <ui:Button text="Progreso" name="Progreso" class="boton" style="top: 102px; left: 301px;">
+            <ui:VisualElement name="BarraProgreso" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_205&quot;); position: absolute; width: 300px; height: 55px; top: -63px; left: -3px;"/>
+        </ui:Button>
+        <ui:Button text="Jugar" name="Jugar" class="boton" style="top: 348px; left: 302px;"/>
+    </ui:VisualElement>
+    <ui:Button text="" name="Inventario" icon-image="project://database/Assets/Layer%20Lab/2D%20Icons-CasualIconPack/Icons/512/Icon_Collectibles_Bag01_Brown.png?fileID=21300000&amp;guid=99a2fc167898941368111d531fb6dabd&amp;type=3#Icon_Collectibles_Bag01_Brown" class="boton" style="top: 66px; left: 76px;">
+        <ui:Label text="Inventario" class="textos" style="top: 95px; left: 74px;"/>
+    </ui:Button>
+    <ui:Button text="Tienda" name="Tienda" class="boton" style="top: 506px; left: 76px;">
+        <ui:VisualElement name="ImgTienda" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1030360415000174041&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_206&quot;); position: absolute; width: 200px; height: 200px; top: -201px; left: 47px;">
+            <ui:Image name="LogoTienda" style="position: absolute; min-width: auto; width: 200px; height: 200px; background-image: url(&quot;project://database/Assets/Layer%20Lab/2D%20Icons-CasualIconPack/Icons/128/Icon_ETC_Buildings_Shop01.png?fileID=21300000&amp;guid=60c652b01434646d785146ab75113c2e&amp;type=3#Icon_ETC_Buildings_Shop01&quot;); top: -7px; left: -2px;"/>
+        </ui:VisualElement>
+    </ui:Button>
+    <ui:Button text="Logros" name="Logros" class="boton" style="top: 869px; left: 66px;"/>
+    <ui:TextField label="" placeholder-text="Apodo" name="ApodoJugador" class="input-custom" style="font-size: 50px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); -unity-font-style: bold; width: 300px; height: 100px; position: absolute; top: 42px; left: 1576px; -unity-text-align: middle-center;"/>
 </ui:UXML>
