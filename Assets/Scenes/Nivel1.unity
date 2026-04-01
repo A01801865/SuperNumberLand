@@ -276,7 +276,7 @@ Tilemap:
       - {fileID: 5584249897878827991, guid: c0ac2887a513d7245bfa14c87f5ccf6e, type: 3}
       - {fileID: 6084675401425524483, guid: c0ac2887a513d7245bfa14c87f5ccf6e, type: 3}
       - {fileID: -6737857938873585757, guid: c0ac2887a513d7245bfa14c87f5ccf6e, type: 3}
-      m_AnimationSpeed: 13
+      m_AnimationSpeed: 13.000001
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -1, y: -3, z: 0}
@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 1378650325}
   - component: {fileID: 1378650324}
   - component: {fileID: 1378650323}
+  - component: {fileID: 1378650326}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -1387,6 +1388,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1378650326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378650322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fffdd4d5332e947b2228cb1110cb48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolverANiveles
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -31,3 +31,11 @@
     width: 300px;
     position: absolute;
 }
+
+.boton {
+    transition-duration: 0.2s;
+}
+
+.boton:hover {
+    scale: 1.1 1.1 1.1;
+}

@@ -21,3 +21,11 @@
     -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
     font-size: 44px;
 }
+
+.botones {
+    transition-duration: 0.2s;
+}
+
+.botones:hover {
+    scale: 1.1 1.1 1.1;
+}

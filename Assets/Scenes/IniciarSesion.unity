@@ -129,6 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1291961660}
   - component: {fileID: 1291961659}
+  - component: {fileID: 1291961663}
+  - component: {fileID: 1291961662}
+  - component: {fileID: 1291961661}
   m_Layer: 5
   m_Name: IniciarSesion
   m_TagString: Untagged
@@ -174,6 +177,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291961661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291961658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18aa4123399865940b5857af66216d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IniciarIrALobby
+--- !u!114 &1291961662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291961658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a763062c2a00b0a46b59435545fbfbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrAOlviCont
+--- !u!114 &1291961663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291961658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8645fefcdc5f9b4ba50f7dc1cbadb9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Regresareginses
 --- !u!1 &1396667763
 GameObject:
   m_ObjectHideFlags: 0

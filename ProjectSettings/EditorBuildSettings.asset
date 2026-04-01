@@ -8,6 +8,42 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 9fc776e76750c124f8fddd682372782b
+  - enabled: 1
+    path: Assets/Scenes/IniciarSesion.unity
+    guid: 72d54dab2f0543540bf3f8c9897460cf
+  - enabled: 1
+    path: Assets/Scenes/Inventario.unity
+    guid: 35d1db4ba70a14f7aa6840b2af570fa4
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 25fa26e745fa6c04ba37dba5ad82a3f2
+  - enabled: 1
+    path: Assets/Scenes/Nivel1.unity
+    guid: 1452782d5874045bd80b9841886b1996
+  - enabled: 1
+    path: Assets/Scenes/Niveles.unity
+    guid: 911384754fa0640babe53195851fe0f0
+  - enabled: 1
+    path: Assets/Scenes/Perfil.unity
+    guid: 40c876a306fe98942bd5b6436ee1a17c
+  - enabled: 1
+    path: Assets/Scenes/Progreso.unity
+    guid: 93592a788c6ae8345b897a76aeaf1537
+  - enabled: 1
+    path: Assets/Scenes/Reg_InSes.unity
+    guid: 7fd97e16599ef4d40888e9b9996d0068
+  - enabled: 1
+    path: Assets/Scenes/Registro.unity
+    guid: dbe1473cbef574fc9933dc6389245212
+  - enabled: 1
+    path: Assets/Scenes/Temas.unity
+    guid: a5fa62422a48f4430a94a844e3b39f9c
+  - enabled: 1
+    path: Assets/Scenes/Tienda.unity
+    guid: 7bd241810900d4bb987dc657068c2d60
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

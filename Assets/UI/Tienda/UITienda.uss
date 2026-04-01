@@ -46,7 +46,7 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    transition-duration: 0.35s;
+    transition-duration: 0.2s;
     padding-top: 50px;
     padding-right: 50px;
     padding-bottom: 50px;

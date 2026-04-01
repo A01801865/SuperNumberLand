@@ -404,6 +404,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1161311636}
   - component: {fileID: 1161311635}
+  - component: {fileID: 1161311641}
+  - component: {fileID: 1161311640}
+  - component: {fileID: 1161311639}
+  - component: {fileID: 1161311638}
+  - component: {fileID: 1161311637}
   m_Layer: 5
   m_Name: Lobby
   m_TagString: Untagged
@@ -449,6 +454,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161311637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161311634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e51a9b7b2bd237488db59ac29615d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrATienda
+--- !u!114 &1161311638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161311634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7e501d1dce10b49aa85f8277c1f497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrATemas
+--- !u!114 &1161311639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161311634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa97f94c309d26478ccb06390d0b9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrAProgreso
+--- !u!114 &1161311640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161311634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b519ccf76c6160b4c9a3525f74fae04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrALogros
+--- !u!114 &1161311641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161311634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2022fde503a5410458c9723f4fdf5db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrAInventario
 --- !u!1 &1389802522
 GameObject:
   m_ObjectHideFlags: 0
