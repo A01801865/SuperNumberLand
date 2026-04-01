@@ -1,0 +1,30 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Tienda/UITienda.uss?fileID=7433441132597879392&amp;guid=abc7e1afeb37d43da97a53941e44d6c4&amp;type=3#UITienda"/>
+    <ui:Label text="tienda" name="IniciarSesion" style="position: relative; top: 36px; left: 715px; font-size: 75px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/2D%20Casual%20UI/Sprite/GUI.png?fileID=21300104&amp;guid=1eaee135ce037439d925cee5e41ce026&amp;type=3#GUI_59&quot;); -unity-background-image-tint-color: rgb(134, 46, 0); width: 450px; height: 150px; align-self: flex-start; justify-content: space-evenly; align-items: flex-start; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;"/>
+    <ui:TextField label="" placeholder-text="Apodo" name="ApodoJugador" class="input-custom" style="font-size: 50px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); -unity-font-style: bold; top: 36px; left: 1610px; background-color: rgba(0, 0, 0, 0); background-image: none;"/>
+    <ui:VisualElement name="NumMon" style="flex-grow: 1; width: 200px; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_205&quot;); align-self: center; align-items: flex-end; position: absolute; height: 50px; top: 136px; left: 1712px;"/>
+    <ui:Label text="0&#10;" name="NumMonedas" style="font-size: 55px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); -unity-text-align: middle-center; position: absolute; top: 140px; left: 1780px; height: 35px; width: 53px; color: rgb(255, 255, 255); -unity-font-style: bold;"/>
+    <ui:VisualElement name="Monedas" style="flex-grow: 1; width: 60px; height: 60px; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-2470168268043156923&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_204&quot;); position: absolute; top: 131px; left: 1681px;">
+        <ui:Image name="ImagenMoneda" style="background-image: url(&quot;project://database/Assets/Monedas/coin3_16x16.png?fileID=7717009168347922525&amp;guid=c0ac2887a513d7245bfa14c87f5ccf6e&amp;type=3#coin3_16x16_0&quot;); width: 50px; height: 50px; position: absolute; top: 4px; left: 4px;"/>
+    </ui:VisualElement>
+    <ui:VisualElement name="Tienda" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1030360415000174041&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_206&quot;); width: 1700px; align-self: center; height: 1000px; position: relative; flex-direction: column; align-items: center; align-content: flex-start; justify-content: center; margin-bottom: 150px; -unity-text-align: upper-center;">
+        <ui:VisualElement style="flex-grow: 1; background-image: none; width: 100%; height: 100px; -unity-text-align: middle-center; align-items: center; justify-content: center; margin-top: 80px; font-size: 55px; flex-direction: row;">
+            <ui:Button text="Personajes" name="BotonPersonajes" class="boton"/>
+            <ui:Button text="fondos" name="BotonFondos" class="boton"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Personajes" style="flex-grow: 1; width: 100%; height: 100%; flex-direction: row; align-items: center; margin-bottom: 70px;">
+            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;">
+                <ui:Label text="test&#10;de&#10;cambio" style="font-size: 90px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Fondos" style="flex-grow: 1; width: 100%; height: 100%; flex-direction: row; align-items: center; margin-bottom: 70px; display: none;">
+            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Image name="Arbol" style="background-image: url(&quot;project://database/Assets/SunnyLand%20Artwork/Environment/props/tree.png?fileID=21300000&amp;guid=f7187675ec12e4aacaeb0e97ad31230a&amp;type=3#tree&quot;); position: absolute; width: 248px; height: 257px; top: 685px; left: 130px;"/>
+    <ui:Image name="Arbol" style="background-image: url(&quot;project://database/Assets/SunnyLand%20Artwork/Environment/props/tree.png?fileID=21300000&amp;guid=f7187675ec12e4aacaeb0e97ad31230a&amp;type=3#tree&quot;); position: absolute; width: 248px; height: 257px; top: 683px; left: 1642px;"/>
+</ui:UXML>
