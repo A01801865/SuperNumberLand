@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/UITemas.uss?fileID=7433441132597879392&amp;guid=c88723d7ee58f4bc88b3c78d36e4c8d1&amp;type=3#UITemas"/>
+    <Style src="project://database/Assets/UI/Temas/UITemas.uss?fileID=7433441132597879392&amp;guid=c88723d7ee58f4bc88b3c78d36e4c8d1&amp;type=3#UITemas"/>
     <ui:VisualElement name="Menu" style="flex-grow: 1;">
         <ui:VisualElement name="ParteArriba" style="flex-grow: 1; width: 100%; height: 100px; flex-direction: column; justify-content: center; align-items: center;">
             <ui:VisualElement name="Titulo" style="flex-grow: 1; justify-content: center; align-items: center; width: 500px; height: 100px; background-image: url(&quot;project://database/Assets/SunnyLand%20Artwork/Sprites/Fx/enemy-death/enemy-death-4.png?fileID=21300000&amp;guid=662dde2f5e71c4d47aadb2a90334c7c8&amp;type=3#enemy-death-4&quot;); -unity-background-image-tint-color: rgb(255, 255, 255);">
@@ -30,6 +30,6 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="User" style="flex-grow: 1; position: absolute; flex-direction: column; align-items: flex-end; width: 100%;">
-        <ui:Label text="Apodo" style="background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-6745462981750161228&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_202&quot;); width: 200px; height: 100px; margin-top: 30px; margin-right: 30px; margin-bottom: 30px; margin-left: 30px; -unity-text-align: middle-center; font-size: 45px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); color: rgb(255, 255, 255); text-overflow: clip; white-space: nowrap;"/>
+        <ui:TextField label="" placeholder-text="Apodo" name="ApodoJugador" class="input-custom" style="font-size: 50px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); -unity-font-style: bold; top: 39px; left: 1577px; position: absolute; height: auto; width: 300px;"/>
     </ui:VisualElement>
 </ui:UXML>
