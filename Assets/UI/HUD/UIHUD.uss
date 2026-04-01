@@ -1,0 +1,86 @@
+:root {
+}
+
+.contenedor {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.vidas {
+    flex-direction: row;
+    align-items: stretch;
+    width: 500px;
+    height: 150px;
+    background-size: 100% 150px;
+}
+
+.vida {
+    background-image: url("project://database/Assets/Layer%20Lab/2D%20Icons-CasualIconPack/Icons/128/Icon_Resources_Heart01_Red.png?fileID=21300000&guid=4775bc44947d548059450bcbdee3a545&type=3#Icon_Resources_Heart01_Red");
+    background-size: 128px 128px;
+    width: 500px;
+    height: 150px;
+    flex-direction: row;
+}
+
+.espacio {
+    flex-grow: 1;
+}
+
+.monedas {
+    flex-direction: row;
+    align-items: center;
+}
+
+.hud {
+    flex-direction: row;
+    height: 150px;
+    min-height: 150px;
+    width: 100%;
+    position: absolute;
+}
+
+.pausa {
+    align-items: stretch;
+    justify-content: center;
+    -unity-background-image-tint-color: rgb(0, 0, 0);
+}
+
+.fondopausa {
+    justify-content: center;
+    align-items: center;
+    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1030360415000174041&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_206");
+    background-size: 1000px 800px;
+}
+
+.boton {
+    width: 500px;
+    height: 150px;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1648770155842974369&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_199");
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 250, 205);
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
+    -unity-font-style: normal;
+    transition-duration: 0.35s;
+}
+
+.boton:hover {
+    scale: 1.15 1.15;
+    transition-duration: 0.35s;
+}
+
+.estrella {
+    background-image: url("project://database/Assets/Layer%20Lab/2D%20Icons-CasualIconPack/Icons/256/Icon_Collectibles_Trophy01_Gold.png?fileID=2800000&guid=350e9683959b24fcf85ed94c7d483865&type=3#Icon_Collectibles_Trophy01_Gold");
+    width: 100px;
+    height: 200px;
+}
