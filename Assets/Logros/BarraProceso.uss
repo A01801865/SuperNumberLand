@@ -1,0 +1,15 @@
+:root {
+}
+
+.unity-progress-bar__progress {
+    background-color: rgb(22, 173, 19);
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+}
+
+.unity-progress-bar__background {
+    background-color: rgba(253, 253, 253, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}

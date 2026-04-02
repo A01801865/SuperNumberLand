@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 1161311639}
   - component: {fileID: 1161311638}
   - component: {fileID: 1161311637}
+  - component: {fileID: 1161311642}
   m_Layer: 5
   m_Name: Lobby
   m_TagString: Untagged
@@ -514,6 +515,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2022fde503a5410458c9723f4fdf5db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IrAInventario
+--- !u!114 &1161311642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161311634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25370bec4863fc146855b4d44045fb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrAPerfil
 --- !u!1 &1389802522
 GameObject:
   m_ObjectHideFlags: 0

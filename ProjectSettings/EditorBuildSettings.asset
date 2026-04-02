@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tienda.unity
     guid: 7bd241810900d4bb987dc657068c2d60
+  - enabled: 1
+    path: Assets/Scenes/Logros.unity
+    guid: 9014be769a4afcb4db8f696e928e6685
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
