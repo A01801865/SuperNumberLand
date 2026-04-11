@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 25fa26e745fa6c04ba37dba5ad82a3f2
   - enabled: 1
-    path: Assets/Scenes/Nivel1.unity
+    path: Assets/Scenes/Niveles Suma/Nivel 1/Nivel1_P1.unity
     guid: 1452782d5874045bd80b9841886b1996
   - enabled: 1
     path: Assets/Scenes/Niveles.unity
