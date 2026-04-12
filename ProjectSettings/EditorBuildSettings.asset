@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 25fa26e745fa6c04ba37dba5ad82a3f2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Niveles Suma/Nivel 1/Nivel1_P1.unity
     guid: 1452782d5874045bd80b9841886b1996
   - enabled: 1
@@ -47,6 +47,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Logros.unity
     guid: 9014be769a4afcb4db8f696e928e6685
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Nivel1.unity
+    guid: 66e26eca91ebea5459c87f77af1b1512
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
