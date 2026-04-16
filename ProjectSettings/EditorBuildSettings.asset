@@ -50,6 +50,66 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TODOS LOS MAPAS/Nivel1.unity
     guid: 66e26eca91ebea5459c87f77af1b1512
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa2.unity
+    guid: 002d6833130742a4ba7946a7f4e81e90
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa3.unity
+    guid: c3f127bdeb93ea644a7e32d7cbda3070
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa4.unity
+    guid: cfd9f02196d21f7498be7f6a21626b74
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa5.unity
+    guid: cde119fe9a1f95a4696757af7e831fa6
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa6.unity
+    guid: 880dd1f64bca65045850c5bb85372470
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa7.unity
+    guid: bd873a279ef4bba4ca539612463719eb
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa8.unity
+    guid: 93e8349bd3959ad489289032496d43c9
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa9.unity
+    guid: 790da377e3920aa4f92056a8bafcd618
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa10.unity
+    guid: 2f62f25288e5a2a479d8a3e72115be43
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa11.unity
+    guid: 2e9a9c2194b35f143a7700520326df7f
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa12.unity
+    guid: e288370cc71500e49a2f9abde914415c
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa13.unity
+    guid: aacb8273fe2b9bc4fa2fa31c8621f4d7
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa14.unity
+    guid: eeb8acb9e1018ee4e9943f7960749547
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa15.unity
+    guid: bd7553bfa97bee642bf01a38a5ff624e
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa16.unity
+    guid: 2f724680be6d8bc44a8b7983bd3e5ead
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa17.unity
+    guid: b50840535446414439b8cdfd92fd9963
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa18.unity
+    guid: cee6fde9d2556c84aa5316cff7a6f35f
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa19.unity
+    guid: be9b8e02b0179c6409bdfae8d60402e0
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa20.unity
+    guid: f344d7b28906b504e818da87835404d9
+  - enabled: 1
+    path: Assets/Scenes/TODOS LOS MAPAS/Mapa21.unity
+    guid: 59bfb6e3a71b7604d827a0b92f32b4f5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

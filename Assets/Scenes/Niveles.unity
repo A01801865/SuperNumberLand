@@ -404,6 +404,15 @@ GameObject:
   - component: {fileID: 1782473515}
   - component: {fileID: 1782473518}
   - component: {fileID: 1782473517}
+  - component: {fileID: 1782473519}
+  - component: {fileID: 1782473520}
+  - component: {fileID: 1782473527}
+  - component: {fileID: 1782473526}
+  - component: {fileID: 1782473525}
+  - component: {fileID: 1782473524}
+  - component: {fileID: 1782473523}
+  - component: {fileID: 1782473522}
+  - component: {fileID: 1782473521}
   m_Layer: 5
   m_Name: UINiveles
   m_TagString: Untagged
@@ -473,6 +482,114 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65860f197a2640e45883c30d8bb592a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolverDesdeNiveles
+--- !u!114 &1782473519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9dc40a15dd4ee45a31988160a58fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel2
+--- !u!114 &1782473520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8a27da401922745bdc8b3c3b1b3284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel3
+--- !u!114 &1782473521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d34acc04fca6af4398a330c236ba56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel10
+--- !u!114 &1782473522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca751e25a29926f4092ff7c0952691be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel9
+--- !u!114 &1782473523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff40bb04165e6e42b3bdf98f514717a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel8
+--- !u!114 &1782473524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd4a509646c49847b0ccffb8be4cb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel7
+--- !u!114 &1782473525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfb28cf4d982ee448d15945eecb4248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel6
+--- !u!114 &1782473526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b267be64c133f247bdbe847b22a2ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel5
+--- !u!114 &1782473527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782473514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007a77b3c8afc354db08e5a609159a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IrANivel4
 --- !u!1 &2105010742
 GameObject:
   m_ObjectHideFlags: 0
