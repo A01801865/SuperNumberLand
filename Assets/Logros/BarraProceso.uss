@@ -2,8 +2,12 @@
 }
 
 .unity-progress-bar__progress {
-    background-color: rgb(22, 173, 19);
+    background-color: rgb(34, 179, 34);
     -unity-background-image-tint-color: rgba(255, 255, 255, 0);
+    height: 19px;
+    justify-content: center;
+    align-self: flex-start;
+    align-items: auto;
 }
 
 .unity-progress-bar__background {

@@ -4,25 +4,45 @@
 .boton {
     width: 300px;
     height: 300px;
-    background-image: url("project://database/Assets/SunnyLand%20Artwork/Environment/props/big-crate.png?fileID=2800000&guid=3fc2bbd409bf34ab6af1637bab569da1&type=3#big-crate");
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Borders/Original/IconBorder.png?fileID=21300000&guid=d813cb5f68722d64e9b9ad8f422dfe9d&type=3#IconBorder");
     flex-direction: column-reverse;
     transition-duration: 0.35s;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
 }
 
 .textos {
-    font-size: 55px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
-    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_205");
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Buttons/16x16.png?fileID=1940803569&guid=584ea5e1f4128f842936858238ac18b1&type=3#16x16_11");
     -unity-text-align: upper-center;
+    -unity-slice-left: 5;
+    -unity-slice-top: 5;
+    -unity-slice-right: 5;
+    -unity-slice-bottom: 5;
+    width: 400px;
+    height: 70px;
+    margin-right: 0;
+    border-right-width: 0;
+    align-self: center;
+    border-top-width: 10px;
+    -unity-background-image-tint-color: rgb(233, 150, 122);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    text-shadow: 0 5px 0 rgb(0, 0, 0);
 }
 
 .simbolos {
-    font-size: 150px;
+    font-size: 110px;
     color: rgb(255, 215, 0);
     -unity-text-outline-width: 5px;
     -unity-text-outline-color: rgb(184, 134, 11);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&guid=2fd92e0f1a30cfd40b90cb5ca04a9372&type=3#ARCADECLASSIC");
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    border-left-width: 10px;
 }
 
 .boton:hover {
@@ -36,9 +56,17 @@
     border-right-color: rgba(123, 43, 0, 0);
     border-top-color: rgba(123, 43, 0, 0);
     border-bottom-color: rgba(123, 43, 0, 0);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
-    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_205");
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Buttons/16x16.png?fileID=1940803569&guid=584ea5e1f4128f842936858238ac18b1&type=3#16x16_11");
     font-size: 30px;
     color: rgb(255, 255, 255);
     -unity-text-align: upper-center;
+    -unity-slice-left: 5;
+    -unity-slice-top: 5;
+    -unity-slice-right: 5;
+    -unity-slice-bottom: 5;
+    -unity-background-image-tint-color: rgb(233, 150, 122);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    text-shadow: 0 2px 0 rgb(0, 0, 0);
 }

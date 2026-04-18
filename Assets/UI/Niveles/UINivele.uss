@@ -2,23 +2,27 @@
 }
 
 .botones {
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 150px;
     margin-top: 80px;
-    margin-right: 80px;
+    margin-right: 60px;
     margin-bottom: 80px;
-    margin-left: 80px;
-    background-color: rgba(255, 255, 255, 0);
+    margin-left: 60px;
+    background-color: rgba(233, 150, 122, 0);
     border-left-color: rgba(0, 0, 0, 0);
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1030360415000174041&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_206");
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Borders/Original/IconBorder.png?fileID=21300000&guid=d813cb5f68722d64e9b9ad8f422dfe9d&type=3#IconBorder");
     background-size: 100% 100%;
     transition-duration: 0.35s;
-    font-size: 90px;
-    color: rgb(255, 255, 224);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&guid=2fd92e0f1a30cfd40b90cb5ca04a9372&type=3#ARCADECLASSIC");
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    text-shadow: 0 10px 0 rgb(0, 0, 0);
 }
 
 .areasniveles {

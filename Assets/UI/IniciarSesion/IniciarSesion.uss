@@ -15,17 +15,31 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_205");
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Inscriptions/2.PNG?fileID=21300000&guid=bd7f41a0d3cd4bc4e99336fd3504d783&type=3#2");
     -unity-background-image-tint-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     font-size: 44px;
+    width: 100%;
+    height: 100px;
+    border-left-width: 50px;
+    border-right-width: 50px;
 }
 
 .botones {
     transition-duration: 0.2s;
+    font-size: 44px;
 }
 
 .botones:hover {
     scale: 1.1 1.1 1.1;
+}
+
+.textfields {
+    color: rgb(0, 0, 0);
+    font-size: 54px;
+}
+
+.textfields:focus {
+    color: rgb(0, 0, 0);
 }

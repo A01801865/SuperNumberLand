@@ -2,31 +2,31 @@
     <Style src="project://database/Assets/UI/Temas/UITemas.uss?fileID=7433441132597879392&amp;guid=c88723d7ee58f4bc88b3c78d36e4c8d1&amp;type=3#UITemas"/>
     <ui:VisualElement name="Menu" style="flex-grow: 1;">
         <ui:VisualElement name="ParteArriba" style="flex-grow: 1; width: 100%; height: 100px; flex-direction: column; justify-content: center; align-items: center;">
-            <ui:VisualElement name="Titulo" style="flex-grow: 1; justify-content: center; align-items: center; width: 500px; height: 100px; background-image: url(&quot;project://database/Assets/SunnyLand%20Artwork/Sprites/Fx/enemy-death/enemy-death-4.png?fileID=21300000&amp;guid=662dde2f5e71c4d47aadb2a90334c7c8&amp;type=3#enemy-death-4&quot;); -unity-background-image-tint-color: rgb(255, 255, 255);">
-                <ui:Label text="Super " style="font-size: 100px; -unity-text-align: upper-center; color: rgb(255, 253, 0); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&amp;guid=2fd92e0f1a30cfd40b90cb5ca04a9372&amp;type=3#ARCADECLASSIC&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0); -unity-text-outline-width: 3.5px; margin-bottom: 0; padding-bottom: 0; justify-content: flex-end; -unity-font-style: normal; -unity-text-outline-color: rgb(0, 0, 0); height: 106px; width: 266px;"/>
-                <ui:Label text="Number Land" style="font-size: 100px; -unity-text-align: upper-center; color: rgb(253, 0, 0); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&amp;guid=2fd92e0f1a30cfd40b90cb5ca04a9372&amp;type=3#ARCADECLASSIC&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0); border-top-width: 0; margin-top: 0; padding-top: 0; justify-content: flex-start; -unity-text-outline-width: 3.5px; -unity-text-outline-color: rgb(0, 0, 0);"/>
+            <ui:VisualElement name="Titulo" style="flex-grow: 1; justify-content: center; align-items: center; width: 500px; height: 100px; background-image: none; -unity-background-image-tint-color: rgb(255, 255, 255); -unity-slice-left: 90; -unity-slice-top: 90; -unity-slice-right: 90; -unity-slice-bottom: 90;">
+                <ui:Label text="Super " style="font-size: 140px; -unity-text-align: upper-center; color: rgb(255, 253, 0); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&amp;guid=2fd92e0f1a30cfd40b90cb5ca04a9372&amp;type=3#ARCADECLASSIC&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0); -unity-text-outline-width: 3.5px; margin-bottom: 0; padding-bottom: 0; justify-content: flex-end; -unity-font-style: normal; -unity-text-outline-color: rgb(0, 0, 0); height: 106px; width: 266px; margin-top: 0; text-shadow: 0 7px 0 rgb(0, 0, 0);"/>
+                <ui:Label text="Number Land" style="font-size: 140px; -unity-text-align: upper-center; color: rgb(253, 0, 0); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&amp;guid=2fd92e0f1a30cfd40b90cb5ca04a9372&amp;type=3#ARCADECLASSIC&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0); border-top-width: 0; margin-top: 0; padding-top: 0; justify-content: flex-start; -unity-text-outline-width: 3.5px; -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 0 7px 0 rgb(0, 0, 0);"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Temas" style="flex-grow: 1; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; width: 100%; height: 20px; align-items: center;">
             <ui:Button text="" name="BotonSuma" class="boton">
                 <ui:Label text="Suma" class="textos"/>
-                <ui:Label text="+" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+                <ui:Label text="+" class="simbolos" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); -unity-font-style: bold;"/>
             </ui:Button>
             <ui:Button text="" name="BotonResta" class="boton">
-                <ui:Label text="resta" class="textos"/>
-                <ui:Label text="-" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+                <ui:Label text="Resta" class="textos"/>
+                <ui:Label text="-" class="simbolos"/>
             </ui:Button>
             <ui:Button text="" name="BotonMult" class="boton">
-                <ui:Label text="multiplicacion" class="textos" style="font-size: 35px; -unity-font-style: normal;"/>
-                <ui:Label text="x" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+                <ui:Label text="MultiplicaciÓn" class="textos" style="font-size: 25px; -unity-font-style: normal; border-top-width: 15px;"/>
+                <ui:Label text="X" class="simbolos" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); -unity-font-style: bold;"/>
             </ui:Button>
             <ui:Button text="" name="BotonDiv" class="boton">
-                <ui:Label text="division" class="textos"/>
-                <ui:Label text="÷" name="Label" class="simbolos" style="-unity-text-align: middle-center; -unity-font-style: bold; font-size: 150px;"/>
+                <ui:Label text="División" selectable="true" focusable="true" class="textos"/>
+                <ui:Label text="÷" class="simbolos" style="-unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&amp;guid=a5c6c7959cecf4f82b41ec6fe2e1768b&amp;type=3#PressStart2P&quot;);"/>
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement name="ParteAbajo" style="flex-grow: 1; width: 100%; height: 50px; align-items: center; justify-content: center;">
-            <ui:Button text="Volver" name="BotonVolver" class="boton" style="font-size: 55px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); background-color: rgba(56, 56, 56, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1648770155842974369&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_199&quot;); color: rgb(255, 255, 255); width: 300px; height: 150px;"/>
+            <ui:Button text="Volver" name="BotonVolver" class="boton" style="font-size: 40px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&amp;guid=a5c6c7959cecf4f82b41ec6fe2e1768b&amp;type=3#PressStart2P&quot;); background-color: rgba(56, 56, 56, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); background-image: url(&quot;project://database/Assets/Wood%20UI/Sprites/Buttons/16x16.png?fileID=1940803569&amp;guid=584ea5e1f4128f842936858238ac18b1&amp;type=3#16x16_11&quot;); color: rgb(255, 255, 255); width: 300px; height: 130px; -unity-background-image-tint-color: rgb(233, 150, 122); -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; -unity-text-outline-width: 2px; -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 0 5px 0 rgb(0, 0, 0); margin-bottom: 125px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="User" style="flex-grow: 1; position: absolute; flex-direction: column; align-items: flex-end; width: 100%;">
