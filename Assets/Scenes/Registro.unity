@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 1216535588}
   - component: {fileID: 1216535590}
   - component: {fileID: 1216535591}
+  - component: {fileID: 1216535592}
   m_Layer: 5
   m_Name: UIRegistro
   m_TagString: Untagged
@@ -473,6 +474,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504c63b38eb74e246bc17f559c6255ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotonJugarLobby
+--- !u!114 &1216535592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216535587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3913b76b2d8254ec3bb176770c06d983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RegisterAPI
 --- !u!1 &1251113304
 GameObject:
   m_ObjectHideFlags: 0
