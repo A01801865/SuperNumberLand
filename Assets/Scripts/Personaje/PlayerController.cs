@@ -2,16 +2,24 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movimiento")]
     public float velocidad = 5f;
+
+    [Header("Salto")]
     public float fuerzaSalto = 8f;
 
+    [Header("Vidas")]
     public int vidas = 3;
     public float limiteCaida = -6f;
 
+    [Header("Respawn")]
     public Transform puntoRespawn;
+
+    [Header("Límites del mapa")]
     public float limiteIzq = -10f;
     public float limiteDer = 10f;
 
+    [Header("UI")]
     public UIVidasToolkit uiVidas;
 
     private Rigidbody2D rb;
@@ -20,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private float movimiento;
     private bool enSuelo;
+    private bool muerto = false;
 
     void Start()
     {
@@ -33,6 +42,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (muerto) return; // 🔥 bloquea control al morir
+
         movimiento = Input.GetAxis("Horizontal");
         animator.SetFloat("velocidad", Mathf.Abs(movimiento));
 
@@ -67,10 +78,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (muerto) return;
+
         rb.linearVelocity = new Vector2(movimiento * velocidad, rb.linearVelocity.y);
     }
 
-    // 🔥 DETECCIÓN DE SUELO CON TRIGGER
+    // DETECTAR SUELO (con tu trigger)
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Suelo"))
@@ -87,6 +100,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // PERDER VIDA
     void PerderVida()
     {
         vidas--;
@@ -97,11 +111,22 @@ public class PlayerController : MonoBehaviour
         if (vidas <= 0)
         {
             Debug.Log("GAME OVER");
+
+            muerto = true;
+
+            if (uiVidas != null)
+                uiVidas.MostrarPantallaPerder();
         }
         else
         {
-            transform.position = puntoRespawn.position;
-            rb.linearVelocity = Vector2.zero;
+            Respawn();
         }
+    }
+
+    // RESPAWN
+    void Respawn()
+    {
+        transform.position = puntoRespawn.position;
+        rb.linearVelocity = Vector2.zero;
     }
 }

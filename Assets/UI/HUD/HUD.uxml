@@ -28,7 +28,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Perder" class="pausa" style="flex-grow: 1; position: absolute; background-color: rgba(0, 0, 0, 0.35);">
-            <ui:VisualElement name="FondoPerder" class="fondopausa" style="flex-grow: 1; display: none;">
+            <ui:VisualElement name="FondoPerder" class="fondopausa" style="flex-grow: 1; display: none; position: absolute; align-self: center; top: 164px; left: 465px; height: 758px; width: 991px;">
                 <ui:Label text="¡Nivel fallado!" name="TituloPerder" style="font-size: 100px; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&amp;guid=7081df243d26bf14ba13034bfe576117&amp;type=3#Super Starfish&quot;); color: rgb(255, 250, 205);"/>
                 <ui:Button text="Reintentar" name="BotonReintentar" icon-image="" class="boton"/>
                 <ui:Button text="Volver al Menu" name="BotonVolver" icon-image="" class="boton"/>

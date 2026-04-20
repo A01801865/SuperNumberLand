@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: dddc0bf37f0c02e4ebd0dec2257083ea
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefabCaja: {fileID: 7005352108738285711, guid: cd19f516ced5f42418c26acc6779a213, type: 3}
+  - puerta: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
