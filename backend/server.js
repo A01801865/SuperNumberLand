@@ -8,12 +8,14 @@ app.use(express.json());
 
 const db = require('./db');
 
-// Ruta de prueba
+
+// 🔥 TEST
 app.get('/test', (req, res) => {
   res.json({ mensaje: "API funcionando 🚀" });
 });
 
-// Usuarios
+
+// 🔥 USUARIOS
 app.get('/usuarios', (req, res) => {
   db.query('SELECT * FROM Usuario', (err, result) => {
     if (err) {
@@ -24,34 +26,43 @@ app.get('/usuarios', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Servidor corriendo en puerto 3000');
-});
 
-// Login
+// 🔐 LOGIN
 app.post('/login', (req, res) => {
   const { usuario, contrasena } = req.body;
 
   const sql = `
     SELECT * FROM Usuario 
-    WHERE nombre_usuario = ? AND contrasena = ?
+    WHERE nombre_usuario = ?
   `;
 
-  db.query(sql, [usuario, contrasena], (err, result) => {
+  db.query(sql, [usuario], (err, result) => {
     if (err) {
       console.error(err);
       return res.status(500).json(err);
     }
 
-    if (result.length > 0) {
-      res.json({ success: true, user: result[0] });
-    } else {
-      res.json({ success: false, message: "Credenciales incorrectas" });
+    if (result.length === 0) {
+      return res.json({ success: false, message: "Usuario no encontrado" });
     }
+
+    const user = result[0];
+
+    if (user.contrasena !== contrasena) {
+      return res.json({ success: false, message: "Contraseña incorrecta" });
+    }
+
+    console.log("✅ Login correcto");
+
+    res.json({
+      success: true,
+      user: user
+    });
   });
 });
 
-// Preguntas
+
+// 🎮 PREGUNTAS
 app.get('/preguntas/:nivel', (req, res) => {
   const nivel = req.params.nivel;
 
@@ -71,21 +82,51 @@ app.get('/preguntas/:nivel', (req, res) => {
   });
 });
 
-// Register
+
+// 🔥 REGISTER (CORREGIDO)
 app.post('/register', (req, res) => {
-  const { usuario, contrasena } = req.body;
+
+  console.log("🔥 DATOS RECIBIDOS:", req.body);
+
+  const {
+    usuario,
+    contrasena,
+    nombre_completo,
+    edad,
+    genero,
+    actividad,
+    alcaldia
+  } = req.body;
 
   const sql = `
-    INSERT INTO Usuario (nombre_usuario, contrasena, fecha_registro, dificultad_usuario)
-    VALUES (?, ?, NOW(), 1)
+    INSERT INTO Usuario 
+    (nombre_usuario, contrasena, nombre_completo, edad, genero, actividad, alcaldia)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
   `;
 
-  db.query(sql, [usuario, contrasena], (err, result) => {
+  db.query(sql, [
+    usuario,
+    contrasena,
+    nombre_completo,
+    edad,
+    genero,
+    actividad,
+    alcaldia
+  ], (err, result) => {
+
     if (err) {
-      console.error(err);
+      console.error("❌ ERROR INSERT:", err);
       return res.status(500).json({ success: false });
     }
 
+    console.log("✅ Usuario insertado correctamente");
+
     res.json({ success: true });
   });
+});
+
+
+// 🚀 SERVER
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Servidor corriendo en puerto 3000');
 });
