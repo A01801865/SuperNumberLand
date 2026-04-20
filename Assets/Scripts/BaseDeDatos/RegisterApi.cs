@@ -114,7 +114,7 @@ public class RegisterAPI : MonoBehaviour
     IEnumerator RegisterRequest(string usuario, string password, string nombre,
         string alcaldia, string actividad, int edad, string genero)
     {
-        string url = "http://192.168.68.115:3000/register";
+        string url = "https://supernumberland-backend.onrender.com/register";
 
         RegisterData data = new RegisterData(usuario, password, nombre, alcaldia, actividad, edad, genero);
         string json = JsonUtility.ToJson(data);

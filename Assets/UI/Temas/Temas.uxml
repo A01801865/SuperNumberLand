@@ -8,19 +8,19 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Temas" style="flex-grow: 1; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; width: 100%; height: 20px; align-items: center;">
-            <ui:Button text="" name="BotonSuma" class="boton">
+            <ui:Button text="" name="suma" class="boton">
                 <ui:Label text="Suma" class="textos"/>
                 <ui:Label text="+" class="simbolos" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); -unity-font-style: bold;"/>
             </ui:Button>
-            <ui:Button text="" name="BotonResta" class="boton">
+            <ui:Button text="" name="resta" class="boton">
                 <ui:Label text="Resta" class="textos"/>
                 <ui:Label text="-" class="simbolos"/>
             </ui:Button>
-            <ui:Button text="" name="BotonMult" class="boton">
+            <ui:Button text="" name="multiplicacion" class="boton">
                 <ui:Label text="MultiplicaciÓn" class="textos" style="font-size: 25px; -unity-font-style: normal; border-top-width: 15px;"/>
                 <ui:Label text="X" class="simbolos" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); -unity-font-style: bold;"/>
             </ui:Button>
-            <ui:Button text="" name="BotonDiv" class="boton">
+            <ui:Button text="" name="division" class="boton">
                 <ui:Label text="División" selectable="true" focusable="true" class="textos"/>
                 <ui:Label text="÷" class="simbolos" style="-unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&amp;guid=a5c6c7959cecf4f82b41ec6fe2e1768b&amp;type=3#PressStart2P&quot;);"/>
             </ui:Button>
