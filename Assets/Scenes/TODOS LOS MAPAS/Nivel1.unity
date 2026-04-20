@@ -1372,8 +1372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f97e9724abbd142945cd535c9acef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerPreguntas
-  preguntaActual: 0
-  totalPreguntas: 5
+  textoPregunta: {fileID: 0}
 --- !u!1 &720990050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc1360c5a0ce774199f78c832b6de11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puerta
+  siguienteNivel: Mapa2
 --- !u!1 &823795902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 1131581074}
   - component: {fileID: 1131581073}
   - component: {fileID: 1131581072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Soldado
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1737,7 +1737,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.20654464, y: 0.50375545}
+  m_Offset: {x: -0.34632635, y: 0.50375545}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1747,7 +1747,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8991437, y: 0.9924891}
+  m_Size: {x: 0.574605, y: 0.9924891}
   m_EdgeRadius: 0
 --- !u!50 &1131581073
 Rigidbody2D:
@@ -1796,6 +1796,10 @@ MonoBehaviour:
   limiteIzq: -10
   limiteDer: 10
   uiVidas: {fileID: 1378650327}
+  rangoGolpe: 1.5
+  capaRespuestas:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!95 &1131581075
 Animator:
   serializedVersion: 7
@@ -2061,6 +2065,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1311597306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311597309}
+  - component: {fileID: 1311597308}
+  - component: {fileID: 1311597307}
+  m_Layer: 0
+  m_Name: SistemaPreguntas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1311597307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311597306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c452d48da940b748bfdca4c0bb80600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIPreguntaController
+  uiDocument: {fileID: 1814690029}
+--- !u!114 &1311597308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311597306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ec613a1df7dde439a82cbe13dc4c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GeneradorPreguntas
+  respuestaCorrecta: 0
+  preguntaActiva: 1
+--- !u!4 &1311597309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311597306}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.50726, y: 0.04517, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378650322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,7 +2230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1560453284}
   - component: {fileID: 1560453285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: puntoSuelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2275,6 +2339,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1814690028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814690030}
+  - component: {fileID: 1814690029}
+  m_Layer: 5
+  m_Name: UIDocument
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1814690029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814690028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: 7456bbe547c19ad40862b98e8da4a845, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4322ba7c4752d1c40ba826ccbf057dcd, type: 3}
+  m_SortingOrder: 0
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!4 &1814690030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814690028}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1819221975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,3 +2443,5 @@ SceneRoots:
   - {fileID: 1819221976}
   - {fileID: 1273520983}
   - {fileID: 1717465940}
+  - {fileID: 1311597309}
+  - {fileID: 1814690030}

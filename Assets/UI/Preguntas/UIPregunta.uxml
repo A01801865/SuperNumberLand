@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 883px; height: 139px; align-self: center; justify-content: center; align-items: center; background-image: url(&quot;project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=-3364632783454987516&amp;guid=3a531961adf596745b17b0e94ee49b3a&amp;type=3#Wooden Pixel Art GUI 32x32_205&quot;); position: absolute; top: -4px; left: 550px;">
+        <ui:Label text="Label" name="preguntaLabel" style="-unity-text-outline-color: rgb(255, 255, 255); color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/ARCADECLASSIC.TTF?fileID=12800000&amp;guid=2fd92e0f1a30cfd40b90cb5ca04a9372&amp;type=3#ARCADECLASSIC&quot;); font-size: 50px;"/>
+    </ui:VisualElement>
+</ui:UXML>

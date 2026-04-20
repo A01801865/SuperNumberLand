@@ -1,32 +1,29 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManagerPreguntas : MonoBehaviour
 {
-    public static GameManagerPreguntas instancia;
+    public TextMeshProUGUI textoPregunta;
 
-    public int preguntaActual = 0;
-    public int totalPreguntas = 5;
+    private int respuestaCorrecta;
 
-    void Awake()
+    void Start()
     {
-        if (instancia == null)
-        {
-            instancia = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        GenerarPregunta();
     }
 
-    public void SiguientePregunta()
+    public int GetRespuestaCorrecta()
     {
-        preguntaActual++;
+        return respuestaCorrecta;
     }
 
-    public bool NivelCompletado()
+    void GenerarPregunta()
     {
-        return preguntaActual >= totalPreguntas;
+        int a = Random.Range(1, 10);
+        int b = Random.Range(1, 10);
+
+        respuestaCorrecta = a + b;
+
+        textoPregunta.text = a + " + " + b + " = ?";
     }
 }

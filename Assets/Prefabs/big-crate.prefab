@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7584133132613454040}
   - component: {fileID: 174394193695965538}
   - component: {fileID: 3586281964770443385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: big-crate
-  m_TagString: Untagged
+  m_TagString: Respuesta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

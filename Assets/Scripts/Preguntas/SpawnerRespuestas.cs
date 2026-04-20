@@ -8,6 +8,8 @@ public class SpawnerRespuestas : MonoBehaviour
 
     void Start()
     {
+        int correcta = GeneradorPreguntas.Instance.respuestaCorrecta;
+
         int indiceCorrecto = Random.Range(0, puntosSpawn.Length);
 
         for (int i = 0; i < puntosSpawn.Length; i++)
@@ -16,9 +18,21 @@ public class SpawnerRespuestas : MonoBehaviour
 
             ObjetoRespuesta respuesta = obj.GetComponent<ObjetoRespuesta>();
 
-            int numero = Random.Range(1, 10);
+            int valor;
 
-            respuesta.SetValor(numero.ToString(), i == indiceCorrecto, puerta);
+            if (i == indiceCorrecto)
+            {
+                valor = correcta;
+            }
+            else
+            {
+                valor = correcta + Random.Range(-3, 4);
+
+                if (valor == correcta)
+                    valor += 1;
+            }
+
+            respuesta.SetValor(valor.ToString(), i == indiceCorrecto, puerta);
         }
     }
 }

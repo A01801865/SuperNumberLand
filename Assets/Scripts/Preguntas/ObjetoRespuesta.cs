@@ -14,21 +14,39 @@ public class ObjetoRespuesta : MonoBehaviour
         puerta = p;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void RecibirGolpe()
     {
-        if (other.CompareTag("Player"))
+        if (esCorrecta)
         {
-            if (esCorrecta)
+            Debug.Log("Correcto");
+
+            
+            GeneradorPreguntas.Instance.preguntaActiva = false;
+
+            
+            GameObject[] cajas = GameObject.FindGameObjectsWithTag("Respuesta");
+
+            foreach (GameObject caja in cajas)
             {
-                Debug.Log("Correcto");
-                puerta.Abrir();
-            }
-            else
-            {
-                Debug.Log("Incorrecto");
+                Destroy(caja);
             }
 
-            Destroy(gameObject); // opcional: desaparece al tocarla
+            
+            puerta.Abrir();
+
+            
+            FindObjectOfType<UIPreguntaController>().MostrarMensaje("PUERTA   ABIERTA");
+        }
+        else
+        {
+            Debug.Log("Incorrecto");
+
+            PlayerController player = FindObjectOfType<PlayerController>();
+
+            if (player != null)
+            {
+                player.PerderVida();
+            }
         }
     }
 }
