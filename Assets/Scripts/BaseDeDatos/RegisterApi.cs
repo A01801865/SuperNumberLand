@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class RegisterAPI : MonoBehaviour
 {
@@ -36,15 +37,15 @@ public class RegisterAPI : MonoBehaviour
         // Botón
         botonRegister = root.Q<Button>("register");
 
-        // 🔥 DEBUG para verificar UI
+        // DEBUG para verificar UI
         if (inputActividad == null)
-            Debug.LogError("❌ inputActividad NO encontrado en el UI");
+            Debug.LogError("inputActividad NO encontrado en el UI");
 
         if (dropdownActividad == null)
-            Debug.LogError("❌ dropdownActividad NO encontrado");
+            Debug.LogError("dropdownActividad NO encontrado");
 
         if (botonRegister == null)
-            Debug.LogError("❌ botón register NO encontrado");
+            Debug.LogError("botón register NO encontrado");
 
         // Evento botón
         botonRegister.clicked += RegistrarDesdeUI;
@@ -61,10 +62,10 @@ public class RegisterAPI : MonoBehaviour
 
     void CambiarVisibilidadActividad(string valor)
     {
-        // 🔥 PROTECCIÓN PARA QUE NO TRUENE
+        // PROTECCIÓN PARA QUE NO TRUENE
         if (inputActividad == null)
         {
-            Debug.LogError("❌ inputActividad es NULL en CambiarVisibilidadActividad");
+            Debug.LogError("inputActividad es NULL en CambiarVisibilidadActividad");
             return;
         }
 
@@ -81,10 +82,10 @@ public class RegisterAPI : MonoBehaviour
 
     void RegistrarDesdeUI()
     {
-        // 🔥 Validaciones básicas
+        // Validaciones básicas
         if (inputUsuario == null || inputPassword == null || inputEdad == null)
         {
-            Debug.LogError("❌ Faltan referencias de UI");
+            Debug.LogError("Faltan referencias de UI");
             return;
         }
 
@@ -129,13 +130,17 @@ public class RegisterAPI : MonoBehaviour
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
-        {
-            Debug.Log("✅ REGISTRO COMPLETO");
-        }
-        else
-        {
-            Debug.LogError("❌ ERROR: " + request.error);
-        }
+            {
+                Debug.Log("✅ REGISTRO COMPLETO");
+
+                // Guarda datos
+                PlayerPrefs.SetString("usuario", usuario);
+                PlayerPrefs.SetInt("edad", edad);
+                PlayerPrefs.Save();
+
+                // IR AL LOBBY
+                SceneManager.LoadScene("Lobby");
+            }
     }
 }
 
