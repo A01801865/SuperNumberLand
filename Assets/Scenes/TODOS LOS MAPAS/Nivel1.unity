@@ -1790,16 +1790,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   velocidad: 3
   fuerzaSalto: 8
+  puntoSuelo: {fileID: 1560453284}
+  radioSuelo: 0.2
   vidas: 3
   limiteCaida: -6
   puntoRespawn: {fileID: 1129748566}
-  limiteIzq: -10
-  limiteDer: 10
   uiVidas: {fileID: 1378650327}
   rangoGolpe: 1.5
   capaRespuestas:
     serializedVersion: 2
     m_Bits: 512
+  cooldownSalto: 0.2
 --- !u!95 &1131581075
 Animator:
   serializedVersion: 7
@@ -2138,6 +2139,7 @@ GameObject:
   - component: {fileID: 1378650323}
   - component: {fileID: 1378650326}
   - component: {fileID: 1378650327}
+  - component: {fileID: 1378650328}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -2220,6 +2222,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ac5074aef76674887e60bdb1e94f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIVidasToolkit
+--- !u!114 &1378650328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378650322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2366332a8d55a4badc02e363f110fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIResultadoController
 --- !u!1 &1560453283
 GameObject:
   m_ObjectHideFlags: 0

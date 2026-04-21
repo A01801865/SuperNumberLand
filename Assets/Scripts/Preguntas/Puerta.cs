@@ -5,7 +5,20 @@ public class Puerta : MonoBehaviour
 {
     private bool abierta = false;
 
-    public string siguienteNivel = "Mapa2"; 
+    [Header("Escena siguiente")]
+    public string siguienteNivel = "Mapa2";
+
+    private Collider2D col;
+
+    void Start()
+    {
+        col = GetComponent<Collider2D>();
+
+        if (col == null)
+        {
+            Debug.LogError("La puerta necesita un Collider2D");
+        }
+    }
 
     public void Abrir()
     {
@@ -13,10 +26,8 @@ public class Puerta : MonoBehaviour
 
         abierta = true;
 
-        Debug.Log("PUERTA   ABIERTA");
+        Debug.Log("PUERTA ABIERTA");
 
-        
-        Collider2D col = GetComponent<Collider2D>();
         if (col != null)
         {
             col.isTrigger = true;

@@ -365,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374127717}
   - component: {fileID: 374127718}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: puntoSuelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,9 +624,12 @@ GameObject:
   - component: {fileID: 551292230}
   - component: {fileID: 551292232}
   - component: {fileID: 551292231}
-  m_Layer: 0
+  - component: {fileID: 551292235}
+  - component: {fileID: 551292234}
+  - component: {fileID: 551292233}
+  m_Layer: 6
   m_Name: Piso
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1782,6 +1785,116 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!66 &551292233
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551292229}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 551292229}
+--- !u!50 &551292234
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551292229}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!19719996 &551292235
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551292229}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &666095778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1909,7 @@ GameObject:
   - component: {fileID: 666095781}
   - component: {fileID: 666095780}
   - component: {fileID: 666095779}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Soldado
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1890,16 +2003,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   velocidad: 3
   fuerzaSalto: 8
+  puntoSuelo: {fileID: 374127717}
+  radioSuelo: 0.2
   vidas: 3
   limiteCaida: -6
   puntoRespawn: {fileID: 1196984681}
-  limiteIzq: -10
-  limiteDer: 10
-  uiVidas: {fileID: 0}
+  uiVidas: {fileID: 1378650327}
   rangoGolpe: 1.5
   capaRespuestas:
     serializedVersion: 2
     m_Bits: 512
+  cooldownSalto: 0.2
 --- !u!95 &666095782
 Animator:
   serializedVersion: 7
@@ -2655,6 +2769,7 @@ GameObject:
   - component: {fileID: 1378650324}
   - component: {fileID: 1378650323}
   - component: {fileID: 1378650326}
+  - component: {fileID: 1378650327}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -2725,6 +2840,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fffdd4d5332e947b2228cb1110cb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolverANiveles
+--- !u!114 &1378650327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378650322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ac5074aef76674887e60bdb1e94f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIVidasToolkit
 --- !u!1 &1489712185
 GameObject:
   m_ObjectHideFlags: 0

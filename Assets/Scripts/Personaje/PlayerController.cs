@@ -8,16 +8,16 @@ public class PlayerController : MonoBehaviour
     [Header("Salto")]
     public float fuerzaSalto = 8f;
 
+    [Header("Suelo")]
+    public Transform puntoSuelo;
+    public float radioSuelo = 0.2f;
+
     [Header("Vidas")]
     public int vidas = 3;
     public float limiteCaida = -6f;
 
     [Header("Respawn")]
     public Transform puntoRespawn;
-
-    [Header("Límites del mapa")]
-    public float limiteIzq = -10f;
-    public float limiteDer = 10f;
 
     [Header("UI")]
     public UIVidasToolkit uiVidas;
@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour
     private bool enSuelo;
     private bool muerto = false;
 
+    //  CONTROL DE SALTO
+    float tiempoUltimoSalto = 0f;
+    public float cooldownSalto = 0.2f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -48,6 +52,10 @@ public class PlayerController : MonoBehaviour
     {
         if (muerto) return;
 
+        //  DETECTAR SUELO (piso + cajas)
+        int mask = LayerMask.GetMask("Suelo", "Respuestas");
+        enSuelo = Physics2D.OverlapCircle(puntoSuelo.position, radioSuelo, mask);
+
         movimiento = Input.GetAxis("Horizontal");
         animator.SetFloat("velocidad", Mathf.Abs(movimiento));
 
@@ -56,28 +64,26 @@ public class PlayerController : MonoBehaviour
             sr.flipX = movimiento < 0;
 
         // SALTO
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && enSuelo)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+            && enSuelo
+            && Time.time > tiempoUltimoSalto)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
             animator.SetTrigger("salto");
+
+            tiempoUltimoSalto = Time.time + cooldownSalto;
         }
 
-        // ATAQUE (SHIFT)
+        //  ATAQUE
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             animator.SetTrigger("atacar");
             DetectarGolpe();
         }
 
-        // LÍMITES
-        Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, limiteIzq, limiteDer);
-        transform.position = pos;
-
-        // CAÍDA AL VACÍO
+        //  CAÍDA
         if (transform.position.y < limiteCaida)
         {
-            Debug.Log("CAYO AL VACIO");
             PerderVida();
         }
     }
@@ -89,7 +95,6 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(movimiento * velocidad, rb.linearVelocity.y);
     }
 
-    // DETECTAR GOLPE
     void DetectarGolpe()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoGolpe, capaRespuestas);
@@ -105,24 +110,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // DETECTAR SUELO
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Suelo"))
-        {
-            enSuelo = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Suelo"))
-        {
-            enSuelo = false;
-        }
-    }
-
-    // PERDER VIDA
     public void PerderVida()
     {
         if (muerto) return;
@@ -136,11 +123,17 @@ public class PlayerController : MonoBehaviour
 
         if (vidas <= 0)
         {
-            Debug.Log("GAME OVER");
             muerto = true;
 
             if (uiVidas != null)
                 uiVidas.MostrarPantallaPerder();
+
+           
+            if (animator != null)
+                animator.SetTrigger("morir");
+
+            
+            Destroy(gameObject, 0.5f);
         }
         else
         {
@@ -148,16 +141,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // RESPAWN
     void Respawn()
     {
-        transform.position = puntoRespawn.position;
-        rb.linearVelocity = Vector2.zero;
+        if (puntoRespawn != null)
+        {
+            transform.position = puntoRespawn.position;
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
-    // DEBUG VISUAL
     void OnDrawGizmosSelected()
     {
+        if (puntoSuelo != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(puntoSuelo.position, radioSuelo);
+        }
+
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, rangoGolpe);
     }
