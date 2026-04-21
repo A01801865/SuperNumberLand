@@ -48,68 +48,68 @@ EditorBuildSettings:
     path: Assets/Scenes/Logros.unity
     guid: 9014be769a4afcb4db8f696e928e6685
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Nivel1.unity
-    guid: 66e26eca91ebea5459c87f77af1b1512
+    path: Assets/Scenes/NivelesResta.unity
+    guid: e0dca4dd19c340a4491c6974f0cc0058
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa2.unity
-    guid: 002d6833130742a4ba7946a7f4e81e90
+    path: Assets/Scenes/Niveles Resta/RNivel1.unity
+    guid: b2dbfee89dac2944faea5ccf177c8dcf
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa3.unity
-    guid: c3f127bdeb93ea644a7e32d7cbda3070
+    path: Assets/Scenes/Niveles Resta/Rnivel2.unity
+    guid: 51cff10617adb9e43be393b016e4ec38
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa4.unity
-    guid: cfd9f02196d21f7498be7f6a21626b74
+    path: Assets/Scenes/Niveles Resta/RNivel3.unity
+    guid: 4ed1135ba298b8b4eb224a94ed40b6a3
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa5.unity
-    guid: cde119fe9a1f95a4696757af7e831fa6
+    path: Assets/Scenes/Niveles Resta/RNivel4.unity
+    guid: c2ab1224589c340489978cf5982b4c35
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa6.unity
-    guid: 880dd1f64bca65045850c5bb85372470
+    path: Assets/Scenes/Niveles Resta/RNivel5.unity
+    guid: d4bb59fc2fe5d7c41bf7ca755eed8748
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa7.unity
-    guid: bd873a279ef4bba4ca539612463719eb
+    path: Assets/Scenes/Niveles Resta/RNivel6.unity
+    guid: cb8140e558e4cab429d668967fee0c10
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa8.unity
-    guid: 93e8349bd3959ad489289032496d43c9
+    path: Assets/Scenes/Niveles Resta/RNivel7.unity
+    guid: 0944656936a5a154e9541d2853946cec
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa9.unity
-    guid: 790da377e3920aa4f92056a8bafcd618
+    path: Assets/Scenes/Niveles Resta/RNivel8.unity
+    guid: 3bfd2dfc723e86a4a944b22a8f055acf
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa10.unity
-    guid: 2f62f25288e5a2a479d8a3e72115be43
+    path: Assets/Scenes/Niveles Resta/RNivel9.unity
+    guid: 71f0dc1e38abb8b40874acb44ecf0d12
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa11.unity
-    guid: 2e9a9c2194b35f143a7700520326df7f
+    path: Assets/Scenes/Niveles Resta/RNivel10.unity
+    guid: 2887e732c15052e41b033ea4788f41ae
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa12.unity
-    guid: e288370cc71500e49a2f9abde914415c
+    path: Assets/Scenes/Niveles Suma/Nivel1.unity
+    guid: 324698be37aae214ba5845743a3f7577
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa13.unity
-    guid: aacb8273fe2b9bc4fa2fa31c8621f4d7
+    path: Assets/Scenes/Niveles Suma/Mapa2.unity
+    guid: 4e913bf5e23184a46b39f61ad57bd8a0
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa14.unity
-    guid: eeb8acb9e1018ee4e9943f7960749547
+    path: Assets/Scenes/Niveles Suma/Mapa3.unity
+    guid: c2eeb4ce43b935c4c965a92962fcf340
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa15.unity
-    guid: bd7553bfa97bee642bf01a38a5ff624e
+    path: Assets/Scenes/Niveles Suma/Mapa4.unity
+    guid: 01e965b9d464c3c4ab51760a6bfbfec3
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa16.unity
-    guid: 2f724680be6d8bc44a8b7983bd3e5ead
+    path: Assets/Scenes/Niveles Suma/Mapa5.unity
+    guid: e8101c3d1c37ae64b961ba8029d86524
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa17.unity
-    guid: b50840535446414439b8cdfd92fd9963
+    path: Assets/Scenes/Niveles Suma/Mapa6.unity
+    guid: 478aeafac8e200d49b4471df3fb1c665
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa18.unity
-    guid: cee6fde9d2556c84aa5316cff7a6f35f
+    path: Assets/Scenes/Niveles Suma/Mapa7.unity
+    guid: 5f77a8155353fda4e8da8a5fe1777d79
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa19.unity
-    guid: be9b8e02b0179c6409bdfae8d60402e0
+    path: Assets/Scenes/Niveles Suma/Mapa8.unity
+    guid: 69bccf9ebaa008a4fb775955806a2e12
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa20.unity
-    guid: f344d7b28906b504e818da87835404d9
+    path: Assets/Scenes/Niveles Suma/Mapa9.unity
+    guid: 6e5f9139cb9dd3d48bcfc5bedfd5f7c0
   - enabled: 1
-    path: Assets/Scenes/TODOS LOS MAPAS/Mapa21.unity
-    guid: 59bfb6e3a71b7604d827a0b92f32b4f5
+    path: Assets/Scenes/Niveles Suma/Mapa10.unity
+    guid: ecc9b1572dce27045adb4d6df7516758
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
