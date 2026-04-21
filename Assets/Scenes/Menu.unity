@@ -1467,7 +1467,7 @@ MonoBehaviour:
   posY: -3
   limiteIzq: -10
   limiteDer: 10
-  maxAnimales: 3
+  maxAnimales: 10
   actuales: 0
 --- !u!4 &1876437868
 Transform:

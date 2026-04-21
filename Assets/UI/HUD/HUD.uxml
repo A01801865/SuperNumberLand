@@ -3,9 +3,9 @@
     <ui:VisualElement name="Contenedor" class="contenedor" style="flex-grow: 1;">
         <ui:VisualElement name="HUD" class="hud" style="flex-grow: 1; position: absolute; display: flex;">
             <ui:VisualElement name="Vidas" class="vidas" style="flex-grow: 1;">
-                <ui:VisualElement name="Vida_1" class="vida" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Vida_2" class="vida" style="flex-grow: 1;"/>
-                <ui:VisualElement name="Vida_3" class="vida" style="flex-grow: 1;"/>
+                <ui:VisualElement name="Vida_2" class="vida" style="flex-grow: 1; width: 131px; position: absolute; height: 100px; top: 2px; left: -5px;"/>
+                <ui:VisualElement name="Vida_1" class="vida" style="flex-grow: 1; height: 100px; width: 200px; position: absolute; top: 4px; left: 88px;"/>
+                <ui:VisualElement name="Vida_3" class="vida" style="flex-grow: 1; position: absolute; top: 1px; left: 255px; height: 104px; width: 117px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="Espacio" class="espacio" style="flex-grow: 1; width: 50%;"/>
             <ui:VisualElement name="Monedas" class="monedas" style="flex-grow: 1;">
