@@ -30,12 +30,9 @@ public class LoginAPI : MonoBehaviour
 
         if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
         {
-            Debug.Log("⚠️ Campos vacíos");
             if (mensaje != null) mensaje.text = "Completa todos los campos";
             return;
         }
-
-        Debug.Log("🔐 Intentando login con: " + usuario);
 
         StartCoroutine(LoginRequest(usuario, password));
     }
@@ -59,43 +56,27 @@ public class LoginAPI : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             string respuesta = request.downloadHandler.text;
-
-            // 🔥 DEBUG IMPORTANTE
-            Debug.Log("📩 RESPUESTA COMPLETA: " + respuesta);
-
             LoginResponse res = JsonUtility.FromJson<LoginResponse>(respuesta);
 
             if (res.success)
             {
-                Debug.Log("✅ LOGIN EXITOSO");
-
-                // 🔥 DEBUG DE DATOS
-                Debug.Log("👤 Usuario: " + res.user.usuario);
-                Debug.Log("🎂 Edad recibida: " + res.user.edad);
-
-                // 🔥 GUARDAR DATOS
+                // Guardar sesión
                 PlayerPrefs.SetInt("user_id", res.user.id);
                 PlayerPrefs.SetString("usuario", res.user.usuario);
                 PlayerPrefs.SetString("nombre", res.user.nombre);
                 PlayerPrefs.SetInt("edad", res.user.edad);
-
                 PlayerPrefs.Save();
 
-                // 🔥 CONFIRMAR QUE SE GUARDÓ
-                Debug.Log("💾 Edad guardada en PlayerPrefs: " + PlayerPrefs.GetInt("edad"));
-
-                // 🚀 CAMBIAR ESCENA
                 SceneManager.LoadScene("Lobby");
             }
             else
             {
-                Debug.Log("❌ " + res.message);
                 if (mensaje != null) mensaje.text = res.message;
             }
         }
         else
         {
-            Debug.LogError("❌ ERROR HTTP: " + request.error);
+            Debug.LogError("Error: " + request.error);
         }
     }
 }
