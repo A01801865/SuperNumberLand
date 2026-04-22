@@ -4,16 +4,16 @@
         <ui:Label text="Tienda" name="Titulo" style="position: absolute; top: 20px; left: 666px; font-size: 55px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&amp;guid=a5c6c7959cecf4f82b41ec6fe2e1768b&amp;type=3#PressStart2P&quot;); color: rgb(255, 255, 255); background-image: none; -unity-background-image-tint-color: rgb(134, 46, 0); width: 450px; height: 150px; align-self: flex-start; justify-content: space-evenly; align-items: flex-start; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 2px; text-shadow: 0 3px 0 rgb(0, 0, 0);"/>
         <ui:VisualElement name="Espacio" style="flex-grow: 1; background-image: none; width: 100%; height: 100px; -unity-text-align: middle-center; align-items: center; justify-content: center; margin-top: 80px; font-size: 55px; flex-direction: row;"/>
         <ui:VisualElement name="Personajes" style="flex-grow: 1; width: 100%; height: 100%; flex-direction: row; align-items: center; margin-bottom: 40px;">
-            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;">
+            <ui:VisualElement name="Personaje1" class="fondosPersj" style="flex-grow: 1;">
                 <ui:Label text="Test de cambio"/>
             </ui:VisualElement>
-            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
-            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement name="Personaje2" class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement name="Personaje3" class="fondosPersj" style="flex-grow: 1;"/>
         </ui:VisualElement>
         <ui:VisualElement name="Fondos" style="flex-grow: 1; width: 100%; height: 100%; flex-direction: row; align-items: center; margin-bottom: 40px; display: none;">
-            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
-            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
-            <ui:VisualElement class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement name="Fondo1" class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement name="Fondo2" class="fondosPersj" style="flex-grow: 1;"/>
+            <ui:VisualElement name="Fondo3" class="fondosPersj" style="flex-grow: 1;"/>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="HUD" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; top: 2px; left: -17px; display: flex;">

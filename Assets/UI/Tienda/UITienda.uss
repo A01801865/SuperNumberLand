@@ -19,7 +19,7 @@
     border-right-color: rgba(123, 43, 0, 0);
     border-top-color: rgba(123, 43, 0, 0);
     border-bottom-color: rgba(123, 43, 0, 0);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     background-image: url("project://database/Assets/Wood%20UI/Sprites/Buttons/16x16.png?fileID=1940803569&guid=584ea5e1f4128f842936858238ac18b1&type=3#16x16_11");
     font-size: 30px;
     color: rgb(255, 255, 255);
@@ -48,7 +48,7 @@
 .estrellas {
 }
 
-.boton {
+.botones {
     transition-duration: 0.2s;
 }
 
@@ -69,7 +69,7 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     font-size: 40px;
     color: rgb(255, 255, 255);
     -unity-text-outline-width: 1px;
@@ -80,4 +80,25 @@
 .botonTienda:hover {
     -unity-background-image-tint-color: rgb(185, 185, 185);
     scale: 1 1;
+}
+
+.titulo {
+    -unity-font: resource("ARCADECLASSIC");
+    font-size: 26px;
+    unity-font-style: bold;
+    unity-text-align: middle-center;
+}
+
+.precio {
+    -unity-font: resource("ARCADECLASSIC");
+    font-size: 24px;
+}
+
+.botones {
+    -unity-font: resource("ARCADECLASSIC");
+    font-size: 22px;
+    color: white;
+}
+
+.nombre {
 }
