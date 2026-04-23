@@ -110,6 +110,72 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Niveles Suma/Mapa10.unity
     guid: ecc9b1572dce27045adb4d6df7516758
+  - enabled: 1
+    path: Assets/Scenes/NivelesMulti.unity
+    guid: 8979c790d7a4c724e9e9bcc9d0a9878b
+  - enabled: 1
+    path: Assets/Scenes/NivelesDivi.unity
+    guid: a9b06b77600821649a1d2b795e303a63
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel1.unity
+    guid: 6ea0f40d302ff2748a07b5e0d52e5b21
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel2.unity
+    guid: 457af73788f0263438f6ad5a6f03931f
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel3.unity
+    guid: 29bf3ea52f650d24a99b3335b8636806
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel4.unity
+    guid: c63a227b1eba9774f99cc2e61e57dd02
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel5.unity
+    guid: ebed2baa550c3594883afd6e23165692
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel6.unity
+    guid: 5614187486db6db49b6eda4b9be9cb3c
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel7.unity
+    guid: a44760b8103d965428acc3d168b67833
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel8.unity
+    guid: f003458ab895d694ea673a765699a9ea
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel9.unity
+    guid: dfd8368dc9792ca4395d01d1b7cb5afa
+  - enabled: 1
+    path: Assets/Scenes/Niveles Multiplicacion/MNivel10.unity
+    guid: f3a2004aabd824540ad065cbfee82f47
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel1.unity
+    guid: d6483e57d91400548a70aded65e5a7b8
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel2.unity
+    guid: 9c9f904817280e34e8bb63d226d17c5e
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel3.unity
+    guid: 8ae86be9b63d0fc4ea3fafdef242d0e7
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel4.unity
+    guid: b984f6324a70f5c408d09048a741b3a8
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel5.unity
+    guid: 64dc9bd15d121d644b9146e3abc374eb
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel6.unity
+    guid: 4d137796a0e441c4f84771472c98a4e7
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel7.unity
+    guid: 7b1e9975838e0024397f733469e6bfea
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel8.unity
+    guid: c6506ef09328db24ba8e56bc8e0b4019
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel9.unity
+    guid: b1dddfa8aecef054690d00b416fae9fe
+  - enabled: 1
+    path: Assets/Scenes/Niveles Division/DNivel10.unity
+    guid: 24dd54bd18a986c44a0f0666516c9f8b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

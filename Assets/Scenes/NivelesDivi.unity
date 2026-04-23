@@ -661,9 +661,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b46f0b0659175449adc6671aa99427d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5059a87908429c74b8bb308d7b93b78c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel10
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel10
 --- !u!114 &1782473520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,9 +673,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ccf60ddcb9ec024f882b809524b85c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 16fa60bca2dddfb4e83ce6935d8dee7a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel9
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel9
 --- !u!114 &1782473521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,9 +685,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba8acbfbefc1324d8d682178598873b, type: 3}
+  m_Script: {fileID: 11500000, guid: 60db8ac6802a52140a989363f663c645, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel8
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel8
 --- !u!114 &1782473522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,9 +697,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481848122ba85624ba2056504c1d8ee5, type: 3}
+  m_Script: {fileID: 11500000, guid: bebcc5f59c5cb2c4792ba89ab8373771, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel7
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel7
 --- !u!114 &1782473523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9683d305c42eac4594105085a4cf624, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f37cd7437176849810a9d23a77115b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel6
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel6
 --- !u!114 &1782473524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,9 +721,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c449df7cd5576b34c8f04e4cbb5965aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c9cf8099080cf240ad6d9361f80d8b5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel5
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel5
 --- !u!114 &1782473525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,9 +733,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c859c78dbf38b04c92f258829ba5be4, type: 3}
+  m_Script: {fileID: 11500000, guid: cdbeef9e773a03049816ee67133d1679, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel4
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel4
 --- !u!114 &1782473526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,9 +745,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5d8dc2bca51954489af396dca6962e8, type: 3}
+  m_Script: {fileID: 11500000, guid: d1625882a9a5da64ea69c4fc698128c2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel3
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel3
 --- !u!114 &1782473527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,9 +757,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf99d395212936f48af70aaf41e3869e, type: 3}
+  m_Script: {fileID: 11500000, guid: 211a787df608942438d13024552d8d8d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel2
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel2
 --- !u!114 &1782473528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,9 +769,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782473514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c5cc5197fcc774c967e7b94df83798, type: 3}
+  m_Script: {fileID: 11500000, guid: 706ea74eb079bb6409d5c177edf6589e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RIrANivel1
+  m_EditorClassIdentifier: Assembly-CSharp::DIrANivel1
 --- !u!1 &2105010742
 GameObject:
   m_ObjectHideFlags: 0

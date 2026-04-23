@@ -61,8 +61,8 @@ public class ControlTemas : MonoBehaviour
     {
         suma.clicked += () => CargarNivel("Niveles");
         resta.clicked += () => CargarNivel("NivelesResta");
-        multiplicacion.clicked += () => CargarNivel("NivelesMultiplicacion");
-        division.clicked += () => CargarNivel("NivelesDivision");
+        multiplicacion.clicked += () => CargarNivel("NivelesMulti");
+        division.clicked += () => CargarNivel("NivelesDivi");
     }
 
     void CargarNivel(string escena)
