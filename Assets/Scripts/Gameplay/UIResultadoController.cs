@@ -13,7 +13,7 @@ public class UIResultadoController : MonoBehaviour
 
        
         btnReintentar = root.Q<Button>("BotonReintentar");
-        btnVolver = root.Q<Button>("BotonVolver");
+        btnVolver = root.Q<Button>("BotonVolve");
 
         btnReintentar.clicked += Reintentar;
         btnVolver.clicked += VolverMenu;

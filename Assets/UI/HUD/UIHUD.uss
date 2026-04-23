@@ -17,7 +17,7 @@
 }
 
 .vida {
-    background-image: url("project://database/Assets/Layer%20Lab/2D%20Icons-CasualIconPack/Icons/128/Icon_Resources_Heart01_Red.png?fileID=21300000&guid=4775bc44947d548059450bcbdee3a545&type=3#Icon_Resources_Heart01_Red");
+    background-image: url("project://database/Assets/Logos/pixil-frame-0.png?fileID=-3337038689812066966&guid=ebfeff54997e345da936e00e8d3ccef8&type=3#pixil-frame-0_0");
     background-size: 128px 128px;
     width: 500px;
     height: 150px;
@@ -50,32 +50,45 @@
 .fondopausa {
     justify-content: center;
     align-items: center;
-    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1030360415000174041&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_206");
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Borders/ExamplesLikeBorders/Inventory.png?fileID=21300000&guid=2a858408be4776b4486c986c764b4850&type=3#Inventory");
     background-size: 1000px 800px;
+    -unity-slice-left: 0;
+    -unity-slice-top: 0;
+    -unity-slice-right: 0;
+    -unity-slice-bottom: 0;
 }
 
 .boton {
-    width: 500px;
-    height: 150px;
+    width: 700px;
+    height: 180px;
     font-size: 50px;
     margin-top: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
-    background-image: url("project://database/Assets/UI%20DE%20MADERA/Wooden%20Pixel%20Art%20GUI%2032x32.png?fileID=1648770155842974369&guid=3a531961adf596745b17b0e94ee49b3a&type=3#Wooden Pixel Art GUI 32x32_199");
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Buttons/16x16.png?fileID=1940803569&guid=584ea5e1f4128f842936858238ac18b1&type=3#16x16_11");
     background-color: rgba(0, 0, 0, 0);
     border-left-color: rgba(0, 0, 0, 0);
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    color: rgb(255, 250, 205);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/Super%20Starfish.ttf?fileID=12800000&guid=7081df243d26bf14ba13034bfe576117&type=3#Super Starfish");
-    -unity-font-style: normal;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: resource("PressStart2P");
+    -unity-font-style: bold;
     transition-duration: 0.35s;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-text-outline-width: 3px;
+    text-shadow: 0 2px 0 rgb(0, 0, 0);
+    -unity-slice-left: 5;
+    -unity-slice-top: 5;
+    -unity-slice-right: 5;
+    -unity-slice-bottom: 5;
+    -unity-slice-scale: 1px;
+    -unity-background-image-tint-color: rgb(233, 150, 122);
 }
 
 .boton:hover {
-    scale: 1.15 1.15;
+    scale: 1.1 1.1;
     transition-duration: 0.35s;
 }
 

@@ -30,7 +30,7 @@ public class UIPreguntaController : MonoBehaviour
     public void MostrarIncorrecto()
     {
         if (preguntaLabel != null)
-            preguntaLabel.text = "¡Fallaste! Sigue intentando";
+            preguntaLabel.text = "¡Fallaste!";
 
         Invoke("RestaurarPregunta", 2f);
     }
@@ -44,6 +44,6 @@ public class UIPreguntaController : MonoBehaviour
     public void MostrarPuertaAbierta()
     {
         if (preguntaLabel != null)
-            preguntaLabel.text = "🚪 ¡Puerta abierta!";
+            preguntaLabel.text = "¡Puerta  abierta!";
     }
 }

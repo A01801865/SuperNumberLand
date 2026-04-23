@@ -6,8 +6,7 @@ public class UIVidasToolkit : MonoBehaviour
     private VisualElement vida1;
     private VisualElement vida2;
     private VisualElement vida3;
-
-    private VisualElement pantallaPerder; // 👈 FondoPerder
+    private VisualElement pantallaPerder; // FondoPerder
 
     void Start()
     {
@@ -19,7 +18,7 @@ public class UIVidasToolkit : MonoBehaviour
         vida3 = root.Q<VisualElement>("Vida_3");
 
         // 💀 Pantalla de perder (IMPORTANTE)
-        pantallaPerder = root.Q<VisualElement>("FondoPerder");
+        pantallaPerder = root.Q<VisualElement>("Perder");
 
         // Debug para confirmar
         Debug.Log("vida1: " + vida1);
@@ -54,7 +53,7 @@ public class UIVidasToolkit : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No se encontró FondoPerder");
+            Debug.LogError("No se encontró Perder");
         }
     }
 }
