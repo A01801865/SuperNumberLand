@@ -2378,7 +2378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerRespuestas
   prefabRespuesta: {fileID: 7005352108738285711, guid: cd19f516ced5f42418c26acc6779a213, type: 3}
-  spawns:
+  puntosSpawn:
   - {fileID: 617283885}
   - {fileID: 823795903}
   - {fileID: 1819221976}
@@ -2459,7 +2459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeneradorPreguntas
   RespuestaCorrecta: 0
-  spawner: {fileID: 1717465939}
 --- !u!4 &2008512180
 Transform:
   m_ObjectHideFlags: 0

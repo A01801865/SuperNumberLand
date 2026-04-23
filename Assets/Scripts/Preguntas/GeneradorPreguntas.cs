@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class GeneradorPreguntas : MonoBehaviour
 {
-    public static GeneradorPreguntas Instance;
-
-    public int respuestaCorrecta;
-    public bool preguntaActiva = true; 
+    public int RespuestaCorrecta;
+    public SpawnerRespuestas spawner;
 
     void Awake()
     {
-        Instance = this;
+        if (spawner == null)
+            spawner = FindFirstObjectByType<SpawnerRespuestas>();
     }
 
     public string GenerarPregunta()
@@ -17,7 +16,14 @@ public class GeneradorPreguntas : MonoBehaviour
         int a = Random.Range(1, 10);
         int b = Random.Range(1, 10);
 
-        respuestaCorrecta = a + b;
+        RespuestaCorrecta = a + b;
+
+        Debug.Log("Respuesta correcta: " + RespuestaCorrecta);
+
+        if (spawner != null)
+            spawner.GenerarRespuestas();
+        else
+            Debug.LogError("Spawner es null en GenerarPregunta!");
 
         return a + " + " + b + " = ?";
     }

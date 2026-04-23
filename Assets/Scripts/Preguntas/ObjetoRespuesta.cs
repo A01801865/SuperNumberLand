@@ -3,50 +3,58 @@ using TMPro;
 
 public class ObjetoRespuesta : MonoBehaviour
 {
-    public bool esCorrecta;
-    public Puerta puerta;
-    public TextMeshPro texto;
+    public int valor;
+    private TextMeshPro textoTMP;
 
-    public void SetValor(string valor, bool correcta, Puerta p)
+    void Start()
     {
-        texto.text = valor;
-        esCorrecta = correcta;
-        puerta = p;
+        textoTMP = GetComponentInChildren<TextMeshPro>();
+    }
+
+    public void SetValor(int nuevoValor)
+    {
+        valor = nuevoValor;
+
+        if (textoTMP == null)
+            textoTMP = GetComponentInChildren<TextMeshPro>();
+
+        if (textoTMP != null)
+            textoTMP.text = valor.ToString();
     }
 
     public void RecibirGolpe()
     {
-        if (esCorrecta)
+        GeneradorPreguntas generador = FindFirstObjectByType<GeneradorPreguntas>();
+        if (generador == null) return;
+
+        UIPreguntaController ui = FindFirstObjectByType<UIPreguntaController>();
+
+        if (valor == generador.RespuestaCorrecta)
         {
             Debug.Log("Correcto");
 
-            
-            GeneradorPreguntas.Instance.preguntaActiva = false;
+            Puerta puerta = FindFirstObjectByType<Puerta>();
+            if (puerta != null)
+                puerta.Abrir();
 
-            
-            GameObject[] cajas = GameObject.FindGameObjectsWithTag("Respuesta");
+            SpawnerRespuestas spawner = FindFirstObjectByType<SpawnerRespuestas>();
+            if (spawner != null)
+                foreach (Transform hijo in spawner.transform)
+                    Destroy(hijo.gameObject);
 
-            foreach (GameObject caja in cajas)
-            {
-                Destroy(caja);
-            }
-
-            
-            puerta.Abrir();
-
-            
-            FindObjectOfType<UIPreguntaController>().MostrarMensaje("PUERTA   ABIERTA");
+            if (ui != null)
+                ui.MostrarPuertaAbierta();
         }
         else
         {
             Debug.Log("Incorrecto");
 
-            PlayerController player = FindObjectOfType<PlayerController>();
+            if (ui != null)
+                ui.MostrarIncorrecto();
 
+            PlayerController player = FindFirstObjectByType<PlayerController>();
             if (player != null)
-            {
                 player.PerderVida();
-            }
         }
     }
 }

@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Salto")]
     public float fuerzaSalto = 8f;
+    public int maxSaltos = 2;
 
     [Header("Suelo")]
     public Transform puntoSuelo;
     public float radioSuelo = 0.2f;
+    public LayerMask capaSuelo;
 
     [Header("Vidas")]
     public int vidas = 3;
@@ -32,17 +34,18 @@ public class PlayerController : MonoBehaviour
 
     private float movimiento;
     private bool enSuelo;
+    private bool estabaEnSuelo;
     private bool muerto = false;
 
-    //  CONTROL DE SALTO
-    float tiempoUltimoSalto = 0f;
-    public float cooldownSalto = 0.2f;
+    private int saltosRestantes;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+
+        saltosRestantes = maxSaltos;
 
         if (uiVidas != null)
             uiVidas.ActualizarVidas(vidas);
@@ -52,36 +55,40 @@ public class PlayerController : MonoBehaviour
     {
         if (muerto) return;
 
-        //  DETECTAR SUELO (piso + cajas)
-        int mask = LayerMask.GetMask("Suelo", "Respuestas");
-        enSuelo = Physics2D.OverlapCircle(puntoSuelo.position, radioSuelo, mask);
+        // guardar estado anterior
+        estabaEnSuelo = enSuelo;
+
+        // detectar suelo
+        enSuelo = Physics2D.OverlapCircle(puntoSuelo.position, radioSuelo, capaSuelo);
+
+        // resetear saltos SOLO cuando aterriza
+        if (enSuelo && !estabaEnSuelo)
+        {
+            saltosRestantes = maxSaltos;
+        }
 
         movimiento = Input.GetAxis("Horizontal");
         animator.SetFloat("velocidad", Mathf.Abs(movimiento));
 
-        // Voltear personaje
         if (movimiento != 0)
             sr.flipX = movimiento < 0;
 
-        // SALTO
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
-            && enSuelo
-            && Time.time > tiempoUltimoSalto)
+        // salto limitado
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && saltosRestantes > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
             animator.SetTrigger("salto");
-
-            tiempoUltimoSalto = Time.time + cooldownSalto;
+            saltosRestantes--;
         }
 
-        //  ATAQUE
+        // ataque
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             animator.SetTrigger("atacar");
             DetectarGolpe();
         }
 
-        //  CAÍDA
+        // caida
         if (transform.position.y < limiteCaida)
         {
             PerderVida();
@@ -116,8 +123,6 @@ public class PlayerController : MonoBehaviour
 
         vidas--;
 
-        Debug.Log("VIDA PERDIDA → " + vidas);
-
         if (uiVidas != null)
             uiVidas.ActualizarVidas(vidas);
 
@@ -128,12 +133,7 @@ public class PlayerController : MonoBehaviour
             if (uiVidas != null)
                 uiVidas.MostrarPantallaPerder();
 
-           
-            if (animator != null)
-                animator.SetTrigger("morir");
-
-            
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject);
         }
         else
         {
@@ -143,11 +143,8 @@ public class PlayerController : MonoBehaviour
 
     void Respawn()
     {
-        if (puntoRespawn != null)
-        {
-            transform.position = puntoRespawn.position;
-            rb.linearVelocity = Vector2.zero;
-        }
+        transform.position = puntoRespawn.position;
+        rb.linearVelocity = Vector2.zero;
     }
 
     void OnDrawGizmosSelected()

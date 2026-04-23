@@ -2,37 +2,55 @@ using UnityEngine;
 
 public class SpawnerRespuestas : MonoBehaviour
 {
-    public GameObject prefabCaja;
-    public Transform[] puntosSpawn;
-    public Puerta puerta;
+    public GameObject prefabRespuesta;
+    public Transform[] spawns;
 
-    void Start()
+    private GeneradorPreguntas generador;
+
+    void Awake() 
     {
-        int correcta = GeneradorPreguntas.Instance.respuestaCorrecta;
+        generador = FindFirstObjectByType<GeneradorPreguntas>();
+    }
 
-        int indiceCorrecto = Random.Range(0, puntosSpawn.Length);
+    public void GenerarRespuestas()
+    {
+        if (generador == null)
+            generador = FindFirstObjectByType<GeneradorPreguntas>(); 
 
-        for (int i = 0; i < puntosSpawn.Length; i++)
+        if (generador == null) return;
+
+        int respuestaCorrecta = generador.RespuestaCorrecta;
+
+        foreach (Transform hijo in transform)
         {
-            GameObject obj = Instantiate(prefabCaja, puntosSpawn[i].position, Quaternion.identity);
+            Destroy(hijo.gameObject);
+        }
 
-            ObjetoRespuesta respuesta = obj.GetComponent<ObjetoRespuesta>();
+        int indiceCorrecto = Random.Range(0, spawns.Length);
 
-            int valor;
+        for (int i = 0; i < spawns.Length; i++)
+        {
+            GameObject nueva = Instantiate(prefabRespuesta, spawns[i].position, Quaternion.identity);
+            nueva.transform.SetParent(transform);
+
+            ObjetoRespuesta obj = nueva.GetComponent<ObjetoRespuesta>();
 
             if (i == indiceCorrecto)
             {
-                valor = correcta;
+                obj.SetValor(respuestaCorrecta);
             }
             else
             {
-                valor = correcta + Random.Range(-3, 4);
+                int falsa;
+                do
+                {
+                    falsa = respuestaCorrecta + Random.Range(-5, 6);
+                    falsa = Mathf.Clamp(falsa, 0, 50);
+                }
+                while (falsa == respuestaCorrecta);
 
-                if (valor == correcta)
-                    valor += 1;
+                obj.SetValor(falsa);
             }
-
-            respuesta.SetValor(valor.ToString(), i == indiceCorrecto, puerta);
         }
     }
 }

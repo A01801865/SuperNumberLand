@@ -107,8 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97e42a052a457f4892ec19195860103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjetoRespuesta
-  esCorrecta: 0
-  puerta: {fileID: 0}
+  valor: 0
   texto: {fileID: 3005193060723961273}
 --- !u!50 &174394193695965538
 Rigidbody2D:

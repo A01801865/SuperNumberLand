@@ -13,7 +13,7 @@ public class UIVidasToolkit : MonoBehaviour
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        // ❤️ Corazones
+        // Corazones
         vida1 = root.Q<VisualElement>("Vida_1");
         vida2 = root.Q<VisualElement>("Vida_2");
         vida3 = root.Q<VisualElement>("Vida_3");

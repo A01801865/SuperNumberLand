@@ -3,29 +3,47 @@ using UnityEngine.UIElements;
 
 public class UIPreguntaController : MonoBehaviour
 {
-    public UIDocument uiDocument;
-
-    Label preguntaLabel;
+    private Label preguntaLabel;
+    private GeneradorPreguntas generador;
+    private string preguntaActual;
 
     void Start()
     {
-        var root = uiDocument.rootVisualElement;
-
+        var root = GetComponent<UIDocument>().rootVisualElement;
         preguntaLabel = root.Q<Label>("preguntaLabel");
+
+        generador = FindFirstObjectByType<GeneradorPreguntas>();
 
         ActualizarPregunta();
     }
 
     public void ActualizarPregunta()
     {
-        if (!GeneradorPreguntas.Instance.preguntaActiva) return;
+        if (generador == null) return;
 
-        string pregunta = GeneradorPreguntas.Instance.GenerarPregunta();
-        preguntaLabel.text = pregunta;
+        preguntaActual = generador.GenerarPregunta();
+
+        if (preguntaLabel != null)
+            preguntaLabel.text = preguntaActual;
     }
 
-    public void MostrarMensaje(string mensaje)
+    public void MostrarIncorrecto()
     {
-        preguntaLabel.text = mensaje;
+        if (preguntaLabel != null)
+            preguntaLabel.text = "¡Fallaste! Sigue intentando";
+
+        Invoke("RestaurarPregunta", 2f);
+    }
+
+    private void RestaurarPregunta()
+    {
+        if (preguntaLabel != null)
+            preguntaLabel.text = preguntaActual;
+    }
+
+    public void MostrarPuertaAbierta()
+    {
+        if (preguntaLabel != null)
+            preguntaLabel.text = "🚪 ¡Puerta abierta!";
     }
 }
