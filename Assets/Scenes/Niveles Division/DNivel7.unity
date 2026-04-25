@@ -119,6 +119,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1232389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232391}
+  - component: {fileID: 1232390}
+  m_Layer: 0
+  m_Name: GeneradorPreguntas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ec613a1df7dde439a82cbe13dc4c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GeneradorPreguntas
+  tipoOperacion: 3
+  RespuestaCorrecta: 0
+  spawner: {fileID: 0}
+--- !u!4 &1232391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232389}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96709, y: -0.02505, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8351042
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc1360c5a0ce774199f78c832b6de11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Puerta
-  siguienteNivel: Mapa2
 --- !u!212 &8351045
 SpriteRenderer:
   serializedVersion: 2
@@ -412,51 +458,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &146355080
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 146355082}
-  - component: {fileID: 146355081}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &146355081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146355080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f97e9724abbd142945cd535c9acef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManagerPreguntas
-  textoPregunta: {fileID: 0}
---- !u!4 &146355082
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146355080}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41136, y: -0.27931, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3983,13 +3984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddc0bf37f0c02e4ebd0dec2257083ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerRespuestas
-  prefabCaja: {fileID: 7005352108738285711, guid: cd19f516ced5f42418c26acc6779a213, type: 3}
-  puntosSpawn:
-  - {fileID: 438631272}
-  - {fileID: 1922221191}
-  - {fileID: 1158461932}
-  - {fileID: 1495473015}
-  puerta: {fileID: 8351044}
+  prefabRespuesta: {fileID: 0}
+  spawns: []
 --- !u!4 &1368002262
 Transform:
   m_ObjectHideFlags: 0
@@ -4153,6 +4149,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1922104819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1922104821}
+  - component: {fileID: 1922104820}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1922104820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922104819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f97e9724abbd142945cd535c9acef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManagerPreguntas
+  textoPregunta: {fileID: 0}
+  tipoOperacion: 3
+--- !u!4 &1922104821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922104819}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.41136, y: -0.27931, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1922221190
 GameObject:
   m_ObjectHideFlags: 0
@@ -4214,7 +4256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c452d48da940b748bfdca4c0bb80600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIPreguntaController
-  uiDocument: {fileID: 79030945}
 --- !u!114 &1928810132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4227,8 +4268,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ec613a1df7dde439a82cbe13dc4c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeneradorPreguntas
-  respuestaCorrecta: 0
-  preguntaActiva: 1
+  tipoOperacion: 0
+  RespuestaCorrecta: 0
+  spawner: {fileID: 0}
 --- !u!4 &1928810133
 Transform:
   m_ObjectHideFlags: 0
@@ -4352,8 +4394,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   velocidad: 3
   fuerzaSalto: 8
+  maxSaltos: 2
   puntoSuelo: {fileID: 285776978}
   radioSuelo: 0.2
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 0
   vidas: 3
   limiteCaida: -6
   puntoRespawn: {fileID: 246720866}
@@ -4362,7 +4408,6 @@ MonoBehaviour:
   capaRespuestas:
     serializedVersion: 2
     m_Bits: 512
-  cooldownSalto: 0.2
 --- !u!95 &1968885900
 Animator:
   serializedVersion: 7
@@ -4479,5 +4524,6 @@ SceneRoots:
   - {fileID: 1330706034}
   - {fileID: 1922221191}
   - {fileID: 8351046}
-  - {fileID: 146355082}
   - {fileID: 438631272}
+  - {fileID: 1922104821}
+  - {fileID: 1232391}

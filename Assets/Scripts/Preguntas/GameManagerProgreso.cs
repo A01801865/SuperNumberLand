@@ -7,11 +7,42 @@ public class GameManagerProgreso : MonoBehaviour
 
     public int nivelActual = 1;
 
-    private List<string> nivelesDisponibles = new List<string>
+    public enum TipoNivel
     {
-        "Mapa2", "Mapa3", "Mapa4", "Mapa5", "Mapa6",
-        "Mapa7", "Mapa8", "Mapa9", "Mapa10", "Nivel1"
+        Suma,
+        Resta,
+        Multiplicacion,
+        Division
+    }
+
+    public TipoNivel tipoActual;
+
+    private List<string> nivelesSuma = new List<string>
+    {
+        "Nivel1",
+        "Mapa2","Mapa3","Mapa4","Mapa5","Mapa6",
+        "Mapa7","Mapa8","Mapa9","Mapa10"
     };
+
+    private List<string> nivelesResta = new List<string>
+    {
+        "RNivel1","RNivel2","RNivel3","RNivel4","RNivel5",
+        "RNivel6","RNivel7","RNivel8","RNivel9","RNivel10"
+    };
+
+    private List<string> nivelesMultiplicacion = new List<string>
+    {
+        "MNivel1","MNivel2","MNivel3","MNivel4","MNivel5",
+        "MNivel6","MNivel7","MNivel8","MNivel9","MNivel10"
+    };
+
+    private List<string> nivelesDivision = new List<string>
+    {
+        "DNivel1","DNivel2","DNivel3","DNivel4","DNivel5",
+        "DNivel6","DNivel7","DNivel8","DNivel9","DNivel10"
+    };
+
+    private List<string> nivelesRestantes = new List<string>();
 
     void Awake()
     {
@@ -26,29 +57,48 @@ public class GameManagerProgreso : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        InicializarLista();
+    }
+
+    void InicializarLista()
+    {
+        nivelesRestantes.Clear();
+
+        switch (tipoActual)
+        {
+            case TipoNivel.Suma:
+                nivelesRestantes.AddRange(nivelesSuma);
+                break;
+            case TipoNivel.Resta:
+                nivelesRestantes.AddRange(nivelesResta);
+                break;
+            case TipoNivel.Multiplicacion:
+                nivelesRestantes.AddRange(nivelesMultiplicacion);
+                break;
+            case TipoNivel.Division:
+                nivelesRestantes.AddRange(nivelesDivision);
+                break;
+        }
+    }
+
     public string ObtenerSiguienteNivel(string nivelActualNombre)
     {
-        // Si ya se jugaron todos, reiniciar la lista
-        if (nivelesDisponibles.Count == 0)
-        {
-            nivelesDisponibles = new List<string>
-            {
-                "Mapa2", "Mapa3", "Mapa4", "Mapa5", "Mapa6",
-                "Mapa7", "Mapa8", "Mapa9", "Mapa10", "Nivel1"
-            };
-        }
+        if (nivelesRestantes.Count == 0)
+            InicializarLista();
 
-        // Quitar el nivel actual de los disponibles si está
-        nivelesDisponibles.Remove(nivelActualNombre);
+        nivelesRestantes.Remove(nivelActualNombre);
 
-        // Elegir uno random de los que quedan
-        int index = Random.Range(0, nivelesDisponibles.Count);
-        string seleccionado = nivelesDisponibles[index];
+        if (nivelesRestantes.Count == 0)
+            InicializarLista();
 
-        // Quitarlo para que no se repita
-        nivelesDisponibles.RemoveAt(index);
+        int index = Random.Range(0, nivelesRestantes.Count);
+        string siguiente = nivelesRestantes[index];
 
-        return seleccionado;
+        nivelesRestantes.RemoveAt(index);
+
+        return siguiente;
     }
 
     public void AvanzarNivel()
@@ -61,5 +111,11 @@ public class GameManagerProgreso : MonoBehaviour
         if (nivelActual <= 3) return 1;
         if (nivelActual <= 7) return 2;
         return 3;
+    }
+
+    public void SetTipoNivel(TipoNivel tipo)
+    {
+        tipoActual = tipo;
+        InicializarLista();
     }
 }

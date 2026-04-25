@@ -5,6 +5,16 @@ public class GameManagerPreguntas : MonoBehaviour
 {
     public TextMeshProUGUI textoPregunta;
 
+    public enum TipoOperacion
+    {
+        Suma,
+        Resta,
+        Multiplicacion,
+        Division
+    }
+
+    public TipoOperacion tipoOperacion;
+
     private int respuestaCorrecta;
 
     void Start()
@@ -22,8 +32,31 @@ public class GameManagerPreguntas : MonoBehaviour
         int a = Random.Range(1, 10);
         int b = Random.Range(1, 10);
 
-        respuestaCorrecta = a + b;
+        switch (tipoOperacion)
+        {
+            case TipoOperacion.Suma:
+                respuestaCorrecta = a + b;
+                textoPregunta.text = a + " + " + b + " = ?";
+                break;
 
-        textoPregunta.text = a + " + " + b + " = ?";
+            case TipoOperacion.Resta:
+                respuestaCorrecta = a - b;
+                textoPregunta.text = a + " - " + b + " = ?";
+                break;
+
+            case TipoOperacion.Multiplicacion:
+                respuestaCorrecta = a * b;
+                textoPregunta.text = a + " × " + b + " = ?";
+                break;
+
+            case TipoOperacion.Division:
+                // Evitar decimales
+                respuestaCorrecta = Random.Range(1, 10);
+                b = Random.Range(1, 10);
+                a = respuestaCorrecta * b;
+
+                textoPregunta.text = a + " ÷ " + b + " = ?";
+                break;
+        }
     }
 }

@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class GeneradorPreguntas : MonoBehaviour
 {
+    public enum TipoOperacion
+    {
+        Suma,
+        Resta,
+        Multiplicacion,
+        Division
+    }
+
+    public TipoOperacion tipoOperacion;
+
     public int RespuestaCorrecta;
     public SpawnerRespuestas spawner;
 
@@ -16,7 +26,32 @@ public class GeneradorPreguntas : MonoBehaviour
         int a = Random.Range(1, 10);
         int b = Random.Range(1, 10);
 
-        RespuestaCorrecta = a + b;
+        switch (tipoOperacion)
+        {
+            case TipoOperacion.Suma:
+                RespuestaCorrecta = a + b;
+                break;
+
+            case TipoOperacion.Resta:
+                if (a < b)
+                {
+                    int temp = a;
+                    a = b;
+                    b = temp;
+                }
+                RespuestaCorrecta = a - b;
+                break;
+
+            case TipoOperacion.Multiplicacion:
+                RespuestaCorrecta = a * b;
+                break;
+
+            case TipoOperacion.Division:
+                RespuestaCorrecta = Random.Range(1, 10);
+                b = Random.Range(1, 10);
+                a = RespuestaCorrecta * b;
+                break;
+        }
 
         Debug.Log("Respuesta correcta: " + RespuestaCorrecta);
 
@@ -25,6 +60,17 @@ public class GeneradorPreguntas : MonoBehaviour
         else
             Debug.LogError("Spawner es null en GenerarPregunta!");
 
-        return a + " + " + b + " = ?";
+        // Generar texto dinámico
+        string simbolo = "+";
+
+        switch (tipoOperacion)
+        {
+            case TipoOperacion.Suma: simbolo = "+"; break;
+            case TipoOperacion.Resta: simbolo = "-"; break;
+            case TipoOperacion.Multiplicacion: simbolo = "×"; break;
+            case TipoOperacion.Division: simbolo = "÷"; break;
+        }
+
+        return a + " " + simbolo + " " + b + " = ?";
     }
 }
