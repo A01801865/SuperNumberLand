@@ -55,3 +55,30 @@
 .boton:hover {
     scale: 1.1 1.1 1.1;
 }
+
+.botonTienda {
+    background-image: url("project://database/Assets/Wood%20UI/Sprites/Buttons/16x16.png?fileID=1940803569&guid=584ea5e1f4128f842936858238ac18b1&type=3#16x16_11");
+    -unity-background-image-tint-color: rgb(233, 150, 122);
+    -unity-slice-left: 5;
+    -unity-slice-top: 5;
+    -unity-slice-right: 5;
+    -unity-slice-bottom: 5;
+    width: 400px;
+    height: 80px;
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    text-shadow: 0 2px 0 rgb(0, 0, 0);
+    transition-duration: 0.2s;
+}
+
+.botonTienda:hover {
+    scale: 1.05 1.05 1.05;
+}

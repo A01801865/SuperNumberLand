@@ -1,0 +1,298 @@
+using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.Networking;
+using System.Collections;
+using System.Collections.Generic;
+
+public class InventarioController : MonoBehaviour
+{
+    public Sprite personaje1Sprite;
+    public Sprite personaje2Sprite;
+    public Sprite personaje3Sprite;
+
+    public Sprite fondo1Sprite;
+    public Sprite fondo2Sprite;
+    public Sprite fondo3Sprite;
+    public Sprite fondo4Sprite; // back - fondo default
+
+    public Font fuenteTexto;
+
+    private VisualElement contenedorPersonajes;
+    private VisualElement contenedorFondos;
+    private Button botonPersonajes;
+    private Button botonFondos;
+    private Label numMonedas;
+
+    private int id_usuario;
+    private int personajeSeleccionado = 0;
+    private int fondoSeleccionado     = 0;
+
+    private List<ItemTienda> personajesComprados = new List<ItemTienda>();
+    private List<ItemTienda> fondosComprados     = new List<ItemTienda>();
+
+    void OnEnable()
+    {
+        var root = GetComponent<UIDocument>().rootVisualElement;
+
+        contenedorPersonajes = root.Q<VisualElement>("Personajes");
+        contenedorFondos     = root.Q<VisualElement>("Fondos");
+        botonPersonajes      = root.Q<Button>("BotonPersonajes");
+        botonFondos          = root.Q<Button>("BotonFondos");
+        numMonedas           = root.Q<Label>("NumMonedas");
+
+        if (botonPersonajes != null) botonPersonajes.pickingMode = PickingMode.Position;
+        if (botonFondos != null)     botonFondos.pickingMode     = PickingMode.Position;
+
+        if (contenedorPersonajes != null) contenedorPersonajes.pickingMode = PickingMode.Ignore;
+        if (contenedorFondos != null)     contenedorFondos.pickingMode     = PickingMode.Ignore;
+
+        botonPersonajes.clicked += MostrarPersonajes;
+        botonFondos.clicked     += MostrarFondos;
+
+        var hud   = root.Q<VisualElement>("HUD");
+        var fondo = root.Q<VisualElement>("Fondo");
+        if (hud != null)   hud.pickingMode   = PickingMode.Ignore;
+        if (fondo != null) fondo.pickingMode = PickingMode.Ignore;
+
+        id_usuario = PlayerPrefs.GetInt("user_id", 0);
+        if (id_usuario == 0) id_usuario = 6;
+
+        StartCoroutine(CargarMonedas());
+        StartCoroutine(CargarInventarioYSeleccion());
+
+        MostrarPersonajes();
+    }
+
+    void OnDisable()
+    {
+        botonPersonajes.clicked -= MostrarPersonajes;
+        botonFondos.clicked     -= MostrarFondos;
+    }
+
+    IEnumerator CargarMonedas()
+    {
+        string url = $"https://supernumberland-backend.onrender.com/monedas/{id_usuario}";
+        UnityWebRequest req = UnityWebRequest.Get(url);
+        yield return req.SendWebRequest();
+
+        if (req.result == UnityWebRequest.Result.Success)
+        {
+            MonedasResponse res = JsonUtility.FromJson<MonedasResponse>(req.downloadHandler.text);
+            if (res.success && numMonedas != null)
+                numMonedas.text = res.monedas.ToString();
+        }
+    }
+
+    IEnumerator CargarInventarioYSeleccion()
+    {
+        // Cargar seleccion actual
+        string urlSel = $"https://supernumberland-backend.onrender.com/seleccion/{id_usuario}";
+        UnityWebRequest reqSel = UnityWebRequest.Get(urlSel);
+        yield return reqSel.SendWebRequest();
+
+        if (reqSel.result == UnityWebRequest.Result.Success)
+        {
+            SeleccionResponse sel = JsonUtility.FromJson<SeleccionResponse>(reqSel.downloadHandler.text);
+            if (sel.success)
+            {
+                personajeSeleccionado = sel.personaje_seleccionado;
+                fondoSeleccionado     = sel.fondo_seleccionado;
+            }
+        }
+
+        // Cargar inventario
+        string urlTienda = $"https://supernumberland-backend.onrender.com/tienda/{id_usuario}";
+        UnityWebRequest reqTienda = UnityWebRequest.Get(urlTienda);
+        yield return reqTienda.SendWebRequest();
+
+        if (reqTienda.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error al cargar inventario: " + reqTienda.error);
+            yield break;
+        }
+
+        TiendaResponse res = JsonUtility.FromJson<TiendaResponse>(reqTienda.downloadHandler.text);
+        if (!res.success) yield break;
+
+        personajesComprados.Clear();
+        fondosComprados.Clear();
+
+        foreach (var item in res.items)
+        {
+            if (item.id_item <= 3)
+            {
+                if (item.comprado) personajesComprados.Add(item);
+            }
+            else
+            {
+                // Fondo 7 (default) siempre aparece
+                if (item.comprado || item.id_item == 7)
+                    fondosComprados.Add(item);
+            }
+        }
+
+        LlenarSlots(contenedorPersonajes, personajesComprados, false);
+        LlenarSlots(contenedorFondos,     fondosComprados,     true);
+    }
+
+    IEnumerator GuardarSeleccion(string tipo, int id_item)
+    {
+        string url = "https://supernumberland-backend.onrender.com/seleccion";
+
+        SeleccionData data = new SeleccionData
+        {
+            id_usuario = id_usuario,
+            tipo       = tipo,
+            id_item    = id_item
+        };
+        string json = JsonUtility.ToJson(data);
+
+        UnityWebRequest req = new UnityWebRequest(url, "POST");
+        req.uploadHandler   = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
+        req.downloadHandler = new DownloadHandlerBuffer();
+        req.SetRequestHeader("Content-Type", "application/json");
+
+        yield return req.SendWebRequest();
+
+        if (req.result == UnityWebRequest.Result.Success)
+        {
+            if (tipo == "personaje")
+            {
+                personajeSeleccionado = id_item;
+                LlenarSlots(contenedorPersonajes, personajesComprados, false);
+            }
+            else
+            {
+                fondoSeleccionado = id_item;
+                LlenarSlots(contenedorFondos, fondosComprados, true);
+            }
+            Debug.Log($"✅ {tipo} seleccionado: {id_item}");
+        }
+    }
+
+    void LlenarSlots(VisualElement contenedor, List<ItemTienda> comprados, bool esFondo)
+    {
+        if (contenedor == null) return;
+
+        contenedor.pickingMode = PickingMode.Ignore;
+
+        var slots = contenedor.Children();
+        int slotIndex = 0;
+
+        foreach (var slot in slots)
+        {
+            slot.Clear();
+            slot.pickingMode = PickingMode.Ignore;
+
+            if (slotIndex < comprados.Count)
+            {
+                var item             = comprados[slotIndex];
+                Sprite spr           = ObtenerSprite(item.id_item);
+                string tipo          = esFondo ? "fondo" : "personaje";
+                int seleccionado     = esFondo ? fondoSeleccionado : personajeSeleccionado;
+                bool estaSeleccionado = item.id_item == seleccionado;
+
+                var imagen = new VisualElement();
+                imagen.style.width           = esFondo ? 240 : 180;
+                imagen.style.height          = esFondo ? 140 : 180;
+                imagen.style.backgroundImage = new StyleBackground(spr);
+                imagen.style.backgroundSize  = new BackgroundSize(BackgroundSizeType.Contain);
+                imagen.style.alignSelf       = Align.Center;
+                imagen.style.marginTop       = 20;
+                imagen.pickingMode           = PickingMode.Ignore;
+
+                var nombre = new Label(item.nombre);
+                nombre.style.fontSize                = 20;
+                nombre.style.unityFontStyleAndWeight = FontStyle.Bold;
+                nombre.style.unityTextAlign          = TextAnchor.MiddleCenter;
+                nombre.style.color                   = Color.white;
+                nombre.style.marginTop               = 10;
+                nombre.pickingMode                   = PickingMode.Ignore;
+                if (fuenteTexto != null) nombre.style.unityFont = fuenteTexto;
+
+                var botonSel = new VisualElement();
+                botonSel.style.marginTop               = 8;
+                botonSel.style.width                   = 180;
+                botonSel.style.height                  = 55;
+                botonSel.style.backgroundColor         = estaSeleccionado
+                    ? new Color(0.1f, 0.6f, 0.1f, 1f)
+                    : new Color(0.6f, 0.3f, 0.1f, 1f);
+                botonSel.style.borderTopLeftRadius     = 6;
+                botonSel.style.borderTopRightRadius    = 6;
+                botonSel.style.borderBottomLeftRadius  = 6;
+                botonSel.style.borderBottomRightRadius = 6;
+                botonSel.style.alignItems              = Align.Center;
+                botonSel.style.justifyContent          = Justify.Center;
+                botonSel.pickingMode                   = PickingMode.Position;
+
+                var textoBoton = new Label(estaSeleccionado ? "Seleccionado" : "Seleccionar");
+                textoBoton.style.unityTextAlign = TextAnchor.MiddleCenter;
+                textoBoton.style.color          = Color.white;
+                textoBoton.style.fontSize       = 18;
+                textoBoton.pickingMode          = PickingMode.Ignore;
+                if (fuenteTexto != null) textoBoton.style.unityFont = fuenteTexto;
+                botonSel.Add(textoBoton);
+
+                var itemRef = item;
+                var tipoRef = tipo;
+                botonSel.RegisterCallback<ClickEvent>(evt =>
+                {
+                    StartCoroutine(GuardarSeleccion(tipoRef, itemRef.id_item));
+                });
+
+                slot.style.alignItems     = Align.Center;
+                slot.style.justifyContent = Justify.Center;
+                slot.style.flexDirection  = FlexDirection.Column;
+
+                slot.Add(imagen);
+                slot.Add(nombre);
+                slot.Add(botonSel);
+            }
+
+            slotIndex++;
+        }
+    }
+
+    Sprite ObtenerSprite(int id_item)
+    {
+        switch (id_item)
+        {
+            case 1: return personaje1Sprite;
+            case 2: return personaje2Sprite;
+            case 3: return personaje3Sprite;
+            case 4: return fondo1Sprite;
+            case 5: return fondo2Sprite;
+            case 6: return fondo3Sprite;
+            case 7: return fondo4Sprite;
+            default: return null;
+        }
+    }
+
+    void MostrarPersonajes()
+    {
+        contenedorPersonajes.style.display = DisplayStyle.Flex;
+        contenedorFondos.style.display     = DisplayStyle.None;
+    }
+
+    void MostrarFondos()
+    {
+        contenedorPersonajes.style.display = DisplayStyle.None;
+        contenedorFondos.style.display     = DisplayStyle.Flex;
+    }
+}
+
+[System.Serializable]
+public class SeleccionResponse
+{
+    public bool success;
+    public int  personaje_seleccionado;
+    public int  fondo_seleccionado;
+}
+
+[System.Serializable]
+public class SeleccionData
+{
+    public int    id_usuario;
+    public string tipo;
+    public int    id_item;
+}

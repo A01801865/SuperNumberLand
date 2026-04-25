@@ -869,6 +869,8 @@ GameObject:
   - component: {fileID: 1458866158}
   - component: {fileID: 1458866157}
   - component: {fileID: 1458866159}
+  - component: {fileID: 1458866160}
+  - component: {fileID: 1458866161}
   m_Layer: 5
   m_Name: Perfil
   m_TagString: Untagged
@@ -926,6 +928,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6debb37abcd98d46ac7854a42a88790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RegresarPerfil
+--- !u!114 &1458866160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458866156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d2fc08580f43ff8f52957f1a88c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HUDController
+  fondoDefault: {fileID: 21300000, guid: 8e160a2a620644cd6afef9119dad1093, type: 3}
+  fondoNoche: {fileID: 21300000, guid: 20dead3c7dd1356488f5890982fba69d, type: 3}
+  fondoArboles: {fileID: 21300000, guid: b0efbc267bf5af34ebc3f2f8e5488a47, type: 3}
+  fondoNubes: {fileID: 21300000, guid: af1060810ec74a443a016417c61fd5f7, type: 3}
+--- !u!114 &1458866161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458866156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f242befff44d4f18aba510239770514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PerfilController
 --- !u!1 &1519152597
 GameObject:
   m_ObjectHideFlags: 0

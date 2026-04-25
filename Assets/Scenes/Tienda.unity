@@ -1007,6 +1007,7 @@ GameObject:
   - component: {fileID: 2122089091}
   - component: {fileID: 2122089094}
   - component: {fileID: 2122089095}
+  - component: {fileID: 2122089096}
   m_Layer: 5
   m_Name: UITienda
   m_TagString: Untagged
@@ -1083,8 +1084,23 @@ MonoBehaviour:
   fondo2Sprite: {fileID: 21300000, guid: 909a7d87fb23fab43aa622698c17741e, type: 3}
   fondo3Sprite: {fileID: 21300000, guid: af1060810ec74a443a016417c61fd5f7, type: 3}
   monedaSprite: {fileID: 7717009168347922525, guid: c0ac2887a513d7245bfa14c87f5ccf6e, type: 3}
-  botonSprite: {fileID: 0}
   fuenteTexto: {fileID: 12800000, guid: 2fd92e0f1a30cfd40b90cb5ca04a9372, type: 3}
+--- !u!114 &2122089096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122089090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d2fc08580f43ff8f52957f1a88c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HUDController
+  fondoDefault: {fileID: 21300000, guid: 8e160a2a620644cd6afef9119dad1093, type: 3}
+  fondoNoche: {fileID: 21300000, guid: 20dead3c7dd1356488f5890982fba69d, type: 3}
+  fondoArboles: {fileID: 21300000, guid: b0efbc267bf5af34ebc3f2f8e5488a47, type: 3}
+  fondoNubes: {fileID: 21300000, guid: af1060810ec74a443a016417c61fd5f7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
