@@ -9,7 +9,6 @@ public class Puerta : MonoBehaviour
     void Start()
     {
         col = GetComponent<Collider2D>();
-
         if (col == null)
             Debug.LogError("La puerta necesita un Collider2D");
     }
@@ -31,11 +30,30 @@ public class Puerta : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            string nivelActual = SceneManager.GetActiveScene().name;
-
             if (GameManagerProgreso.Instance != null)
             {
                 GameManagerProgreso.Instance.AvanzarNivel();
+
+                if (GameManagerProgreso.Instance.HaGanado())
+                {
+                    Debug.Log("¡GANASTE!");
+
+                    // Detener al jugador
+                    PlayerController player = FindFirstObjectByType<PlayerController>();
+                    if (player != null)
+                        player.Detener();
+
+                    // Mostrar pantalla de ganar
+                    UIVidasToolkit ui = FindFirstObjectByType<UIVidasToolkit>();
+                    if (ui != null)
+                        ui.MostrarPantallaGanar();
+                    else
+                        Debug.LogError("No se encontró UIVidasToolkit");
+
+                    return;
+                }
+
+                string nivelActual = SceneManager.GetActiveScene().name;
                 string siguiente = GameManagerProgreso.Instance.ObtenerSiguienteNivel(nivelActual);
                 SceneManager.LoadScene(siguiente);
             }

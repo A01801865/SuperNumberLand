@@ -7,6 +7,8 @@ public class PausaController : MonoBehaviour
     public bool estaPausado = false;
 
     private VisualElement pausa;
+    private VisualElement pantallaPerder;
+    private VisualElement pantallaGanar;
     private Button botonContinuar;
     private InputAction accionPausar;
 
@@ -28,6 +30,10 @@ public class PausaController : MonoBehaviour
         pausa = root.Q<VisualElement>("Pausa");
         botonContinuar = root.Q<Button>("BotonContinuar");
 
+        // ← Obtener referencias a pantallas de ganar y perder
+        pantallaPerder = root.Q<VisualElement>("Perder");
+        pantallaGanar = root.Q<VisualElement>("Ganar");
+
         pausa.style.display = DisplayStyle.None;
 
         botonContinuar.clicked += ContinuarJuego;
@@ -43,6 +49,14 @@ public class PausaController : MonoBehaviour
 
     private void OnPause(InputAction.CallbackContext ctx)
     {
+        // ← No pausar si está la pantalla de perder o ganar visible
+        bool perderVisible = pantallaPerder != null &&
+            pantallaPerder.style.display == DisplayStyle.Flex;
+        bool ganarVisible = pantallaGanar != null &&
+            pantallaGanar.style.display == DisplayStyle.Flex;
+
+        if (perderVisible || ganarVisible) return;
+
         Pausar();
     }
 
@@ -58,7 +72,6 @@ public class PausaController : MonoBehaviour
     {
         if (!estaPausado) return;
 
-        // Ocultar primero, inmediatamente
         pausa.style.display = DisplayStyle.None;
         estaPausado = false;
         Time.timeScale = 1f;

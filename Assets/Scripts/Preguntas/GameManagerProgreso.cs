@@ -6,22 +6,17 @@ public class GameManagerProgreso : MonoBehaviour
     public static GameManagerProgreso Instance;
 
     public int nivelActual = 1;
+    public int totalNiveles = 10;
+    public int vidasActuales = 3;
+    public int vidasPerdidas = 0;
 
-    public enum TipoNivel
-    {
-        Suma,
-        Resta,
-        Multiplicacion,
-        Division
-    }
-
+    public enum TipoNivel { Suma, Resta, Multiplicacion, Division }
     public TipoNivel tipoActual;
 
     private List<string> nivelesSuma = new List<string>
     {
-        "Nivel1",
-        "Mapa2","Mapa3","Mapa4","Mapa5","Mapa6",
-        "Mapa7","Mapa8","Mapa9","Mapa10"
+        "Nivel1", "Mapa2","Mapa3","Mapa4","Mapa5",
+        "Mapa6","Mapa7","Mapa8","Mapa9","Mapa10"
     };
 
     private List<string> nivelesResta = new List<string>
@@ -68,18 +63,10 @@ public class GameManagerProgreso : MonoBehaviour
 
         switch (tipoActual)
         {
-            case TipoNivel.Suma:
-                nivelesRestantes.AddRange(nivelesSuma);
-                break;
-            case TipoNivel.Resta:
-                nivelesRestantes.AddRange(nivelesResta);
-                break;
-            case TipoNivel.Multiplicacion:
-                nivelesRestantes.AddRange(nivelesMultiplicacion);
-                break;
-            case TipoNivel.Division:
-                nivelesRestantes.AddRange(nivelesDivision);
-                break;
+            case TipoNivel.Suma: nivelesRestantes.AddRange(nivelesSuma); break;
+            case TipoNivel.Resta: nivelesRestantes.AddRange(nivelesResta); break;
+            case TipoNivel.Multiplicacion: nivelesRestantes.AddRange(nivelesMultiplicacion); break;
+            case TipoNivel.Division: nivelesRestantes.AddRange(nivelesDivision); break;
         }
     }
 
@@ -95,7 +82,6 @@ public class GameManagerProgreso : MonoBehaviour
 
         int index = Random.Range(0, nivelesRestantes.Count);
         string siguiente = nivelesRestantes[index];
-
         nivelesRestantes.RemoveAt(index);
 
         return siguiente;
@@ -104,6 +90,11 @@ public class GameManagerProgreso : MonoBehaviour
     public void AvanzarNivel()
     {
         nivelActual++;
+    }
+
+    public bool HaGanado()
+    {
+        return nivelActual > totalNiveles;
     }
 
     public int ObtenerDificultad()
@@ -117,5 +108,10 @@ public class GameManagerProgreso : MonoBehaviour
     {
         tipoActual = tipo;
         InicializarLista();
+    }
+
+    public int CalcularEstrellas()
+    {
+        return vidasActuales; // 3 vidas = 3 estrellas, 2 vidas = 2, 1 vida = 1
     }
 }

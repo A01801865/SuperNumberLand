@@ -12,24 +12,23 @@ public class VolverANiveles : MonoBehaviour
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
 
-        botonVolver = root.Q<Button>("BotonVolver");
+        var fondoPausa = root.Q<VisualElement>("FondoPausa");
+        if (fondoPausa != null)
+            botonVolver = fondoPausa.Q<Button>("BotonVolver");
 
         if (botonVolver != null)
-        {
             botonVolver.clicked += Volver;
-        }
     }
 
     void OnDisable()
     {
         if (botonVolver != null)
-        {
             botonVolver.clicked -= Volver;
-        }
     }
 
     void Volver()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Niveles");
     }
 }

@@ -47,6 +47,21 @@ public class PlayerController : MonoBehaviour
 
         saltosRestantes = maxSaltos;
 
+        // ← Buscar referencias automáticamente si no están asignadas
+        if (puntoRespawn == null)
+        {
+            GameObject respawn = GameObject.Find("Respawn");
+            if (respawn != null)
+                puntoRespawn = respawn.transform;
+        }
+
+        if (uiVidas == null)
+            uiVidas = FindFirstObjectByType<UIVidasToolkit>();
+
+        // ← Tomar vidas guardadas
+        if (GameManagerProgreso.Instance != null)
+            vidas = GameManagerProgreso.Instance.vidasActuales;
+
         if (uiVidas != null)
             uiVidas.ActualizarVidas(vidas);
     }
@@ -55,17 +70,11 @@ public class PlayerController : MonoBehaviour
     {
         if (muerto) return;
 
-        // guardar estado anterior
         estabaEnSuelo = enSuelo;
-
-        // detectar suelo
         enSuelo = Physics2D.OverlapCircle(puntoSuelo.position, radioSuelo, capaSuelo);
 
-        // resetear saltos SOLO cuando aterriza
         if (enSuelo && !estabaEnSuelo)
-        {
             saltosRestantes = maxSaltos;
-        }
 
         movimiento = Input.GetAxis("Horizontal");
         animator.SetFloat("velocidad", Mathf.Abs(movimiento));
@@ -73,7 +82,6 @@ public class PlayerController : MonoBehaviour
         if (movimiento != 0)
             sr.flipX = movimiento < 0;
 
-        // salto limitado
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && saltosRestantes > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
@@ -81,24 +89,19 @@ public class PlayerController : MonoBehaviour
             saltosRestantes--;
         }
 
-        // ataque
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             animator.SetTrigger("atacar");
             DetectarGolpe();
         }
 
-        // caida
         if (transform.position.y < limiteCaida)
-        {
             PerderVida();
-        }
     }
 
     void FixedUpdate()
     {
         if (muerto) return;
-
         rb.linearVelocity = new Vector2(movimiento * velocidad, rb.linearVelocity.y);
     }
 
@@ -109,11 +112,8 @@ public class PlayerController : MonoBehaviour
         foreach (Collider2D hit in hits)
         {
             ObjetoRespuesta obj = hit.GetComponent<ObjetoRespuesta>();
-
             if (obj != null)
-            {
                 obj.RecibirGolpe();
-            }
         }
     }
 
@@ -122,6 +122,12 @@ public class PlayerController : MonoBehaviour
         if (muerto) return;
 
         vidas--;
+
+        if (GameManagerProgreso.Instance != null)
+        {
+            GameManagerProgreso.Instance.vidasActuales = vidas;
+            GameManagerProgreso.Instance.vidasPerdidas++;
+        }
 
         if (uiVidas != null)
             uiVidas.ActualizarVidas(vidas);
@@ -139,6 +145,12 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
+    }
+
+    public void Detener()
+    {
+        muerto = true;
+        rb.linearVelocity = Vector2.zero;
     }
 
     void Respawn()
