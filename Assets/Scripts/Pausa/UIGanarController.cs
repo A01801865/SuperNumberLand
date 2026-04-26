@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class UIGanarController : MonoBehaviour
 {
     private Button botonSiguiente;
     private Button botonVolver;
 
-    void Start() // ← OnEnable → Start
+    void Start()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
@@ -17,10 +19,7 @@ public class UIGanarController : MonoBehaviour
         if (fondoGanar != null)
         {
             botonSiguiente = fondoGanar.Q<Button>("BotonSigNiv");
-            botonVolver = fondoGanar.Q<Button>("BotonVolver");
-
-            Debug.Log("BotonSigNiv: " + botonSiguiente);
-            Debug.Log("BotonVolver: " + botonVolver);
+            botonVolver    = fondoGanar.Q<Button>("BotonVolver");
 
             if (botonSiguiente != null)
                 botonSiguiente.clicked += SiguienteNivel;
@@ -38,9 +37,9 @@ public class UIGanarController : MonoBehaviour
 
         if (GameManagerProgreso.Instance != null)
         {
-            GameManagerProgreso.Instance.vidasActuales = 3;
-            GameManagerProgreso.Instance.nivelActual = 1;
-            GameManagerProgreso.Instance.vidasPerdidas = 0;
+            GameManagerProgreso.Instance.vidasActuales  = 3;
+            GameManagerProgreso.Instance.nivelActual    = 1;
+            GameManagerProgreso.Instance.vidasPerdidas  = 0;
         }
 
         if (MonedaManager.instance != null)
@@ -56,9 +55,9 @@ public class UIGanarController : MonoBehaviour
 
         if (GameManagerProgreso.Instance != null)
         {
-            GameManagerProgreso.Instance.vidasActuales = 3;
-            GameManagerProgreso.Instance.nivelActual = 1;
-            GameManagerProgreso.Instance.vidasPerdidas = 0;
+            GameManagerProgreso.Instance.vidasActuales  = 3;
+            GameManagerProgreso.Instance.nivelActual    = 1;
+            GameManagerProgreso.Instance.vidasPerdidas  = 0;
         }
 
         if (MonedaManager.instance != null)
