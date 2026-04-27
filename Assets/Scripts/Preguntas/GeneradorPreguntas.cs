@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class GeneradorPreguntas : MonoBehaviour
 {
+    public enum TipoOperacion
+    {
+        Suma,
+        Resta,
+        Multiplicacion,
+        Division
+    }
+
+    public TipoOperacion tipoOperacion;
+
     public int RespuestaCorrecta;
     public SpawnerRespuestas spawner;
 
@@ -13,40 +23,54 @@ public class GeneradorPreguntas : MonoBehaviour
 
     public string GenerarPregunta()
     {
-        int dificultad = GameManagerProgreso.Instance != null
-            ? GameManagerProgreso.Instance.ObtenerDificultad()
-            : 1;
+        int a = Random.Range(1, 10);
+        int b = Random.Range(1, 10);
 
-        int a, b;
-
-        // Dificultad 1 (niveles 1-3): números del 1 al 5
-        // Dificultad 2 (niveles 4-7): números del 1 al 10
-        // Dificultad 3 (niveles 8-10): números del 5 al 20
-        if (dificultad == 1)
+        switch (tipoOperacion)
         {
-            a = Random.Range(1, 6);
-            b = Random.Range(1, 6);
-        }
-        else if (dificultad == 2)
-        {
-            a = Random.Range(1, 11);
-            b = Random.Range(1, 11);
-        }
-        else
-        {
-            a = Random.Range(5, 21);
-            b = Random.Range(5, 21);
+            case TipoOperacion.Suma:
+                RespuestaCorrecta = a + b;
+                break;
+
+            case TipoOperacion.Resta:
+                if (a < b)
+                {
+                    int temp = a;
+                    a = b;
+                    b = temp;
+                }
+                RespuestaCorrecta = a - b;
+                break;
+
+            case TipoOperacion.Multiplicacion:
+                RespuestaCorrecta = a * b;
+                break;
+
+            case TipoOperacion.Division:
+                RespuestaCorrecta = Random.Range(1, 10);
+                b = Random.Range(1, 10);
+                a = RespuestaCorrecta * b;
+                break;
         }
 
-        RespuestaCorrecta = a + b;
-
-        Debug.Log("Dificultad: " + dificultad + " | Respuesta correcta: " + RespuestaCorrecta);
+        Debug.Log("Respuesta correcta: " + RespuestaCorrecta);
 
         if (spawner != null)
             spawner.GenerarRespuestas();
         else
-            Debug.LogError("Spawner es null!");
+            Debug.LogError("Spawner es null en GenerarPregunta!");
 
-        return "Resuelve: " + a + " + " + b + " = ?";
+        // Generar texto dinámico
+        string simbolo = "+";
+
+        switch (tipoOperacion)
+        {
+            case TipoOperacion.Suma: simbolo = "+"; break;
+            case TipoOperacion.Resta: simbolo = "-"; break;
+            case TipoOperacion.Multiplicacion: simbolo = "×"; break;
+            case TipoOperacion.Division: simbolo = "÷"; break;
+        }
+
+        return a + " " + simbolo + " " + b + " = ?";
     }
 }

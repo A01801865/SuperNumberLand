@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerVidas
   vidas: 3
-  ui: {fileID: 0}
+  ui: {fileID: 144175918}
 --- !u!4 &255243623
 Transform:
   m_ObjectHideFlags: 0
@@ -2566,6 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ec613a1df7dde439a82cbe13dc4c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeneradorPreguntas
+  tipoOperacion: 0
   RespuestaCorrecta: 0
   spawner: {fileID: 227308017}
 --- !u!4 &1117312146
@@ -3107,7 +3108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerProgreso
   nivelActual: 1
-  totalNiveles: 10
+  totalNiveles: 5
   vidasActuales: 3
   vidasPerdidas: 0
   tipoActual: 0

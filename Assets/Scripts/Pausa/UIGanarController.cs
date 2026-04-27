@@ -1,34 +1,25 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using UnityEngine.Networking;
-using System.Collections;
 
 public class UIGanarController : MonoBehaviour
 {
-    private Button botonSiguiente;
-    private Button botonVolver;
+    private VisualElement fondoGanar;
 
     void Start()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
+        fondoGanar = root.Q<VisualElement>("FondoGanar");
 
-        var fondoGanar = root.Q<VisualElement>("FondoGanar");
-        Debug.Log("FondoGanar: " + fondoGanar);
+        // Registrar callbacks directamente en los botones
+        var botonSiguiente = fondoGanar?.Q<Button>("BotonSigNiv");
+        var botonVolver = fondoGanar?.Q<Button>("BotonVuelve");
 
-        if (fondoGanar != null)
-        {
-            botonSiguiente = fondoGanar.Q<Button>("BotonSigNiv");
-            botonVolver    = fondoGanar.Q<Button>("BotonVolver");
+        if (botonSiguiente != null)
+            botonSiguiente.RegisterCallback<ClickEvent>(e => SiguienteNivel());
 
-            if (botonSiguiente != null)
-                botonSiguiente.clicked += SiguienteNivel;
-
-            if (botonVolver != null)
-                botonVolver.clicked += VolverMenu;
-        }
-        else
-            Debug.LogError("No se encontró FondoGanar");
+        if (botonVolver != null)
+            botonVolver.RegisterCallback<ClickEvent>(e => VolverMenu());
     }
 
     private void SiguienteNivel()
@@ -37,9 +28,9 @@ public class UIGanarController : MonoBehaviour
 
         if (GameManagerProgreso.Instance != null)
         {
-            GameManagerProgreso.Instance.vidasActuales  = 3;
-            GameManagerProgreso.Instance.nivelActual    = 1;
-            GameManagerProgreso.Instance.vidasPerdidas  = 0;
+            GameManagerProgreso.Instance.vidasActuales = 3;
+            GameManagerProgreso.Instance.nivelActual = 1;
+            GameManagerProgreso.Instance.vidasPerdidas = 0;
         }
 
         if (MonedaManager.instance != null)
@@ -55,9 +46,9 @@ public class UIGanarController : MonoBehaviour
 
         if (GameManagerProgreso.Instance != null)
         {
-            GameManagerProgreso.Instance.vidasActuales  = 3;
-            GameManagerProgreso.Instance.nivelActual    = 1;
-            GameManagerProgreso.Instance.vidasPerdidas  = 0;
+            GameManagerProgreso.Instance.vidasActuales = 3;
+            GameManagerProgreso.Instance.nivelActual = 1;
+            GameManagerProgreso.Instance.vidasPerdidas = 0;
         }
 
         if (MonedaManager.instance != null)

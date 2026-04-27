@@ -23,7 +23,7 @@
                 <ui:Button text="Volver al &#10;menú" name="BotonVolver" class="boton"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Ganar" enabled="false" class="pausa" style="flex-grow: 1; position: relative; background-color: rgba(0, 0, 0, 0.35); display: none; opacity: 1;">
+        <ui:VisualElement name="Ganar" enabled="true" class="pausa" style="flex-grow: 1; position: relative; background-color: rgba(0, 0, 0, 0.35); display: none; opacity: 1;">
             <ui:VisualElement name="FondoGanar" class="fondopausa" style="flex-grow: 1; position: relative; top: auto; left: auto; background-size: 1250px 900px; margin-top: 50px; display: flex;">
                 <ui:Label text="¡Felicidades&#10;Ganaste!" name="TituloGanar" style="font-size: 65px; -unity-font-definition: resource(&quot;PressStart2P&quot;); color: rgb(255, 255, 255); -unity-text-outline-width: 3px; -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 0 3px 0 rgb(0, 0, 0); background-image: url(&quot;project://database/Assets/Wood%20UI/Sprites/Borders/Original/Titlebox.png?fileID=21300000&amp;guid=54214d0dae9aadd49a6c31b28cc135de&amp;type=3#Titlebox&quot;); -unity-slice-left: 30; -unity-slice-top: 30; -unity-slice-right: 30; -unity-slice-bottom: 30; width: 900px; height: 250px; align-self: center; -unity-text-align: middle-center; position: absolute; top: -30px; left: auto; align-items: center; background-size: 100% 100%;"/>
                 <ui:Button text="Siguiente" name="BotonSigNiv" icon-image="" class="boton" style="margin-top: 325px; width: 600px; height: 140px; font-size: 40px; -unity-text-outline-width: 2px;"/>

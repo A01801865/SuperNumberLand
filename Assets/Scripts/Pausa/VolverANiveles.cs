@@ -7,7 +7,7 @@ public class VolverANiveles : MonoBehaviour
     private UIDocument menu;
     private Button botonVolver;
 
-    void OnEnable()
+    void Start()
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
@@ -18,12 +18,6 @@ public class VolverANiveles : MonoBehaviour
 
         if (botonVolver != null)
             botonVolver.clicked += Volver;
-    }
-
-    void OnDisable()
-    {
-        if (botonVolver != null)
-            botonVolver.clicked -= Volver;
     }
 
     void Volver()

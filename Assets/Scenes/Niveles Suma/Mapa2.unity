@@ -577,7 +577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333800730}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.21, y: -2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2241,7 +2241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerProgreso
   nivelActual: 1
-  totalNiveles: 10
+  totalNiveles: 5
   vidasActuales: 3
   vidasPerdidas: 0
   tipoActual: 0
@@ -2616,6 +2616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ec613a1df7dde439a82cbe13dc4c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeneradorPreguntas
+  tipoOperacion: 0
   RespuestaCorrecta: 0
   spawner: {fileID: 2141573385}
 --- !u!4 &1814365701
@@ -2738,7 +2739,6 @@ SceneRoots:
   - {fileID: 1814365701}
   - {fileID: 2141573386}
   - {fileID: 455154742}
-  - {fileID: 333800731}
   - {fileID: 819484387}
   - {fileID: 1065104052}
   - {fileID: 8676191}
@@ -2746,3 +2746,4 @@ SceneRoots:
   - {fileID: 124889264}
   - {fileID: 1720668040}
   - {fileID: 225505446}
+  - {fileID: 333800731}
