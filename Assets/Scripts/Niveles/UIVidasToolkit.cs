@@ -14,6 +14,8 @@ public class UIVidasToolkit : MonoBehaviour
     private VisualElement estrella1;
     private VisualElement estrella2;
     private VisualElement estrella3;
+    private Label nivelActual;
+
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class UIVidasToolkit : MonoBehaviour
         estrella1 = root.Q<VisualElement>("Estrella_1");
         estrella2 = root.Q<VisualElement>("Estrella_2");
         estrella3 = root.Q<VisualElement>("Estrella_3");
+
+        nivelActual = root.Q<Label>("NivelActual");
 
         var fondoPerder = root.Q<VisualElement>("FondoPerder");
         if (fondoPerder != null)
@@ -50,6 +54,30 @@ public class UIVidasToolkit : MonoBehaviour
 
         if (GameManagerProgreso.Instance != null)
             ActualizarVidas(GameManagerProgreso.Instance.vidasActuales);
+
+        ActualizarNivel();
+    }
+
+    public void ActualizarNivel()
+    {
+        if (nivelActual == null)
+            return;
+
+        string nombreEscena = SceneManager.GetActiveScene().name;
+        string numeroNivel = "";
+
+        foreach (char caracter in nombreEscena)
+        {
+            if (char.IsDigit(caracter))
+                numeroNivel += caracter;
+        }
+
+        if (string.IsNullOrEmpty(numeroNivel))
+            numeroNivel = GameManagerProgreso.Instance != null
+                ? GameManagerProgreso.Instance.nivelActual.ToString()
+                : "1";
+
+        nivelActual.text = $"Nivel: {numeroNivel}";
     }
 
     private void Reintentar()

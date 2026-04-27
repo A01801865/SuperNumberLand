@@ -5,18 +5,78 @@
         <ui:VisualElement name="ParteArriba" style="flex-grow: 1; width: 100%; height: 100px; flex-direction: column; justify-content: center; align-items: center;"/>
         <ui:VisualElement name="Niveles" style="flex-grow: 1; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; width: 100%; height: 20px; align-items: center; align-content: auto; align-self: auto; margin-top: 30px; background-image: none; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; background-size: 1000px 100px; background-position-x: center; -unity-background-scale-mode: scale-to-fit; margin-right: 100px; border-right-width: 50px; border-left-width: 50px; top: -87px;">
             <ui:VisualElement name="NivAr" class="areasniveles" style="flex-grow: 1; margin-bottom: 60px;">
-                <ui:Button text="1" name="MUno" class="botones"/>
-                <ui:Button text="2" name="MDos" class="botones"/>
-                <ui:Button text="3" name="MTres" class="botones"/>
-                <ui:Button text="4" name="MCuatro" class="botones"/>
-                <ui:Button text="5" name="MCinco" class="botones"/>
+                <ui:Button text="1" name="MUno" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="2" name="MDos" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="3" name="MTres" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="4" name="MCuatro" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="5" name="MCinco" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
             </ui:VisualElement>
             <ui:VisualElement name="NivAb" class="areasniveles" style="flex-grow: 1; margin-top: 100px;">
-                <ui:Button text="6" name="MSeis" class="botones"/>
-                <ui:Button text="7" name="MSiete" class="botones"/>
-                <ui:Button text="8" name="MOcho" class="botones"/>
-                <ui:Button text="9" name="MNueve" class="botones"/>
-                <ui:Button text="10" enable-rich-text="false" name="MDiez" class="botones"/>
+                <ui:Button text="6" name="MSeis" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="7" name="MSiete" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="8" name="MOcho" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="9" name="MNueve" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Button text="10" enable-rich-text="false" name="MDiez" class="botones">
+                    <ui:VisualElement name="Estrellas" style="flex-grow: 1;">
+                        <ui:Image name="Estrella_2" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: -15px;"/>
+                        <ui:Image name="Estrella_1" style="width: 60px; height: 60px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 80px; left: auto; align-self: center;"/>
+                        <ui:Image name="Estrella_3" style="width: 50px; height: 50px; position: absolute; background-image: url(&quot;project://database/Assets/Logos/pixil-frame-0%20copy%203.png?fileID=154673233858023292&amp;guid=08375c589f6074921bcb735f3fdf9c8b&amp;type=3#pixil-frame-0 copy 3_0&quot;); top: 88px; left: auto; right: -15px;"/>
+                    </ui:VisualElement>
+                </ui:Button>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="ParteAbajo" style="flex-grow: 1; width: 100%; height: 50px; align-items: center; justify-content: center;">

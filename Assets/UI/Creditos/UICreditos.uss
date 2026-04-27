@@ -1,0 +1,26 @@
+:root {
+}
+
+.boton {
+    transition-duration: 0.35s;
+}
+
+.texto {
+    -unity-font-definition: resource("PressStart2P");
+    -unity-text-align: upper-center;
+    -unity-paragraph-spacing: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: rgb(173, 119, 87);
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    text-shadow: 0 2px 0 rgb(0, 0, 0);
+}
+
+.boton:hover {
+    scale: 1.1 1.1;
+    transition-duration: 0.35s;
+}
+
+
