@@ -2062,7 +2062,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cfe5431974b64bffb78c84b1b567caa, type: 3}
---- !u!1 &819484385
+--- !u!1 &869916499
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2070,8 +2070,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 819484387}
-  - component: {fileID: 819484386}
+  - component: {fileID: 869916501}
+  - component: {fileID: 869916500}
   m_Layer: 0
   m_Name: SpawnerJugador
   m_TagString: Untagged
@@ -2079,13 +2079,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &819484386
+--- !u!114 &869916500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819484385}
+  m_GameObject: {fileID: 869916499}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a8a27a415acc5a4d84fa831f05e0d12, type: 3}
@@ -2093,14 +2093,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnJugador
   personajes:
   - {fileID: 1900522843675492617, guid: e35e07ad53688bb4793cc4edd8aa997e, type: 3}
+  - {fileID: 2888560055472369138, guid: ce544c0e5fcba11439d914ddf0a3f1ca, type: 3}
+  - {fileID: 3534183361272286782, guid: 049c2a95fa0a8164e850fd0f089446f4, type: 3}
+  - {fileID: 11686482552628957, guid: 84fc8171681c2c8459b7cc28fd4a34c6, type: 3}
   puntoSpawn: {fileID: 333800731}
---- !u!4 &819484387
+--- !u!4 &869916501
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819484385}
+  m_GameObject: {fileID: 869916499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.00613, y: -0.19458, z: 0}
@@ -2739,7 +2742,6 @@ SceneRoots:
   - {fileID: 1814365701}
   - {fileID: 2141573386}
   - {fileID: 455154742}
-  - {fileID: 819484387}
   - {fileID: 1065104052}
   - {fileID: 8676191}
   - {fileID: 1751967990}
@@ -2747,3 +2749,4 @@ SceneRoots:
   - {fileID: 1720668040}
   - {fileID: 225505446}
   - {fileID: 333800731}
+  - {fileID: 869916501}

@@ -15,7 +15,7 @@ public class InventarioController : MonoBehaviour
     public Sprite fondo1Sprite;
     public Sprite fondo2Sprite;
     public Sprite fondo3Sprite;
-    public Sprite fondo4Sprite; // back - fondo default
+    public Sprite fondo4Sprite;
 
     public Font fuenteTexto;
 
@@ -88,7 +88,6 @@ public class InventarioController : MonoBehaviour
 
     IEnumerator CargarInventarioYSeleccion()
     {
-        // Cargar seleccion actual
         string urlSel = $"https://supernumberland-backend.onrender.com/seleccion/{id_usuario}";
         UnityWebRequest reqSel = UnityWebRequest.Get(urlSel);
         yield return reqSel.SendWebRequest();
@@ -100,10 +99,13 @@ public class InventarioController : MonoBehaviour
             {
                 personajeSeleccionado = sel.personaje_seleccionado;
                 fondoSeleccionado     = sel.fondo_seleccionado;
+
+                // ← Actualizar GameManager al cargar
+                if (GameManager.instancia != null)
+                    GameManager.instancia.personajeSeleccionado = ObtenerIndexPersonaje(personajeSeleccionado);
             }
         }
 
-        // Cargar inventario
         string urlTienda = $"https://supernumberland-backend.onrender.com/tienda/{id_usuario}";
         UnityWebRequest reqTienda = UnityWebRequest.Get(urlTienda);
         yield return reqTienda.SendWebRequest();
@@ -128,7 +130,6 @@ public class InventarioController : MonoBehaviour
             }
             else
             {
-                // Fondo 7 (default) siempre aparece
                 if (item.comprado || item.id_item == 7)
                     fondosComprados.Add(item);
             }
@@ -162,6 +163,11 @@ public class InventarioController : MonoBehaviour
             if (tipo == "personaje")
             {
                 personajeSeleccionado = id_item;
+
+                // ← Actualizar GameManager para que SpawnerJugador use el personaje correcto
+                if (GameManager.instancia != null)
+                    GameManager.instancia.personajeSeleccionado = ObtenerIndexPersonaje(id_item);
+
                 LlenarSlots(contenedorPersonajes, personajesComprados, false);
             }
             else
@@ -170,6 +176,18 @@ public class InventarioController : MonoBehaviour
                 LlenarSlots(contenedorFondos, fondosComprados, true);
             }
             Debug.Log($"✅ {tipo} seleccionado: {id_item}");
+        }
+    }
+
+    // ← Convierte id_item del backend al index del array de SpawnerJugador
+    int ObtenerIndexPersonaje(int id_item)
+    {
+        switch (id_item)
+        {
+            case 1: return 1; // Caballero
+            case 2: return 2; // Escudero
+            case 3: return 3; // Arquera
+            default: return 0; // Soldado default
         }
     }
 

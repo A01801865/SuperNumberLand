@@ -531,53 +531,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cfe5431974b64bffb78c84b1b567caa, type: 3}
---- !u!1 &477316590
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 477316592}
-  - component: {fileID: 477316591}
-  m_Layer: 0
-  m_Name: SpawnerJugador
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &477316591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477316590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8a27a415acc5a4d84fa831f05e0d12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnJugador
-  personajes:
-  - {fileID: 1900522843675492617, guid: e35e07ad53688bb4793cc4edd8aa997e, type: 3}
-  puntoSpawn: {fileID: 738561259}
---- !u!4 &477316592
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477316590}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.00613, y: -0.19458, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487036853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2535,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1958961049572308941, guid: 3cfe5431974b64bffb78c84b1b567caa, type: 3}
   m_PrefabInstance: {fileID: 1290954476}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1261459712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261459714}
+  - component: {fileID: 1261459713}
+  m_Layer: 0
+  m_Name: SpawnerJugador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1261459713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261459712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8a27a415acc5a4d84fa831f05e0d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnJugador
+  personajes:
+  - {fileID: 1900522843675492617, guid: e35e07ad53688bb4793cc4edd8aa997e, type: 3}
+  - {fileID: 2888560055472369138, guid: ce544c0e5fcba11439d914ddf0a3f1ca, type: 3}
+  - {fileID: 3534183361272286782, guid: 049c2a95fa0a8164e850fd0f089446f4, type: 3}
+  - {fileID: 11686482552628957, guid: 84fc8171681c2c8459b7cc28fd4a34c6, type: 3}
+  puntoSpawn: {fileID: 738561259}
+--- !u!4 &1261459714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261459712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.00613, y: -0.19458, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1290954476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2799,7 +2802,6 @@ SceneRoots:
   - {fileID: 1179397021}
   - {fileID: 1185848697}
   - {fileID: 738561259}
-  - {fileID: 477316592}
   - {fileID: 117466993}
   - {fileID: 253552466}
   - {fileID: 555891850}
@@ -2808,3 +2810,4 @@ SceneRoots:
   - {fileID: 1578133546}
   - {fileID: 1899646029}
   - {fileID: 487036862}
+  - {fileID: 1261459714}

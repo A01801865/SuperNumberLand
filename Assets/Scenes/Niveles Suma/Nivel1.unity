@@ -1369,6 +1369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnJugador
   personajes:
   - {fileID: 1900522843675492617, guid: e35e07ad53688bb4793cc4edd8aa997e, type: 3}
+  - {fileID: 2888560055472369138, guid: ce544c0e5fcba11439d914ddf0a3f1ca, type: 3}
+  - {fileID: 3534183361272286782, guid: 049c2a95fa0a8164e850fd0f089446f4, type: 3}
+  - {fileID: 11686482552628957, guid: 84fc8171681c2c8459b7cc28fd4a34c6, type: 3}
   puntoSpawn: {fileID: 1129748566}
 --- !u!4 &974045511
 Transform:
