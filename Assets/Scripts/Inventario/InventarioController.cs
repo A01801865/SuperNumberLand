@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class InventarioController : MonoBehaviour
 {
+    private static readonly Color colorTextoItems = new Color32(0xAD, 0x77, 0x57, 0xFF);
+
     public Sprite personaje1Sprite;
     public Sprite personaje2Sprite;
     public Sprite personaje3Sprite;
@@ -33,6 +35,7 @@ public class InventarioController : MonoBehaviour
     void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
+        fuenteTexto = Resources.Load<Font>("PressStart2P") ?? fuenteTexto;
 
         contenedorPersonajes = root.Q<VisualElement>("Personajes");
         contenedorFondos     = root.Q<VisualElement>("Fondos");
@@ -202,18 +205,18 @@ public class InventarioController : MonoBehaviour
                 imagen.pickingMode           = PickingMode.Ignore;
 
                 var nombre = new Label(item.nombre);
-                nombre.style.fontSize                = 20;
-                nombre.style.unityFontStyleAndWeight = FontStyle.Bold;
+                AplicarFuenteInventario(nombre);
+                nombre.style.fontSize                = 25;
+                nombre.style.unityFontStyleAndWeight = FontStyle.Normal;
                 nombre.style.unityTextAlign          = TextAnchor.MiddleCenter;
-                nombre.style.color                   = Color.white;
+                nombre.style.color                   = colorTextoItems;
                 nombre.style.marginTop               = 10;
                 nombre.pickingMode                   = PickingMode.Ignore;
-                if (fuenteTexto != null) nombre.style.unityFont = fuenteTexto;
 
                 var botonSel = new VisualElement();
                 botonSel.style.marginTop               = 8;
-                botonSel.style.width                   = 180;
-                botonSel.style.height                  = 55;
+                botonSel.style.width                   = 240;
+                botonSel.style.height                  = 65;
                 botonSel.style.backgroundColor         = estaSeleccionado
                     ? new Color(0.1f, 0.6f, 0.1f, 1f)
                     : new Color(0.6f, 0.3f, 0.1f, 1f);
@@ -226,11 +229,12 @@ public class InventarioController : MonoBehaviour
                 botonSel.pickingMode                   = PickingMode.Position;
 
                 var textoBoton = new Label(estaSeleccionado ? "Seleccionado" : "Seleccionar");
+                AplicarFuenteInventario(textoBoton);
                 textoBoton.style.unityTextAlign = TextAnchor.MiddleCenter;
                 textoBoton.style.color          = Color.white;
                 textoBoton.style.fontSize       = 18;
+                textoBoton.style.whiteSpace     = WhiteSpace.Normal;
                 textoBoton.pickingMode          = PickingMode.Ignore;
-                if (fuenteTexto != null) textoBoton.style.unityFont = fuenteTexto;
                 botonSel.Add(textoBoton);
 
                 var itemRef = item;
@@ -251,6 +255,13 @@ public class InventarioController : MonoBehaviour
 
             slotIndex++;
         }
+    }
+
+    void AplicarFuenteInventario(Label label)
+    {
+        label.AddToClassList("textoInventario");
+        label.style.unityFontStyleAndWeight = FontStyle.Normal;
+        if (fuenteTexto != null) label.style.unityFont = fuenteTexto;
     }
 
     Sprite ObtenerSprite(int id_item)

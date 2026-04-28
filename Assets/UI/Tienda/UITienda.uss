@@ -83,21 +83,26 @@
 }
 
 .titulo {
-    -unity-font: resource("ARCADECLASSIC");
+    -unity-font-definition: resource("PressStart2P");
     font-size: 26px;
-    unity-font-style: bold;
-    unity-text-align: middle-center;
+    -unity-font-style: normal;
+    -unity-text-align: middle-center;
 }
 
 .precio {
-    -unity-font: resource("ARCADECLASSIC");
+    -unity-font-definition: resource("PressStart2P");
     font-size: 24px;
 }
 
 .botones {
-    -unity-font: resource("ARCADECLASSIC");
+    -unity-font-definition: resource("PressStart2P");
     font-size: 22px;
     color: white;
+}
+
+.textoTienda {
+    -unity-font-definition: resource("PressStart2P");
+    -unity-font-style: normal;
 }
 
 .nombre {

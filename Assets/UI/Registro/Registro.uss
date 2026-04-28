@@ -15,7 +15,7 @@
     border-top-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0);
     -unity-background-image-tint-color: rgb(233, 150, 122);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     transition-duration: 0.2s;
     margin-top: 0;
     margin-right: 70px;
@@ -45,18 +45,18 @@
     margin-right: 50px;
     margin-bottom: 0;
     margin-left: 50px;
-    color: rgb(255, 255, 255);
-    font-size: 44px;
+    color: rgb(173, 119, 87);
+    font-size: 40px;
     -unity-text-align: upper-center;
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     background-image: none;
     background-color: rgba(0, 0, 0, 0);
     height: 17%;
     width: 70%;
     align-self: center;
-    -unity-text-outline-width: 1px;
-    -unity-text-outline-color: rgb(0, 0, 0);
-    text-shadow: 0 1.5px 0 rgb(0, 0, 0);
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    text-shadow: 0 2px 0 rgb(0, 0, 0);
 }
 
 #unity-text-input {
@@ -68,7 +68,7 @@
     background-image: url("project://database/Assets/Wood%20UI/Sprites/Inscriptions/2.PNG?fileID=21300000&guid=bd7f41a0d3cd4bc4e99336fd3504d783&type=3#2");
     -unity-background-image-tint-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     font-size: 30px;
 }
 
@@ -78,7 +78,7 @@
     border-right-color: rgba(123, 43, 0, 0);
     border-top-color: rgba(123, 43, 0, 0);
     border-bottom-color: rgba(123, 43, 0, 0);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     background-image: url("project://database/Assets/Wood%20UI/Sprites/Inscriptions/2.PNG?fileID=21300000&guid=bd7f41a0d3cd4bc4e99336fd3504d783&type=3#2");
     color: rgb(255, 255, 255);
     font-size: 40px;
@@ -103,5 +103,5 @@
     color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0);
     -unity-font-style: normal;
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
 }

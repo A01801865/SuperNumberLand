@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class TiendaController : MonoBehaviour
 {
+    private static readonly Color colorTextoItems = new Color32(0xAD, 0x77, 0x57, 0xFF);
+
     // SPRITES
     public Sprite personaje1Sprite;
     public Sprite personaje2Sprite;
@@ -32,6 +34,7 @@ public class TiendaController : MonoBehaviour
     void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
+        fuenteTexto = Resources.Load<Font>("PressStart2P") ?? fuenteTexto;
 
         contenedorPersonajes = root.Q<VisualElement>("Personajes");
         contenedorFondos     = root.Q<VisualElement>("Fondos");
@@ -179,12 +182,12 @@ public class TiendaController : MonoBehaviour
 
         // Nombre
         var nombre = new Label(item.nombre);
-        nombre.style.fontSize                = 22;
-        nombre.style.unityFontStyleAndWeight = FontStyle.Bold;
+        AplicarFuenteTienda(nombre);
+        nombre.style.fontSize                = 35;
+        nombre.style.unityFontStyleAndWeight = FontStyle.Normal;
         nombre.style.unityTextAlign          = TextAnchor.MiddleCenter;
-        nombre.style.color                   = Color.white;
+        nombre.style.color                   = colorTextoItems;
         nombre.pickingMode                   = PickingMode.Ignore;
-        if (fuenteTexto != null) nombre.style.unityFont = fuenteTexto;
 
         // Precio con icono
         var contPrecio = new VisualElement();
@@ -197,8 +200,8 @@ public class TiendaController : MonoBehaviour
         if (monedaSprite != null)
         {
             var icono = new VisualElement();
-            icono.style.width           = 35;
-            icono.style.height          = 35;
+            icono.style.width           = 50;
+            icono.style.height          = 50;
             icono.style.backgroundImage = new StyleBackground(monedaSprite);
             icono.style.backgroundSize  = new BackgroundSize(BackgroundSizeType.Contain);
             icono.pickingMode           = PickingMode.Ignore;
@@ -206,10 +209,10 @@ public class TiendaController : MonoBehaviour
         }
 
         var precio = new Label(item.precio.ToString());
-        precio.style.fontSize = 22;
-        precio.style.color    = Color.white;
+        AplicarFuenteTienda(precio);
+        precio.style.fontSize = 35;
+        precio.style.color    = colorTextoItems;
         precio.pickingMode    = PickingMode.Ignore;
-        if (fuenteTexto != null) precio.style.unityFont = fuenteTexto;
         contPrecio.Add(precio);
 
         // Botón como VisualElement
@@ -229,11 +232,11 @@ public class TiendaController : MonoBehaviour
         boton.pickingMode                    = PickingMode.Position;
 
         var textoBoton = new Label(item.comprado ? "Comprado" : "Comprar");
+        AplicarFuenteTienda(textoBoton);
         textoBoton.style.unityTextAlign = TextAnchor.MiddleCenter;
         textoBoton.style.color          = Color.white;
         textoBoton.style.fontSize       = 20;
         textoBoton.pickingMode          = PickingMode.Ignore;
-        if (fuenteTexto != null) textoBoton.style.unityFont = fuenteTexto;
         boton.Add(textoBoton);
 
         if (!item.comprado)
@@ -250,6 +253,13 @@ public class TiendaController : MonoBehaviour
         slot.Add(nombre);
         slot.Add(contPrecio);
         slot.Add(boton);
+    }
+
+    void AplicarFuenteTienda(Label label)
+    {
+        label.AddToClassList("textoTienda");
+        label.style.unityFontStyleAndWeight = FontStyle.Normal;
+        if (fuenteTexto != null) label.style.unityFont = fuenteTexto;
     }
 
     string ObtenerNombreSlot(int id_item)

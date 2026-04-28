@@ -23,4 +23,34 @@
     transition-duration: 0.35s;
 }
 
+#unity-tracker {
+    background-color: rgb(216, 181, 148);
+    border-left-color: rgb(216, 181, 148);
+    border-right-color: rgb(216, 181, 148);
+    border-top-color: rgb(216, 181, 148);
+    border-bottom-color: rgb(216, 181, 148);
+}
 
+#unity-dragger {
+    background-color: rgb(173, 119, 87);
+}
+
+#unity-low-button {
+    background-color: rgb(216, 181, 148);
+    border-left-color: rgb(216, 181, 148);
+    border-right-color: rgb(216, 181, 148);
+    border-top-color: rgb(216, 181, 148);
+    border-bottom-color: rgb(216, 181, 148);
+    background-image: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4154780841294389669&guid=019f4e2403a62784aa159878b35356e2&type=3#arrow-down");
+    -unity-background-image-tint-color: rgb(122, 72, 65);
+}
+
+#unity-high-button {
+    background-color: rgb(216, 181, 148);
+    border-left-color: rgb(216, 181, 148);
+    border-right-color: rgb(216, 181, 148);
+    border-top-color: rgb(216, 181, 148);
+    border-bottom-color: rgb(216, 181, 148);
+    background-image: url("project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1304905567622442630&guid=019f4e2403a62784aa159878b35356e2&type=3#arrow-down@2x");
+    -unity-background-image-tint-color: rgb(122, 72, 65);
+}
