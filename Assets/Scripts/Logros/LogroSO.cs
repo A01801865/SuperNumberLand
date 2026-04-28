@@ -5,6 +5,7 @@ public class LogroSO : ScriptableObject
 {
     [Header("Configuración Básica")]
     public string id;
+    public int idBD; // <-- AGREGA ESTO (coincide con id_logro en MySQL)
     public string titulo;
     [TextArea] public string descripcion;
 

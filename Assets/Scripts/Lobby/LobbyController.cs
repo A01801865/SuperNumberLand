@@ -5,18 +5,22 @@ using System.Collections;
 
 public class LobbyController : MonoBehaviour
 {
-    public Sprite fondoDefault;        // back
-    public Sprite fondoNoche;          // parallax-mountain-bg
-    public Sprite fondoArboles;        // frame0000
-    public Sprite fondoNubes;          // demo01_PixelSky
+    public Sprite fondoDefault;
+    public Sprite fondoNoche;
+    public Sprite fondoArboles;
+    public Sprite fondoNubes;
 
-    public SpriteRenderer fondoRenderer; // arrastrar el GameObject "back"
+    private SpriteRenderer fondoRenderer;
 
-    void OnEnable()
+    void Start()
     {
+        GameObject backObj = GameObject.Find("back");
+        if (backObj != null)
+            fondoRenderer = backObj.GetComponent<SpriteRenderer>();
+
         var root       = GetComponent<UIDocument>().rootVisualElement;
-        var apodo      = root.Q<TextField>("ApodoJugador");
         var numMonedas = root.Q<Label>("NumMonedas");
+        var apodo      = root.Q<TextField>("ApodoJugador");
 
         string usuario = PlayerPrefs.GetString("usuario", "");
         int id_usuario = PlayerPrefs.GetInt("user_id", 0);
@@ -26,7 +30,9 @@ public class LobbyController : MonoBehaviour
 
         if (id_usuario == 0) id_usuario = 6;
 
-        StartCoroutine(CargarMonedas(id_usuario, numMonedas));
+        if (numMonedas != null)
+            StartCoroutine(CargarMonedas(id_usuario, numMonedas));
+
         StartCoroutine(CargarFondo(id_usuario));
     }
 
@@ -56,8 +62,25 @@ public class LobbyController : MonoBehaviour
             if (res.success && fondoRenderer != null)
             {
                 fondoRenderer.sprite = ObtenerSpriteFondo(res.fondo_seleccionado);
+                AjustarEscala();
             }
         }
+    }
+
+    void AjustarEscala()
+    {
+        if (fondoRenderer == null || fondoRenderer.sprite == null) return;
+
+        Camera cam = Camera.main;
+        float alturaWorld  = cam.orthographicSize * 2f;
+        float anchoWorld   = alturaWorld * cam.aspect;
+        float alturaSprite = fondoRenderer.sprite.bounds.size.y;
+        float anchoSprite  = fondoRenderer.sprite.bounds.size.x;
+
+        float scaleX = anchoWorld  / anchoSprite;
+        float scaleY = alturaWorld / alturaSprite;
+
+        fondoRenderer.transform.localScale = new Vector3(scaleX, scaleY, 1f);
     }
 
     Sprite ObtenerSpriteFondo(int id_item)

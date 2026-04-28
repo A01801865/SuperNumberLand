@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b69571c9b3ae13488a7c4f827153834, type: 3}
-  m_Name: NuevoLogro
+  m_Name: PrincipianteSumas
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
-  id: 
-  titulo: 
-  descripcion: 
-  meta: 0
+  id: logro_nivel_sumas
+  idBD: 7
+  titulo: Principiante Sumas
+  descripcion: Completa tu primer nivel de sumas
+  meta: 1
   progresoActual: 0
-  monedasRecompensa: 0
+  monedasRecompensa: 25
   reclamado: 0

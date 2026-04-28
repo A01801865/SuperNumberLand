@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b69571c9b3ae13488a7c4f827153834, type: 3}
   m_Name: Monedas
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
-  id: logro_monedas_500
-  titulo: "Peque\xF1o Tesoro"
+  id: logro_monedas_millonario
+  idBD: 10
+  titulo: Millonario
   descripcion: Recolecta un total de 500 monedas en las plataformas.
   meta: 500
   progresoActual: 0
-  monedasRecompensa: 0
+  monedasRecompensa: 250
   reclamado: 0

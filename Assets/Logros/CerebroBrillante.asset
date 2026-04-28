@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b69571c9b3ae13488a7c4f827153834, type: 3}
-  m_Name: "Sinda\xF1o"
+  m_Name: CerebroBrillante
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
-  id: "logro_sin_da\xF1o"
-  idBD: 11
-  titulo: "Sin Rasgu\xF1os"
-  descripcion: Completa un nivel sin perder ninguna de tus 3 vidas.
-  meta: 1
+  id: logro_cerebro
+  idBD: 3
+  titulo: Cerebro Birllante
+  descripcion: 'Responde correctamente 10 preguntas seguidas '
+  meta: 10
   progresoActual: 0
-  monedasRecompensa: 50
+  monedasRecompensa: 30
   reclamado: 0

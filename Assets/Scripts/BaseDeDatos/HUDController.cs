@@ -67,8 +67,27 @@ public class HUDController : MonoBehaviour
         {
             SeleccionResponse res = JsonUtility.FromJson<SeleccionResponse>(req.downloadHandler.text);
             if (res.success && fondoRenderer != null)
+            {
                 fondoRenderer.sprite = ObtenerSpriteFondo(res.fondo_seleccionado);
+                AjustarEscala();
+            }
         }
+    }
+
+    void AjustarEscala()
+    {
+        if (fondoRenderer == null || fondoRenderer.sprite == null) return;
+
+        Camera cam = Camera.main;
+        float alturaWorld  = cam.orthographicSize * 2f;
+        float anchoWorld   = alturaWorld * cam.aspect;
+        float alturaSprite = fondoRenderer.sprite.bounds.size.y;
+        float anchoSprite  = fondoRenderer.sprite.bounds.size.x;
+
+        float scaleX = anchoWorld  / anchoSprite;
+        float scaleY = alturaWorld / alturaSprite;
+
+        fondoRenderer.transform.localScale = new Vector3(scaleX, scaleY, 1f);
     }
 
     Sprite ObtenerSpriteFondo(int id_item)

@@ -119,6 +119,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &169830743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169830745}
+  - component: {fileID: 169830744}
+  m_Layer: 0
+  m_Name: LogrosManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &169830744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169830743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9730efb054111436893620769d06abde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LogrosManager
+  todosLosLogros:
+  - {fileID: 11400000, guid: eff01e8fdc34b6b4393aaef7cceb06dd, type: 2}
+  - {fileID: 11400000, guid: 289008211fe6f184e94e3940dea35a57, type: 2}
+  - {fileID: 11400000, guid: 5d2424638b16166429d96e6cb1ce5594, type: 2}
+  - {fileID: 11400000, guid: 641dacdf268bc1c499a697abf93398f7, type: 2}
+  - {fileID: 11400000, guid: 2f360146743c05247991a4660ca65901, type: 2}
+  - {fileID: 11400000, guid: 9bdd137def5e84457a2aa21e62c3d424, type: 2}
+  - {fileID: 11400000, guid: ad54106a3ba1d5848ac4eb276f08859f, type: 2}
+  - {fileID: 11400000, guid: e506c835edf584259a0b99545c09703b, type: 2}
+  - {fileID: 11400000, guid: 9968128da0a90454ca955729ffa9e4bb, type: 2}
+  - {fileID: 11400000, guid: 0c78f085abacd614a9cfd5d48691ffe1, type: 2}
+--- !u!4 &169830745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169830743}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.22622, y: -0.53828, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854433589
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,10 +413,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LobbyController
   fondoDefault: {fileID: 21300000, guid: 8e160a2a620644cd6afef9119dad1093, type: 3}
-  fondoNoche: {fileID: 21300000, guid: 20dead3c7dd1356488f5890982fba69d, type: 3}
+  fondoNoche: {fileID: 21300000, guid: 8561de75836fa478e9cb13037cb8d396, type: 3}
   fondoArboles: {fileID: 21300000, guid: b0efbc267bf5af34ebc3f2f8e5488a47, type: 3}
   fondoNubes: {fileID: 21300000, guid: af1060810ec74a443a016417c61fd5f7, type: 3}
-  fondoRenderer: {fileID: 1389802523}
 --- !u!114 &1161311644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,3 +932,4 @@ SceneRoots:
   - {fileID: 1161311636}
   - {fileID: 854433591}
   - {fileID: 1001804608}
+  - {fileID: 169830745}

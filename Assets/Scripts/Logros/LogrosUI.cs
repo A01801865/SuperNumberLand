@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Networking;
 using System.Collections.Generic;
-using System.Collections; // Necesario para el retraso
+using System.Collections;
 
 public class LogrosUI : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class LogrosUI : MonoBehaviour
     
     private VisualElement contenedor;
 
-    // Usamos Start y una Corrutina para dar tiempo a que la UI cargue
     void Start() 
     {
         StartCoroutine(EsperarYActualizar());
@@ -21,7 +21,6 @@ public class LogrosUI : MonoBehaviour
 
     IEnumerator EsperarYActualizar()
     {
-        // Esperamos un frame para que el UIDocument esté listo
         yield return null;
 
         var uiDocument = GetComponent<UIDocument>();
@@ -29,7 +28,7 @@ public class LogrosUI : MonoBehaviour
         if (uiDocument == null || uiDocument.rootVisualElement == null)
         {
             Debug.LogWarning("Esperando a que el UIDocument esté listo...");
-            yield return new WaitForSeconds(0.1f); // Un ligero retraso extra
+            yield return new WaitForSeconds(0.1f);
             uiDocument = GetComponent<UIDocument>();
         }
 
@@ -40,6 +39,12 @@ public class LogrosUI : MonoBehaviour
 
             if (contenedor != null)
             {
+                int idUsuario = PlayerPrefs.GetInt("user_id", 0);
+                if (idUsuario == 0) idUsuario = 6;
+
+                if (LogrosManager.Instance != null)
+                    yield return StartCoroutine(LogrosManager.Instance.CargarLogrosDesideBD(idUsuario));
+
                 ActualizarInterfaz();
             }
             else
@@ -58,7 +63,6 @@ public class LogrosUI : MonoBehaviour
         {
             VisualElement fila = logroTemplate.Instantiate();
 
-            // Llenar datos (Asegúrate de que estos nombres coincidan en UI Builder)
             fila.Q<Label>("LabelTitulo").text = logro.titulo;
             fila.Q<Label>("LabelMonedas").text = $"+{logro.monedasRecompensa}";
 
@@ -73,17 +77,23 @@ public class LogrosUI : MonoBehaviour
             Button btn = fila.Q<Button>("BotonCobrar");
             if (btn != null)
             {
-                if (logro.reclamado) {
+                if (logro.reclamado)
+                {
                     btn.text = "Canjeado";
                     btn.SetEnabled(false);
-                } else if (logro.EstaCompletado) {
+                }
+                else if (logro.EstaCompletado)
+                {
                     btn.text = "¡Recoger!";
                     btn.SetEnabled(true);
                     btn.clicked += () => {
-                        logro.reclamado = true;
-                        ActualizarInterfaz();
+                        int idUsuario = PlayerPrefs.GetInt("user_id", 0);
+                        if (idUsuario == 0) idUsuario = 6;
+                        StartCoroutine(ReclamarRecompensa(logro, idUsuario));
                     };
-                } else {
+                }
+                else
+                {
                     btn.text = "Bloqueado";
                     btn.SetEnabled(false);
                 }
@@ -91,5 +101,33 @@ public class LogrosUI : MonoBehaviour
 
             contenedor.Add(fila);
         }
+    }
+
+    IEnumerator ReclamarRecompensa(LogroSO logro, int idUsuario)
+    {
+        if (logro.monedasRecompensa > 0)
+        {
+            string url = "https://supernumberland-backend.onrender.com/sumar-monedas";
+            string json = JsonUtility.ToJson(new SumarMonedasData
+            {
+                id_usuario = idUsuario,
+                cantidad   = logro.monedasRecompensa
+            });
+
+            UnityWebRequest req = new UnityWebRequest(url, "POST");
+            req.uploadHandler   = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
+            req.downloadHandler = new DownloadHandlerBuffer();
+            req.SetRequestHeader("Content-Type", "application/json");
+
+            yield return req.SendWebRequest();
+
+            if (req.result == UnityWebRequest.Result.Success)
+                Debug.Log($"✅ Recompensa de {logro.monedasRecompensa} monedas enviada");
+            else
+                Debug.LogError("Error al reclamar recompensa: " + req.error);
+        }
+
+        logro.reclamado = true;
+        ActualizarInterfaz();
     }
 }

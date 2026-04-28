@@ -44,7 +44,6 @@ public class TiendaController : MonoBehaviour
 
         id_usuario = PlayerPrefs.GetInt("user_id", 0);
 
-        // TEMPORAL PARA PRUEBAS
         if (id_usuario == 0)
         {
             id_usuario = 6;
@@ -97,29 +96,16 @@ public class TiendaController : MonoBehaviour
             yield break;
         }
 
-        Debug.Log("Respuesta tienda: " + req.downloadHandler.text);
-
         TiendaResponse res = JsonUtility.FromJson<TiendaResponse>(req.downloadHandler.text);
-
-        Debug.Log("Success: " + res.success);
-        Debug.Log("Items count: " + (res.items != null ? res.items.Count.ToString() : "NULL"));
-
         if (!res.success) yield break;
 
         foreach (var item in res.items)
         {
-            Debug.Log($"Item: {item.id_item} - {item.nombre} - comprado: {item.comprado}");
-
             string nombreSlot = ObtenerNombreSlot(item.id_item);
-            Debug.Log("Slot buscado: " + nombreSlot);
-
             if (string.IsNullOrEmpty(nombreSlot)) continue;
 
             var root = GetComponent<UIDocument>().rootVisualElement;
             var slot = root.Q<VisualElement>(nombreSlot);
-
-            Debug.Log("Slot encontrado: " + (slot != null ? "SI" : "NO"));
-
             if (slot == null) continue;
 
             LlenarSlot(slot, item);
@@ -150,11 +136,18 @@ public class TiendaController : MonoBehaviour
                 item.comprado = true;
                 LlenarSlot(slot, item);
                 Debug.Log("✅ Compra exitosa: " + item.nombre);
+
+                // Logro: Coleccionista (id_logro = 9)
+                LogrosManager.Instance?.DesbloquearLogro(9);
             }
             else
             {
                 Debug.Log("❌ " + res.message);
             }
+        }
+        else
+        {
+            Debug.LogError("Error en compra: " + req.error);
         }
     }
 
@@ -168,7 +161,6 @@ public class TiendaController : MonoBehaviour
         slot.style.alignItems     = Align.Center;
         slot.style.justifyContent = Justify.Center;
 
-        // Imagen
         var imagen = new VisualElement();
         imagen.style.width           = 180;
         imagen.style.height          = 180;
@@ -177,7 +169,6 @@ public class TiendaController : MonoBehaviour
         imagen.style.alignSelf       = Align.Center;
         imagen.pickingMode           = PickingMode.Ignore;
 
-        // Nombre
         var nombre = new Label(item.nombre);
         nombre.style.fontSize                = 22;
         nombre.style.unityFontStyleAndWeight = FontStyle.Bold;
@@ -186,7 +177,6 @@ public class TiendaController : MonoBehaviour
         nombre.pickingMode                   = PickingMode.Ignore;
         if (fuenteTexto != null) nombre.style.unityFont = fuenteTexto;
 
-        // Precio con icono
         var contPrecio = new VisualElement();
         contPrecio.style.flexDirection  = FlexDirection.Row;
         contPrecio.style.alignItems     = Align.Center;
@@ -212,7 +202,6 @@ public class TiendaController : MonoBehaviour
         if (fuenteTexto != null) precio.style.unityFont = fuenteTexto;
         contPrecio.Add(precio);
 
-        // Botón como VisualElement
         var boton = new VisualElement();
         boton.style.marginTop                = 8;
         boton.style.width                    = 180;
@@ -241,7 +230,6 @@ public class TiendaController : MonoBehaviour
             var itemRef = item;
             var slotRef = slot;
             boton.RegisterCallback<ClickEvent>(evt => {
-                Debug.Log("Click en: " + itemRef.nombre);
                 StartCoroutine(ComprarRequest(itemRef, slotRef));
             });
         }

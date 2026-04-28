@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     private int saltosRestantes;
 
+    private static int contadorShift = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,7 +49,9 @@ public class PlayerController : MonoBehaviour
 
         saltosRestantes = maxSaltos;
 
-        // ← Buscar referencias automáticamente si no están asignadas
+        // Cargar contador guardado entre sesiones
+        contadorShift = PlayerPrefs.GetInt("contador_shift", 0);
+
         if (puntoRespawn == null)
         {
             GameObject respawn = GameObject.Find("Respawn");
@@ -58,7 +62,6 @@ public class PlayerController : MonoBehaviour
         if (uiVidas == null)
             uiVidas = FindFirstObjectByType<UIVidasToolkit>();
 
-        // ← Tomar vidas guardadas
         if (GameManagerProgreso.Instance != null)
             vidas = GameManagerProgreso.Instance.vidasActuales;
 
@@ -93,6 +96,13 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("atacar");
             DetectarGolpe();
+
+            // Logro: Boton Pro (idBD 8) — presionar Shift 50 veces
+            contadorShift++;
+            PlayerPrefs.SetInt("contador_shift", contadorShift);
+            Debug.Log($"Shift presionado: {contadorShift}/50");
+            if (contadorShift >= 50)
+                LogrosManager.Instance?.DesbloquearLogro(8);
         }
 
         if (transform.position.y < limiteCaida)

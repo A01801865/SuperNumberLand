@@ -248,7 +248,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LogrosUI
   logroTemplate: {fileID: 9197481963319205126, guid: 1fdd64b67fa55024d90d745752521be1, type: 3}
   listaDeLogros:
-  - {fileID: 11400000, guid: 4ccd6f032955f4e4e843cc8cdcc16459, type: 2}
   - {fileID: 11400000, guid: 0c78f085abacd614a9cfd5d48691ffe1, type: 2}
   - {fileID: 11400000, guid: eff01e8fdc34b6b4393aaef7cceb06dd, type: 2}
   - {fileID: 11400000, guid: 289008211fe6f184e94e3940dea35a57, type: 2}
@@ -257,6 +256,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f360146743c05247991a4660ca65901, type: 2}
   - {fileID: 11400000, guid: 5d2424638b16166429d96e6cb1ce5594, type: 2}
   - {fileID: 11400000, guid: ad54106a3ba1d5848ac4eb276f08859f, type: 2}
+  - {fileID: 11400000, guid: e506c835edf584259a0b99545c09703b, type: 2}
+  - {fileID: 11400000, guid: 9bdd137def5e84457a2aa21e62c3d424, type: 2}
 --- !u!114 &223472145
 MonoBehaviour:
   m_ObjectHideFlags: 0

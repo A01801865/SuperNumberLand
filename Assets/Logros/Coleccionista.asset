@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b69571c9b3ae13488a7c4f827153834, type: 3}
-  m_Name: Veloz
+  m_Name: Coleccionista
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
-  id: logro_veloz_01
-  titulo: Contra el Reloj
-  descripcion: Termina 5 niveles antes de que el tiempo se agote.
-  meta: 5
+  id: logro_coleccionista
+  idBD: 9
+  titulo: Collecionista
+  descripcion: Compra tu primer item en tienda
+  meta: 1
   progresoActual: 0
-  monedasRecompensa: 0
+  monedasRecompensa: 20
   reclamado: 0

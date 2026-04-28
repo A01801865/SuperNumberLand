@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b69571c9b3ae13488a7c4f827153834, type: 3}
   m_Name: LogroMulti
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
-  id: logro_multi_unlock
+  id: logro_multiplicar
+  idBD: 6
   titulo: Experto en Multiplicar
   descripcion: "Re\xFAne 45 estrellas totales para abrir multiplicaciones."
   meta: 45
   progresoActual: 0
-  monedasRecompensa: 0
+  monedasRecompensa: 75
   reclamado: 0

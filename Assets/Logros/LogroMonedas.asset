@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b69571c9b3ae13488a7c4f827153834, type: 3}
   m_Name: LogroMonedas
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
-  id: logro_sumas_01
-  titulo: Principiante de Sumas
-  descripcion: Consigue tus primeras 5 estrellas en niveles de suma.
-  meta: 5
+  id: logro_monedas
+  idBD: 4
+  titulo: "Peque\xF1o Tesoro"
+  descripcion: Consigue tus primeras 6 estrellas en niveles de suma.
+  meta: 6
   progresoActual: 0
-  monedasRecompensa: 50
+  monedasRecompensa: 25
   reclamado: 0

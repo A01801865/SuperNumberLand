@@ -6,6 +6,9 @@ public class ObjetoRespuesta : MonoBehaviour
     public int valor;
     private TextMeshPro textoTMP;
 
+    private static int rachaCorrectas = 0;
+    private static float tiempoUltimaPregunta = -1f;
+
     void Start()
     {
         textoTMP = GetComponentInChildren<TextMeshPro>();
@@ -20,6 +23,9 @@ public class ObjetoRespuesta : MonoBehaviour
 
         if (textoTMP != null)
             textoTMP.text = valor.ToString();
+
+        // Registrar el momento en que apareció la pregunta
+        tiempoUltimaPregunta = Time.time;
     }
 
     public void RecibirGolpe()
@@ -32,6 +38,18 @@ public class ObjetoRespuesta : MonoBehaviour
         if (valor == generador.RespuestaCorrecta)
         {
             Debug.Log("Correcto");
+
+            // Logro: Dedo Veloz (idBD 8) — respondió en menos de 3 segundos
+            if (tiempoUltimaPregunta >= 0 && (Time.time - tiempoUltimaPregunta) < 3f)
+                LogrosManager.Instance?.DesbloquearLogro(8);
+
+            // Racha para Intocable y Cerebro Brillante
+            rachaCorrectas++;
+            if (rachaCorrectas >= 10)
+            {
+                LogrosManager.Instance?.DesbloquearLogro(2);  // Intocable
+                LogrosManager.Instance?.DesbloquearLogro(3);  // Cerebro Brillante
+            }
 
             Puerta puerta = FindFirstObjectByType<Puerta>();
             if (puerta != null)
@@ -49,6 +67,9 @@ public class ObjetoRespuesta : MonoBehaviour
         {
             Debug.Log("Incorrecto");
 
+            // Resetear racha al fallar
+            rachaCorrectas = 0;
+
             if (ui != null)
                 ui.MostrarIncorrecto();
 
@@ -56,5 +77,11 @@ public class ObjetoRespuesta : MonoBehaviour
             if (player != null)
                 player.PerderVida();
         }
+    }
+
+    public static void ResetearRacha()
+    {
+        rachaCorrectas = 0;
+        tiempoUltimaPregunta = -1f;
     }
 }

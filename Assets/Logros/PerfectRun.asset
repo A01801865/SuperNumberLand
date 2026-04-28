@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: PerfectRun
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
   id: logro_perfect_run
-  titulo: Cerebro Brillante
+  idBD: 2
+  titulo: Intocable
   descripcion: Responde 10 preguntas seguidas sin cometer errores.
   meta: 10
   progresoActual: 0
-  monedasRecompensa: 0
+  monedasRecompensa: 100
   reclamado: 0

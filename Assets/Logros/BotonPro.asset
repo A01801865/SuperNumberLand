@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: BotonPro
   m_EditorClassIdentifier: Assembly-CSharp::LogroSO
   id: logro_boton_pro
-  titulo: Dedo Veloz
+  idBD: 8
+  titulo: Boton Pro
   descripcion: "Usa el bot\xF3n de acci\xF3n para capturar 50 respuestas."
   meta: 50
-  progresoActual: 0
-  monedasRecompensa: 0
-  reclamado: 0
+  progresoActual: 50
+  monedasRecompensa: 40
+  reclamado: 1
