@@ -2405,7 +2405,7 @@ GameObject:
   - component: {fileID: 1466046833}
   - component: {fileID: 1466046832}
   - component: {fileID: 1466046831}
-  - component: {fileID: 1466046830}
+  - component: {fileID: 1466046839}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -2413,18 +2413,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1466046830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466046829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2fffdd4d5332e947b2228cb1110cb48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VolverANiveles
 --- !u!114 &1466046831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,6 +2524,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466046839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466046829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d952f2defd2534592abfbda6ae0e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RVolverANiveles
 --- !u!1 &1688838774
 GameObject:
   m_ObjectHideFlags: 0
