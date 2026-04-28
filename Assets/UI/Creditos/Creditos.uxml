@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Creditos/UICreditos.uss?fileID=7433441132597879392&amp;guid=c9e7e270839cd4df0a0ce7b0264f1c53&amp;type=3"/>
+    <Style src="project://database/Assets/UI/Creditos/UICreditos.uss?fileID=7433441132597879392&amp;guid=c9e7e270839cd4df0a0ce7b0264f1c53&amp;type=3#UICreditos"/>
     <ui:VisualElement name="Fondo" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Wood%20UI/Sprites/Borders/ExamplesLikeBorders/Inventory.png?fileID=21300000&amp;guid=2a858408be4776b4486c986c764b4850&amp;type=3#Inventory&quot;); position: absolute; width: 1600px; height: 900px; align-self: center; justify-content: flex-start; align-content: flex-start; align-items: stretch; bottom: 150px; display: flex;">
         <ui:Label text="Créditos" name="Titulo" style="position: absolute; font-size: 60px; -unity-font-definition: resource(&quot;PressStart2P&quot;); align-self: center; top: 50px; color: rgb(255, 255, 255); -unity-text-outline-width: 3px; -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 0 2px 0 rgb(0, 0, 0);"/>
         <ui:ScrollView style="height: 600px; position: absolute; width: 1295px; left: 150px; top: 170px; justify-content: flex-start; align-items: flex-start; align-content: flex-start; align-self: flex-start;">
@@ -11,7 +11,10 @@
                 <ui:Label text="Diego Alexander Cisneros Ramos&#10;" name="DiegoC" class="texto" style="position: relative; font-size: 39px; top: auto; left: auto;"/>
                 <ui:Label text="Maximiliano Arriaga Navarro" name="Maximiliano" class="texto" style="position: relative; font-size: 39px; top: auto; left: auto;"/>
                 <ui:Label text="" name="Espacio" class="texto"/>
-                <ui:Label text="SuperNumberland fue creado con el objetivo de ayudar a los estudiantes de la fundación NIDE a que practiquen  matemáticas de forma interactiva, divertida y motivadora, mientras progresan en el juego y desbloquean recompensas como monedas, skins y accesorios." name="Info" class="texto text-height" style="white-space: pre-wrap; width: 1250px; -unity-paragraph-spacing: 0; height: 436px; font-size: 39px; word-spacing: 0; letter-spacing: 5px; -unity-text-generator: standard; -unity-text-align: upper-center; -unity-text-auto-size: none; text-overflow: clip;"/>
+                <ui:Label text="" name="Espacio" class="texto"/>
+                <ui:Label text="SuperNumberland fue creado por un grupo de estudiantes del Tecnológico de Monterrey Campus Estado de México de la carrera de Ingeniería en Tecnologías Computacionales como proyecto del curso Construcción de software y toma de decisiones con el objetivo de ayudar a los alumnos de la fundación NIDE a que practiquen  matemáticas de forma interactiva, divertida y motivadora, mientras progresan en el juego y desbloquean recompensas como monedas, skins y accesorios." name="Info" class="texto text-height" style="white-space: pre-wrap; width: 1250px; -unity-paragraph-spacing: 0; height: 750px; font-size: 39px; word-spacing: 0; letter-spacing: 5px; -unity-text-generator: standard; -unity-text-align: upper-center; -unity-text-auto-size: none; text-overflow: clip;"/>
+                <ui:Label text="Correo de contacto:" name="CorreoText" class="texto" style="font-size: 39px;"/>
+                <ui:Label text="supernumberland@gmail.com" name="Correo" class="texto" style="font-size: 39px;"/>
             </ui:VisualElement>
         </ui:ScrollView>
     </ui:VisualElement>

@@ -18,7 +18,7 @@
     background-image: url("project://database/Assets/Wood%20UI/Sprites/Inscriptions/2.PNG?fileID=21300000&guid=bd7f41a0d3cd4bc4e99336fd3504d783&type=3#2");
     -unity-background-image-tint-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
-    -unity-font-definition: url("project://database/Assets/fuente%20texto/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
+    -unity-font-definition: url("project://database/Assets/Resources/PressStart2P.ttf?fileID=12800000&guid=a5c6c7959cecf4f82b41ec6fe2e1768b&type=3#PressStart2P");
     font-size: 44px;
     width: 100%;
     height: 100px;
@@ -36,7 +36,7 @@
 }
 
 .textfields {
-    color: rgb(0, 0, 0);
+    color: rgb(26, 21, 21);
     font-size: 54px;
 }
 
