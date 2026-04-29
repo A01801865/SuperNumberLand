@@ -16,6 +16,27 @@ public class NivelesController : MonoBehaviour
         string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
         Debug.Log("NivelesController cargando tipo: " + tipo);
 
+        // 🔥 SINCRONIZAR CON GAME MANAGER
+        if (GameManagerProgreso.Instance != null)
+        {
+            switch (tipo)
+            {
+                case "resta":
+                    GameManagerProgreso.Instance.tipoActual = GameManagerProgreso.TipoNivel.Resta;
+                    break;
+                case "multiplicacion":
+                    GameManagerProgreso.Instance.tipoActual = GameManagerProgreso.TipoNivel.Multiplicacion;
+                    break;
+                case "division":
+                    GameManagerProgreso.Instance.tipoActual = GameManagerProgreso.TipoNivel.Division;
+                    break;
+                default:
+                    GameManagerProgreso.Instance.tipoActual = GameManagerProgreso.TipoNivel.Suma;
+                    break;
+            }
+        }
+
+        // 🔘 BOTONES SEGÚN TIPO
         switch (tipo)
         {
             case "resta":
@@ -48,7 +69,11 @@ public class NivelesController : MonoBehaviour
         }
 
         EstrellasResponse res = JsonUtility.FromJson<EstrellasResponse>(req.downloadHandler.text);
-        if (!res.success) yield break;
+        if (res == null || !res.success)
+        {
+            Debug.LogError("Respuesta inválida del servidor");
+            yield break;
+        }
 
         Dictionary<int, int> estrellasDict = new Dictionary<int, int>();
         foreach (var n in res.niveles)
@@ -73,7 +98,7 @@ public class NivelesController : MonoBehaviour
             if (e3 != null) e3.style.opacity = estrellas >= 3 ? 1f : 0.2f;
         }
 
-        Debug.Log("✅ Estrellas cargadas");
+        Debug.Log("✅ Estrellas cargadas correctamente");
     }
 }
 

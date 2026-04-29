@@ -43,16 +43,20 @@ public class Puerta : MonoBehaviour
                     if (player != null)
                         player.Detener();
 
-                    // Mostrar pantalla de ganar
+                    // Obtener vidas actuales como estrellas
+                    int estrellas = Mathf.Clamp(GameManagerProgreso.Instance.vidasActuales, 0, 3);
+
+                    // Mostrar pantalla de ganar con estrellas correctas
                     UIVidasToolkit ui = FindFirstObjectByType<UIVidasToolkit>();
                     if (ui != null)
-                        ui.MostrarPantallaGanar();
+                        ui.MostrarPantallaGanar(estrellas);
                     else
                         Debug.LogError("No se encontró UIVidasToolkit");
 
                     return;
                 }
 
+                // Cargar siguiente nivel
                 string nivelActual = SceneManager.GetActiveScene().name;
                 string siguiente = GameManagerProgreso.Instance.ObtenerSiguienteNivel(nivelActual);
                 SceneManager.LoadScene(siguiente);

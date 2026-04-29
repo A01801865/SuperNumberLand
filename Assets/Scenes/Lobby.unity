@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerProgreso
   nivelActual: 1
-  totalNiveles: 5
+  totalNiveles: 10
   vidasActuales: 3
   vidasPerdidas: 0
   mapasCompletados: 0

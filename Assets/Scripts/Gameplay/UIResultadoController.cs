@@ -11,22 +11,30 @@ public class UIResultadoController : MonoBehaviour
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-       
         btnReintentar = root.Q<Button>("BotonReintentar");
-        btnVolver = root.Q<Button>("BotonVolve");
+        btnVolver = root.Q<Button>("BotonVolve"); // así se llama en el UXML
 
-        btnReintentar.clicked += Reintentar;
-        btnVolver.clicked += VolverMenu;
+        if (btnReintentar != null)
+            btnReintentar.clicked += Reintentar;
+
+        if (btnVolver != null)
+            btnVolver.clicked += VolverMenu;
     }
 
     void Reintentar()
     {
-        Scene escenaActual = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(escenaActual.name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void VolverMenu()
     {
-        SceneManager.LoadScene("Niveles"); 
+        string tipo = PlayerPrefs.GetString("tipo_nivel", "suma").ToLower();
+        switch (tipo)
+        {
+            case "resta":          SceneManager.LoadScene("NivelesResta"); break;
+            case "multiplicacion": SceneManager.LoadScene("NivelesMulti"); break;
+            case "division":       SceneManager.LoadScene("NivelesDivi");  break;
+            default:               SceneManager.LoadScene("Niveles");      break;
+        }
     }
 }

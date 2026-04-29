@@ -7,7 +7,7 @@ public class RVolverANiveles : MonoBehaviour
     private UIDocument menu;
     private Button botonVolver;
 
-    void OnEnable()
+    void Start()
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
@@ -16,20 +16,18 @@ public class RVolverANiveles : MonoBehaviour
 
         if (botonVolver != null)
         {
+            Debug.Log("RVolverANiveles: BotonVolver encontrado ✅");
             botonVolver.clicked += Volver;
         }
-    }
-
-    void OnDisable()
-    {
-        if (botonVolver != null)
+        else
         {
-            botonVolver.clicked -= Volver;
+            Debug.LogError("RVolverANiveles: BotonVolver NO encontrado ❌");
         }
     }
 
     void Volver()
     {
+        Debug.Log("RVolverANiveles: Volver() ejecutado → NivelesResta");
         SceneManager.LoadScene("NivelesResta");
     }
 }
