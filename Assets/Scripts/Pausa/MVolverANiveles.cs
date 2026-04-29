@@ -15,21 +15,18 @@ public class MVolverANiveles : MonoBehaviour
         botonVolver = root.Q<Button>("BotonVolver");
 
         if (botonVolver != null)
-        {
             botonVolver.clicked += Volver;
-        }
     }
 
     void OnDisable()
     {
         if (botonVolver != null)
-        {
             botonVolver.clicked -= Volver;
-        }
     }
 
     void Volver()
     {
+        Time.timeScale = 1f; // ← Fix
         SceneManager.LoadScene("NivelesMulti");
     }
 }

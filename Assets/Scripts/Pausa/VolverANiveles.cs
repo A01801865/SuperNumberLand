@@ -7,7 +7,7 @@ public class VolverANiveles : MonoBehaviour
     private UIDocument menu;
     private Button botonVolver;
 
-    void Start()
+    void OnEnable()
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
@@ -20,9 +20,15 @@ public class VolverANiveles : MonoBehaviour
             botonVolver.clicked += Volver;
     }
 
+    void OnDisable()
+    {
+        if (botonVolver != null)
+            botonVolver.clicked -= Volver;
+    }
+
     void Volver()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // ← Fix
         SceneManager.LoadScene("Niveles");
     }
 }

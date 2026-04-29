@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManagerProgreso : MonoBehaviour
 {
@@ -51,6 +52,20 @@ public class GameManagerProgreso : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // ← Fix de seguridad: suscribirse al evento de carga de escena
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // ← Fix: cada vez que carga cualquier escena de nivel, resetear timeScale
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Time.timeScale = 1f;
     }
 
     void Start()
