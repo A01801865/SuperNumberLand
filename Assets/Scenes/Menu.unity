@@ -1140,6 +1140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1781280238}
   - component: {fileID: 1781280237}
+  - component: {fileID: 1781280239}
   m_Layer: 0
   m_Name: pixelland--no-copyright-8-bit-music
   m_TagString: Untagged
@@ -1159,10 +1160,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 67010fb9c55391a41b1a1847f37b892a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.505
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1259,6 +1260,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1781280239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781280236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ec4ec47834b084d968a7702767f898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicaManager
+  musicaMenu: {fileID: 8300000, guid: 67010fb9c55391a41b1a1847f37b892a, type: 3}
+  musicaLobby: {fileID: 8300000, guid: 7c8bc337691f45d4da7d98bd03aa1c8a, type: 3}
+  musicaSuma: {fileID: 8300000, guid: 0a6ef3e0cc906f243828170e8c05cb63, type: 3}
+  musicaResta: {fileID: 8300000, guid: 6591188284afa5d459e8fede23f4dac2, type: 3}
+  musicaMulti: {fileID: 8300000, guid: 6abef5c7168bca34385ef1c5b8ad2f53, type: 3}
+  musicaDivi: {fileID: 8300000, guid: 785109376cd7f644f80f3c74d25fc1c6, type: 3}
 --- !u!1 &1796616016
 GameObject:
   m_ObjectHideFlags: 0
