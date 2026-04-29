@@ -4362,6 +4362,7 @@ GameObject:
   - component: {fileID: 1932801339}
   - component: {fileID: 1932801338}
   - component: {fileID: 1932801337}
+  - component: {fileID: 1932801345}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -4492,6 +4493,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932801345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932801335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ac5074aef76674887e60bdb1e94f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIVidasToolkit
 --- !u!1 &2014849585
 GameObject:
   m_ObjectHideFlags: 0

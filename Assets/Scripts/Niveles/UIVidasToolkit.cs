@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using UnityEngine.Networking;
-using System.Collections;
 
 public class UIVidasToolkit : MonoBehaviour
 {
@@ -24,7 +22,7 @@ public class UIVidasToolkit : MonoBehaviour
         vida3 = root.Q<VisualElement>("Vida_3");
 
         pantallaPerder = root.Q<VisualElement>("Perder");
-        pantallaGanar  = root.Q<VisualElement>("Ganar");
+        pantallaGanar = root.Q<VisualElement>("Ganar");
 
         estrella1 = root.Q<VisualElement>("Estrella_1");
         estrella2 = root.Q<VisualElement>("Estrella_2");
@@ -37,7 +35,7 @@ public class UIVidasToolkit : MonoBehaviour
             if (botonReintentar != null)
                 botonReintentar.clicked += Reintentar;
 
-            Button botonVolverPerder = fondoPerder.Q<Button>("BotonVolver");
+            Button botonVolverPerder = fondoPerder.Q<Button>("BotonVolve");
             if (botonVolverPerder != null)
                 botonVolverPerder.clicked += VolverMenu;
         }
@@ -57,53 +55,82 @@ public class UIVidasToolkit : MonoBehaviour
         if (GameManagerProgreso.Instance != null)
         {
             GameManagerProgreso.Instance.vidasActuales = 3;
-            GameManagerProgreso.Instance.nivelActual   = 1;
+            GameManagerProgreso.Instance.nivelActual = 1;
             GameManagerProgreso.Instance.vidasPerdidas = 0;
         }
 
         if (MonedaManager.instance != null)
             MonedaManager.instance.totalMonedas = 0;
 
-        ObjetoRespuesta.ResetearRacha();
-
         Time.timeScale = 1f;
 
-        string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
-        Debug.Log("Reintentar tipo: " + tipo);
-        switch (tipo)
+        // ← Reintentar desde el primer nivel del tipo actual
+        if (GameManagerProgreso.Instance != null)
         {
-            case "resta":          SceneManager.LoadScene("RNivel1");  break;
-            case "multiplicacion": SceneManager.LoadScene("MNivel1");  break;
-            case "division":       SceneManager.LoadScene("DNivel1");  break;
-            default:               SceneManager.LoadScene("Nivel1");   break;
+            switch (GameManagerProgreso.Instance.tipoActual)
+            {
+                case GameManagerProgreso.TipoNivel.Suma:
+                    SceneManager.LoadScene("Nivel1");
+                    break;
+                case GameManagerProgreso.TipoNivel.Resta:
+                    SceneManager.LoadScene("RNivel1");
+                    break;
+                case GameManagerProgreso.TipoNivel.Multiplicacion:
+                    SceneManager.LoadScene("MNivel1");
+                    break;
+                case GameManagerProgreso.TipoNivel.Division:
+                    SceneManager.LoadScene("DNivel1");
+                    break;
+                default:
+                    SceneManager.LoadScene("Nivel1");
+                    break;
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("Nivel1");
         }
     }
 
     private void VolverMenu()
     {
-        Debug.Log("VolverMenu tipo: " + PlayerPrefs.GetString("tipo_nivel", "suma"));
-
         if (GameManagerProgreso.Instance != null)
         {
             GameManagerProgreso.Instance.vidasActuales = 3;
-            GameManagerProgreso.Instance.nivelActual   = 1;
+            GameManagerProgreso.Instance.nivelActual = 1;
             GameManagerProgreso.Instance.vidasPerdidas = 0;
         }
 
         if (MonedaManager.instance != null)
             MonedaManager.instance.totalMonedas = 0;
 
-        ObjetoRespuesta.ResetearRacha();
-
         Time.timeScale = 1f;
 
-        string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
-        switch (tipo)
+        // ← Regresar al menú correcto según el tipo de nivel
+        if (GameManagerProgreso.Instance != null)
         {
-            case "resta":          SceneManager.LoadScene("NivelesResta"); break;
-            case "multiplicacion": SceneManager.LoadScene("NivelesMulti"); break;
-            case "division":       SceneManager.LoadScene("NivelesDivi");  break;
-            default:               SceneManager.LoadScene("Niveles");      break;
+            switch (GameManagerProgreso.Instance.tipoActual)
+            {
+                case GameManagerProgreso.TipoNivel.Suma:
+                    SceneManager.LoadScene("Niveles");
+                    break;
+                case GameManagerProgreso.TipoNivel.Resta:
+                    SceneManager.LoadScene("NivelesResta");
+                    break;
+                case GameManagerProgreso.TipoNivel.Multiplicacion:
+                    SceneManager.LoadScene("NivelesMulti");
+                    break;
+                case GameManagerProgreso.TipoNivel.Division:
+                    SceneManager.LoadScene("NivelesDivi");
+                    break;
+                default:
+                    SceneManager.LoadScene("Niveles");
+                    break;
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("Niveles");
         }
     }
 
@@ -128,8 +155,7 @@ public class UIVidasToolkit : MonoBehaviour
 
     public void MostrarPantallaGanar()
     {
-        Debug.Log("¡GANASTE!");
-        Debug.Log("Escena actual: " + SceneManager.GetActiveScene().name);
+        Debug.Log("MOSTRANDO PANTALLA DE GANAR");
 
         if (pantallaGanar != null)
             pantallaGanar.style.display = DisplayStyle.Flex;
@@ -146,74 +172,5 @@ public class UIVidasToolkit : MonoBehaviour
             estrella3.style.display = estrellas >= 2 ? DisplayStyle.Flex : DisplayStyle.None;
         if (estrella2 != null)
             estrella2.style.display = estrellas >= 3 ? DisplayStyle.Flex : DisplayStyle.None;
-
-        if (GameManagerProgreso.Instance != null && GameManagerProgreso.Instance.vidasPerdidas == 0)
-            LogrosManager.Instance?.DesbloquearLogro(11);
-
-        string escena = SceneManager.GetActiveScene().name.ToLower();
-        string tipo = "";
-
-        if (escena == "nivel1" || escena.Contains("mapa"))
-        {
-            LogrosManager.Instance?.DesbloquearLogro(7);
-            tipo = "suma";
-        }
-        else if (escena.Contains("rnivel"))
-        {
-            LogrosManager.Instance?.DesbloquearLogro(5);
-            tipo = "resta";
-        }
-        else if (escena.Contains("mnivel"))
-        {
-            LogrosManager.Instance?.DesbloquearLogro(6);
-            tipo = "multiplicacion";
-        }
-        else if (escena.Contains("dnivel"))
-        {
-            tipo = "division";
-        }
-
-        int idNivel = PlayerPrefs.GetInt("nivel_seleccionado", 0);
-        int id_usuario = PlayerPrefs.GetInt("user_id", 0);
-        if (id_usuario == 0) id_usuario = 6;
-
-        if (tipo != "" && idNivel > 0)
-            StartCoroutine(GuardarProgreso(id_usuario, idNivel, tipo, estrellas));
-
-        if (MonedaManager.instance != null)
-            MonedaManager.instance.EnviarMonedasAlBackend(id_usuario);
     }
-
-    IEnumerator GuardarProgreso(int id_usuario, int id_nivel, string tipo, int estrellas)
-    {
-        string url = "https://supernumberland-backend.onrender.com/progreso/guardar";
-        string json = JsonUtility.ToJson(new ProgresoData
-        {
-            id_usuario = id_usuario,
-            id_nivel   = id_nivel,
-            tipo       = tipo,
-            estrellas  = estrellas
-        });
-
-        UnityWebRequest req = new UnityWebRequest(url, "POST");
-        req.uploadHandler   = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json));
-        req.downloadHandler = new DownloadHandlerBuffer();
-        req.SetRequestHeader("Content-Type", "application/json");
-
-        yield return req.SendWebRequest();
-
-        if (req.result == UnityWebRequest.Result.Success)
-            Debug.Log($"✅ Progreso guardado: {tipo} nivel {id_nivel} - {estrellas} estrellas");
-        else
-            Debug.LogError("Error guardando progreso: " + req.error);
-    }
-}
-
-[System.Serializable]
-public class ProgresoData
-{
-    public int id_usuario;
-    public int id_nivel;
-    public string tipo;
-    public int estrellas;
 }

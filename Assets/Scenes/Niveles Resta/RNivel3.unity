@@ -2408,6 +2408,7 @@ GameObject:
   - component: {fileID: 1466046832}
   - component: {fileID: 1466046831}
   - component: {fileID: 1466046839}
+  - component: {fileID: 1466046840}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -2538,6 +2539,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d952f2defd2534592abfbda6ae0e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RVolverANiveles
+--- !u!114 &1466046840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466046829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3944864f433960849ad4a2a29a9255d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UINivelActual
 --- !u!1001 &1468356071
 PrefabInstance:
   m_ObjectHideFlags: 0

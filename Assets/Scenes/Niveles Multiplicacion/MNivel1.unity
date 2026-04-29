@@ -466,6 +466,7 @@ GameObject:
   - component: {fileID: 306816254}
   - component: {fileID: 306816253}
   - component: {fileID: 306816261}
+  - component: {fileID: 306816262}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -596,6 +597,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497cefe9e91936841b2f83840871e6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MVolverANiveles
+--- !u!114 &306816262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306816251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3944864f433960849ad4a2a29a9255d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UINivelActual
 --- !u!1 &341633973
 GameObject:
   m_ObjectHideFlags: 0

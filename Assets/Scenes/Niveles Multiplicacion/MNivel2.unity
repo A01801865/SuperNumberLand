@@ -3155,6 +3155,7 @@ GameObject:
   - component: {fileID: 1563668187}
   - component: {fileID: 1563668186}
   - component: {fileID: 1563668193}
+  - component: {fileID: 1563668194}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -3273,6 +3274,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd551d46207ee4bb2b72867dfc6b3ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InicializarMonedas
+--- !u!114 &1563668194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563668185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3944864f433960849ad4a2a29a9255d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UINivelActual
 --- !u!1 &2045938760
 GameObject:
   m_ObjectHideFlags: 0

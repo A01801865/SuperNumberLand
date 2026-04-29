@@ -107,8 +107,8 @@ public class GameManagerProgreso : MonoBehaviour
 
     public int ObtenerDificultad()
     {
-        if (nivelActual <= 3) return 1;
-        if (nivelActual <= 7) return 2;
+        if (mapasCompletados <= 1) return 1;
+        if (mapasCompletados <= 3) return 2;
         return 3;
     }
 
