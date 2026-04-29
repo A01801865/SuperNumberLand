@@ -11,25 +11,22 @@ public class RIrANivel5 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonRCinco = root.Q<Button>("RCinco");
-
         if (botonRCinco != null)
-        {
             botonRCinco.clicked += AbrirRNivel5;
-        }
     }
 
     void OnDisable()
     {
         if (botonRCinco != null)
-        {
             botonRCinco.clicked -= AbrirRNivel5;
-        }
     }
 
     void AbrirRNivel5()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 5);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("RNivel5");
     }
 }

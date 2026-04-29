@@ -11,9 +11,8 @@ public class UIGanarController : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
         fondoGanar = root.Q<VisualElement>("FondoGanar");
 
-        // Registrar callbacks directamente en los botones
         var botonSiguiente = fondoGanar?.Q<Button>("BotonSigNiv");
-        var botonVolver = fondoGanar?.Q<Button>("BotonVuelve");
+        var botonVolver    = fondoGanar?.Q<Button>("BotonVuelve");
 
         if (botonSiguiente != null)
             botonSiguiente.RegisterCallback<ClickEvent>(e => SiguienteNivel());
@@ -26,35 +25,69 @@ public class UIGanarController : MonoBehaviour
     {
         Debug.Log("SiguienteNivel clicked!");
 
-        if (GameManagerProgreso.Instance != null)
-        {
-            GameManagerProgreso.Instance.vidasActuales = 3;
-            GameManagerProgreso.Instance.nivelActual = 1;
-            GameManagerProgreso.Instance.vidasPerdidas = 0;
-        }
+        int nivelActual = PlayerPrefs.GetInt("nivel_seleccionado", 1);
+        int siguienteNivel = nivelActual + 1;
+
+        GameManagerProgreso.Instance?.ResetearMapas();
 
         if (MonedaManager.instance != null)
             MonedaManager.instance.totalMonedas = 0;
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Mapa2");
+
+        if (siguienteNivel <= 10)
+        {
+            PlayerPrefs.SetInt("nivel_seleccionado", siguienteNivel);
+            PlayerPrefs.Save();
+            string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
+            string escena = ObtenerPrimerMapa(siguienteNivel, tipo);
+            SceneManager.LoadScene(escena);
+        }
+        else
+        {
+            SceneManager.LoadScene(ObtenerEscenaNiveles());
+        }
     }
 
     private void VolverMenu()
     {
         Debug.Log("VolverMenu clicked!");
 
-        if (GameManagerProgreso.Instance != null)
-        {
-            GameManagerProgreso.Instance.vidasActuales = 3;
-            GameManagerProgreso.Instance.nivelActual = 1;
-            GameManagerProgreso.Instance.vidasPerdidas = 0;
-        }
+        GameManagerProgreso.Instance?.ResetearMapas();
 
         if (MonedaManager.instance != null)
             MonedaManager.instance.totalMonedas = 0;
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Niveles");
+        SceneManager.LoadScene(ObtenerEscenaNiveles());
+    }
+
+    string ObtenerEscenaNiveles()
+    {
+        string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
+        switch (tipo)
+        {
+            case "resta":         return "NivelesResta";
+            case "multiplicacion": return "NivelesMulti";
+            case "division":      return "NivelesDivi";
+            default:              return "Niveles";
+        }
+    }
+
+    string ObtenerPrimerMapa(int nivel, string tipo)
+    {
+        switch (tipo)
+        {
+            case "suma":
+                return nivel == 1 ? "Nivel1" : $"Mapa{nivel}";
+            case "resta":
+                return $"RNivel{nivel}";
+            case "multiplicacion":
+                return $"MNivel{nivel}";
+            case "division":
+                return $"DNivel{nivel}";
+            default:
+                return "Niveles";
+        }
     }
 }

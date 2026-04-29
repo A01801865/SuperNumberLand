@@ -11,25 +11,22 @@ public class DIrANivel9 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDNueve = root.Q<Button>("DNueve");
-
         if (botonDNueve != null)
-        {
             botonDNueve.clicked += AbrirDNivel9;
-        }
     }
 
     void OnDisable()
     {
         if (botonDNueve != null)
-        {
             botonDNueve.clicked -= AbrirDNivel9;
-        }
     }
 
     void AbrirDNivel9()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 9);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("DNivel9");
     }
 }

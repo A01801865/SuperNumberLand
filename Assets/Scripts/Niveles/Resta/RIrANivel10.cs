@@ -11,25 +11,22 @@ public class RIrANivel10 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonRDiez = root.Q<Button>("RDiez");
-
         if (botonRDiez != null)
-        {
             botonRDiez.clicked += AbrirRNivel10;
-        }
     }
 
     void OnDisable()
     {
         if (botonRDiez != null)
-        {
             botonRDiez.clicked -= AbrirRNivel10;
-        }
     }
 
     void AbrirRNivel10()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 10);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("RNivel10");
     }
 }

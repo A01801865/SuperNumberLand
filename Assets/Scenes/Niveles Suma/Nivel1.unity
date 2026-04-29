@@ -1284,55 +1284,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1717465940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &826687103
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 826687105}
-  - component: {fileID: 826687104}
-  m_Layer: 0
-  m_Name: GameManagerProgreso
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &826687104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826687103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b859cbb96425b924fa6022d126423f2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManagerProgreso
-  nivelActual: 1
-  totalNiveles: 5
-  vidasActuales: 3
-  vidasPerdidas: 0
-  tipoActual: 0
---- !u!4 &826687105
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826687103}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.96709, y: -0.02505, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &903007342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1958961049572308941, guid: 3cfe5431974b64bffb78c84b1b567caa, type: 3}
@@ -2231,7 +2182,6 @@ SceneRoots:
   - {fileID: 1129748566}
   - {fileID: 626677157}
   - {fileID: 1717465940}
-  - {fileID: 826687105}
   - {fileID: 2008512180}
   - {fileID: 1294534035}
   - {fileID: 1722183598}

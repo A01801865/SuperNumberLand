@@ -11,25 +11,22 @@ public class RIrANivel4 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonRCuatro = root.Q<Button>("RCuatro");
-
         if (botonRCuatro != null)
-        {
             botonRCuatro.clicked += AbrirRNivel4;
-        }
     }
 
     void OnDisable()
     {
         if (botonRCuatro != null)
-        {
             botonRCuatro.clicked -= AbrirRNivel4;
-        }
     }
 
     void AbrirRNivel4()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 4);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("RNivel4");
     }
 }

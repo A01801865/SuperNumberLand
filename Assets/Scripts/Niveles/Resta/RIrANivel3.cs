@@ -11,25 +11,22 @@ public class RIrANivel3 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonRTres = root.Q<Button>("RTres");
-
         if (botonRTres != null)
-        {
             botonRTres.clicked += AbrirRNivel3;
-        }
     }
 
     void OnDisable()
     {
         if (botonRTres != null)
-        {
             botonRTres.clicked -= AbrirRNivel3;
-        }
     }
 
     void AbrirRNivel3()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 3);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("RNivel3");
     }
 }

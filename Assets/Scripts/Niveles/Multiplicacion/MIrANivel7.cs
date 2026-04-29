@@ -11,25 +11,22 @@ public class MIrANivel7 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonMSiete = root.Q<Button>("MSiete");
-
         if (botonMSiete != null)
-        {
             botonMSiete.clicked += AbrirMNivel7;
-        }
     }
 
     void OnDisable()
     {
         if (botonMSiete != null)
-        {
             botonMSiete.clicked -= AbrirMNivel7;
-        }
     }
 
     void AbrirMNivel7()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 7);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("MNivel7");
     }
 }

@@ -9,23 +9,33 @@ public class MostrarPersonajeLobby : MonoBehaviour
 
     void Start()
     {
-        MostrarPersonaje();
+        // No spawneamos aqui — LobbyController lo hara despues de cargar la seleccion
     }
 
-    public void MostrarPersonaje()
+    void Update()
+    {
+        if (personajeActual == null)
+            Debug.LogWarning("personajeActual es null");
+    }
+
+    public void MostrarPersonaje(int index = -1)
     {
         if (personajeActual != null)
             Destroy(personajeActual);
 
-        int index = 0;
-        if (GameManager.instancia != null)
-            index = GameManager.instancia.personajeSeleccionado;
+        if (index == -1)
+        {
+            index = 0;
+            if (GameManager.instancia != null)
+                index = GameManager.instancia.personajeSeleccionado;
+        }
+
+        Debug.Log("MostrarPersonaje llamado con index: " + index);
 
         if (personajes.Length > index)
         {
             personajeActual = Instantiate(personajes[index], puntoSpawn.position, Quaternion.identity);
-
-            personajeActual.transform.localScale = new Vector3(20f, 20f, 18f); // ← Ajusta a tu gusto
+            personajeActual.transform.localScale = new Vector3(20f, 20f, 18f);
 
             var pc = personajeActual.GetComponent<PlayerController>();
             if (pc != null) pc.enabled = false;

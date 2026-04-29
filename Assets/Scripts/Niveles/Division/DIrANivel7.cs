@@ -11,25 +11,22 @@ public class DIrANivel7 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDSiete = root.Q<Button>("DSiete");
-
         if (botonDSiete != null)
-        {
             botonDSiete.clicked += AbrirDNivel7;
-        }
     }
 
     void OnDisable()
     {
         if (botonDSiete != null)
-        {
             botonDSiete.clicked -= AbrirDNivel7;
-        }
     }
 
     void AbrirDNivel7()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 7);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("DNivel7");
     }
 }

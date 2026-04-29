@@ -11,25 +11,22 @@ public class DIrANivel1 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDUno = root.Q<Button>("DUno");
-
         if (botonDUno != null)
-        {
             botonDUno.clicked += AbrirDNivel1;
-        }
     }
 
     void OnDisable()
     {
         if (botonDUno != null)
-        {
             botonDUno.clicked -= AbrirDNivel1;
-        }
     }
 
     void AbrirDNivel1()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("DNivel1");
     }
 }

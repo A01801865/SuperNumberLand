@@ -86,6 +86,7 @@ public class LogrosUI : MonoBehaviour
                 {
                     btn.text = "¡Recoger!";
                     btn.SetEnabled(true);
+                    btn.pickingMode = PickingMode.Position;
                     btn.clicked += () => {
                         int idUsuario = PlayerPrefs.GetInt("user_id", 0);
                         if (idUsuario == 0) idUsuario = 6;
@@ -99,12 +100,21 @@ public class LogrosUI : MonoBehaviour
                 }
             }
 
+            // Forzar pickingMode en toda la jerarquía
+            fila.pickingMode = PickingMode.Position;
+            fila.Query<VisualElement>().ForEach(el => {
+                el.pickingMode = PickingMode.Ignore;
+            });
+            if (btn != null)
+                btn.pickingMode = PickingMode.Position;
+
             contenedor.Add(fila);
         }
     }
 
     IEnumerator ReclamarRecompensa(LogroSO logro, int idUsuario)
     {
+        // 1. Enviar monedas de recompensa
         if (logro.monedasRecompensa > 0)
         {
             string url = "https://supernumberland-backend.onrender.com/sumar-monedas";
@@ -127,6 +137,11 @@ public class LogrosUI : MonoBehaviour
                 Debug.LogError("Error al reclamar recompensa: " + req.error);
         }
 
+        // 2. Marcar como reclamado en BD
+        if (LogrosManager.Instance != null)
+            yield return StartCoroutine(LogrosManager.Instance.ReclamarLogroEnBD(idUsuario, logro.idBD));
+
+        // 3. Actualizar SO y UI
         logro.reclamado = true;
         ActualizarInterfaz();
     }

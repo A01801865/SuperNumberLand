@@ -11,25 +11,22 @@ public class RIrANivel7 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonRSiete = root.Q<Button>("RSiete");
-
         if (botonRSiete != null)
-        {
             botonRSiete.clicked += AbrirRNivel7;
-        }
     }
 
     void OnDisable()
     {
         if (botonRSiete != null)
-        {
             botonRSiete.clicked -= AbrirRNivel7;
-        }
     }
 
     void AbrirRNivel7()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 7);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("RNivel7");
     }
 }

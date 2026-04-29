@@ -9,6 +9,8 @@ public class GameManagerProgreso : MonoBehaviour
     public int totalNiveles = 10;
     public int vidasActuales = 3;
     public int vidasPerdidas = 0;
+    public int mapasCompletados = 0;
+    public int mapasPorNivel = 5;
 
     public enum TipoNivel { Suma, Resta, Multiplicacion, Division }
     public TipoNivel tipoActual;
@@ -41,15 +43,14 @@ public class GameManagerProgreso : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -89,12 +90,19 @@ public class GameManagerProgreso : MonoBehaviour
 
     public void AvanzarNivel()
     {
-        nivelActual++;
+        mapasCompletados++;
     }
 
     public bool HaGanado()
     {
-        return nivelActual > totalNiveles;
+        return mapasCompletados >= mapasPorNivel;
+    }
+
+    public void ResetearMapas()
+    {
+        mapasCompletados = 0;
+        vidasActuales = 3;
+        vidasPerdidas = 0;
     }
 
     public int ObtenerDificultad()
@@ -112,6 +120,6 @@ public class GameManagerProgreso : MonoBehaviour
 
     public int CalcularEstrellas()
     {
-        return vidasActuales; // 3 vidas = 3 estrellas, 2 vidas = 2, 1 vida = 1
+        return vidasActuales;
     }
 }

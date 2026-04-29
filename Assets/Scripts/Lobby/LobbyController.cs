@@ -2,15 +2,24 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LobbyController : MonoBehaviour
 {
+    [Header("Sprites de fondos")]
     public Sprite fondoDefault;
     public Sprite fondoNoche;
     public Sprite fondoArboles;
     public Sprite fondoNubes;
 
+    [Header("Sprites de personajes")]
+    public Sprite personaje0Sprite;
+    public Sprite personaje1Sprite;
+    public Sprite personaje2Sprite;
+    public Sprite personaje3Sprite;
+
     private SpriteRenderer fondoRenderer;
+    private VisualElement barraVerde;
 
     void Start()
     {
@@ -21,6 +30,7 @@ public class LobbyController : MonoBehaviour
         var root       = GetComponent<UIDocument>().rootVisualElement;
         var numMonedas = root.Q<Label>("NumMonedas");
         var apodo      = root.Q<TextField>("ApodoJugador");
+        barraVerde     = root.Q<VisualElement>("BarraVerde");
 
         string usuario = PlayerPrefs.GetString("usuario", "");
         int id_usuario = PlayerPrefs.GetInt("user_id", 0);
@@ -33,7 +43,8 @@ public class LobbyController : MonoBehaviour
         if (numMonedas != null)
             StartCoroutine(CargarMonedas(id_usuario, numMonedas));
 
-        StartCoroutine(CargarFondo(id_usuario));
+        StartCoroutine(CargarSeleccion(id_usuario));
+        StartCoroutine(CargarLogros(id_usuario));
     }
 
     IEnumerator CargarMonedas(int id_usuario, Label numMonedas)
@@ -50,7 +61,7 @@ public class LobbyController : MonoBehaviour
         }
     }
 
-    IEnumerator CargarFondo(int id_usuario)
+    IEnumerator CargarSeleccion(int id_usuario)
     {
         string url = $"https://supernumberland-backend.onrender.com/seleccion/{id_usuario}";
         UnityWebRequest req = UnityWebRequest.Get(url);
@@ -59,11 +70,92 @@ public class LobbyController : MonoBehaviour
         if (req.result == UnityWebRequest.Result.Success)
         {
             SeleccionResponse res = JsonUtility.FromJson<SeleccionResponse>(req.downloadHandler.text);
-            if (res.success && fondoRenderer != null)
+            if (res.success)
             {
-                fondoRenderer.sprite = ObtenerSpriteFondo(res.fondo_seleccionado);
-                AjustarEscala();
+                PlayerPrefs.SetInt("personaje_seleccionado", res.personaje_seleccionado);
+                PlayerPrefs.Save();
+
+                if (fondoRenderer != null)
+                {
+                    fondoRenderer.sprite = ObtenerSpriteFondo(res.fondo_seleccionado);
+                    AjustarEscala();
+                }
+
+                var root    = GetComponent<UIDocument>().rootVisualElement;
+                var imgPerf = root.Q<VisualElement>("ImgPerf");
+                if (imgPerf != null)
+                {
+                    Sprite spritePersonaje = ObtenerSpritePersonaje(res.personaje_seleccionado);
+                    if (spritePersonaje != null)
+                    {
+                        imgPerf.style.backgroundImage               = new StyleBackground(spritePersonaje);
+                        imgPerf.style.backgroundSize                = new BackgroundSize(BackgroundSizeType.Contain);
+                        imgPerf.style.unityBackgroundImageTintColor = Color.white;
+                    }
+                }
+
+                ActualizarPersonajeEnLobby(res.personaje_seleccionado);
             }
+        }
+    }
+
+    IEnumerator CargarLogros(int id_usuario)
+    {
+        string url = $"https://supernumberland-backend.onrender.com/logros/{id_usuario}";
+        UnityWebRequest req = UnityWebRequest.Get(url);
+        yield return req.SendWebRequest();
+
+        if (req.result != UnityWebRequest.Result.Success) yield break;
+
+        LogrosResponse res = JsonUtility.FromJson<LogrosResponse>(req.downloadHandler.text);
+        if (!res.success) yield break;
+
+        int totalLogros = res.logros.Count;
+        int desbloqueados = 0;
+        foreach (var logro in res.logros)
+            if (logro.desbloqueado == 1) desbloqueados++;
+
+        // Actualizar barra verde
+        if (barraVerde != null && totalLogros > 0)
+        {
+            float porcentaje = (float)desbloqueados / totalLogros * 100f;
+            barraVerde.style.width = Length.Percent(porcentaje);
+        }
+
+        Debug.Log($"Logros: {desbloqueados}/{totalLogros}");
+    }
+
+    void ActualizarPersonajeEnLobby(int id_personaje)
+    {
+        int index = ObtenerIndexPersonaje(id_personaje);
+
+        if (GameManager.instancia != null)
+            GameManager.instancia.personajeSeleccionado = index;
+
+        MostrarPersonajeLobby lobby = FindFirstObjectByType<MostrarPersonajeLobby>();
+        if (lobby != null)
+            lobby.MostrarPersonaje(index);
+    }
+
+    int ObtenerIndexPersonaje(int id_item)
+    {
+        switch (id_item)
+        {
+            case 1: return 1;
+            case 2: return 2;
+            case 3: return 3;
+            default: return 0;
+        }
+    }
+
+    Sprite ObtenerSpritePersonaje(int id_item)
+    {
+        switch (id_item)
+        {
+            case 1: return personaje1Sprite;
+            case 2: return personaje2Sprite;
+            case 3: return personaje3Sprite;
+            default: return personaje0Sprite;
         }
     }
 

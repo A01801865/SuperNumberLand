@@ -11,25 +11,22 @@ public class IrANivel10 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDiez = root.Q<Button>("Diez");
-
         if (botonDiez != null)
-        {
             botonDiez.clicked += AbrirNivel10;
-        }
     }
 
     void OnDisable()
     {
         if (botonDiez != null)
-        {
             botonDiez.clicked -= AbrirNivel10;
-        }
     }
 
     void AbrirNivel10()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 10);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Mapa10");
     }
 }

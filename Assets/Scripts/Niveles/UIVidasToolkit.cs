@@ -67,11 +67,22 @@ public class UIVidasToolkit : MonoBehaviour
         ObjetoRespuesta.ResetearRacha();
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Nivel1");
+
+        string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
+        Debug.Log("Reintentar tipo: " + tipo);
+        switch (tipo)
+        {
+            case "resta":          SceneManager.LoadScene("RNivel1");  break;
+            case "multiplicacion": SceneManager.LoadScene("MNivel1");  break;
+            case "division":       SceneManager.LoadScene("DNivel1");  break;
+            default:               SceneManager.LoadScene("Nivel1");   break;
+        }
     }
 
     private void VolverMenu()
     {
+        Debug.Log("VolverMenu tipo: " + PlayerPrefs.GetString("tipo_nivel", "suma"));
+
         if (GameManagerProgreso.Instance != null)
         {
             GameManagerProgreso.Instance.vidasActuales = 3;
@@ -85,7 +96,15 @@ public class UIVidasToolkit : MonoBehaviour
         ObjetoRespuesta.ResetearRacha();
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Niveles");
+
+        string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
+        switch (tipo)
+        {
+            case "resta":          SceneManager.LoadScene("NivelesResta"); break;
+            case "multiplicacion": SceneManager.LoadScene("NivelesMulti"); break;
+            case "division":       SceneManager.LoadScene("NivelesDivi");  break;
+            default:               SceneManager.LoadScene("Niveles");      break;
+        }
     }
 
     public void ActualizarVidas(int vidas)
@@ -110,8 +129,6 @@ public class UIVidasToolkit : MonoBehaviour
     public void MostrarPantallaGanar()
     {
         Debug.Log("¡GANASTE!");
-        Debug.Log("MOSTRANDO PANTALLA DE GANAR");
-        Debug.Log("Total monedas al ganar: " + (MonedaManager.instance != null ? MonedaManager.instance.totalMonedas.ToString() : "NULL"));
         Debug.Log("Escena actual: " + SceneManager.GetActiveScene().name);
 
         if (pantallaGanar != null)
@@ -130,27 +147,25 @@ public class UIVidasToolkit : MonoBehaviour
         if (estrella2 != null)
             estrella2.style.display = estrellas >= 3 ? DisplayStyle.Flex : DisplayStyle.None;
 
-        // Logro: Sin Rasguños (idBD 11)
         if (GameManagerProgreso.Instance != null && GameManagerProgreso.Instance.vidasPerdidas == 0)
             LogrosManager.Instance?.DesbloquearLogro(11);
 
-        // Detectar tipo de nivel con ToLower para ignorar mayúsculas
         string escena = SceneManager.GetActiveScene().name.ToLower();
         string tipo = "";
 
-        if (escena.Contains("mapa"))
+        if (escena == "nivel1" || escena.Contains("mapa"))
         {
-            LogrosManager.Instance?.DesbloquearLogro(7); // Principiante de Sumas
+            LogrosManager.Instance?.DesbloquearLogro(7);
             tipo = "suma";
         }
         else if (escena.Contains("rnivel"))
         {
-            LogrosManager.Instance?.DesbloquearLogro(5); // Explorador de Restas
+            LogrosManager.Instance?.DesbloquearLogro(5);
             tipo = "resta";
         }
         else if (escena.Contains("mnivel"))
         {
-            LogrosManager.Instance?.DesbloquearLogro(6); // Experto en Multiplicar
+            LogrosManager.Instance?.DesbloquearLogro(6);
             tipo = "multiplicacion";
         }
         else if (escena.Contains("dnivel"))
@@ -158,31 +173,26 @@ public class UIVidasToolkit : MonoBehaviour
             tipo = "division";
         }
 
-        // Guardar progreso en BD
+        int idNivel = PlayerPrefs.GetInt("nivel_seleccionado", 0);
         int id_usuario = PlayerPrefs.GetInt("user_id", 0);
         if (id_usuario == 0) id_usuario = 6;
 
-        if (tipo != "")
-        {
-            string numeroStr = escena.Replace("mapa", "").Replace("rnivel", "")
-                                     .Replace("mnivel", "").Replace("dnivel", "");
-            if (int.TryParse(numeroStr, out int idNivel))
-                StartCoroutine(GuardarProgreso(id_usuario, idNivel, tipo));
-        }
+        if (tipo != "" && idNivel > 0)
+            StartCoroutine(GuardarProgreso(id_usuario, idNivel, tipo, estrellas));
 
-        // Enviar monedas al backend
         if (MonedaManager.instance != null)
             MonedaManager.instance.EnviarMonedasAlBackend(id_usuario);
     }
 
-    IEnumerator GuardarProgreso(int id_usuario, int id_nivel, string tipo)
+    IEnumerator GuardarProgreso(int id_usuario, int id_nivel, string tipo, int estrellas)
     {
         string url = "https://supernumberland-backend.onrender.com/progreso/guardar";
         string json = JsonUtility.ToJson(new ProgresoData
         {
             id_usuario = id_usuario,
             id_nivel   = id_nivel,
-            tipo       = tipo
+            tipo       = tipo,
+            estrellas  = estrellas
         });
 
         UnityWebRequest req = new UnityWebRequest(url, "POST");
@@ -193,7 +203,7 @@ public class UIVidasToolkit : MonoBehaviour
         yield return req.SendWebRequest();
 
         if (req.result == UnityWebRequest.Result.Success)
-            Debug.Log($"✅ Progreso guardado: {tipo} nivel {id_nivel}");
+            Debug.Log($"✅ Progreso guardado: {tipo} nivel {id_nivel} - {estrellas} estrellas");
         else
             Debug.LogError("Error guardando progreso: " + req.error);
     }
@@ -205,4 +215,5 @@ public class ProgresoData
     public int id_usuario;
     public int id_nivel;
     public string tipo;
+    public int estrellas;
 }

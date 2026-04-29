@@ -11,25 +11,22 @@ public class IrANivel2 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDos = root.Q<Button>("Dos");
-
         if (botonDos != null)
-        {
             botonDos.clicked += AbrirNivel2;
-        }
     }
 
     void OnDisable()
     {
         if (botonDos != null)
-        {
             botonDos.clicked -= AbrirNivel2;
-        }
     }
 
     void AbrirNivel2()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 2);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Mapa2");
     }
 }

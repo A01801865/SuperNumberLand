@@ -11,25 +11,22 @@ public class DIrANivel3 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDTres = root.Q<Button>("DTres");
-
         if (botonDTres != null)
-        {
             botonDTres.clicked += AbrirDNivel3;
-        }
     }
 
     void OnDisable()
     {
         if (botonDTres != null)
-        {
             botonDTres.clicked -= AbrirDNivel3;
-        }
     }
 
     void AbrirDNivel3()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 3);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("DNivel3");
     }
 }

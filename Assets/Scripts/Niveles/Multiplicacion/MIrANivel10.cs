@@ -11,25 +11,22 @@ public class MIrANivel10 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonMDiez = root.Q<Button>("MDiez");
-
         if (botonMDiez != null)
-        {
             botonMDiez.clicked += AbrirMNivel10;
-        }
     }
 
     void OnDisable()
     {
         if (botonMDiez != null)
-        {
             botonMDiez.clicked -= AbrirMNivel10;
-        }
     }
 
     void AbrirMNivel10()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 10);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("MNivel10");
     }
 }

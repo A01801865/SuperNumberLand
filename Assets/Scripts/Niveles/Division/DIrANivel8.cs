@@ -11,25 +11,22 @@ public class DIrANivel8 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDOcho = root.Q<Button>("DOcho");
-
         if (botonDOcho != null)
-        {
             botonDOcho.clicked += AbrirDNivel8;
-        }
     }
 
     void OnDisable()
     {
         if (botonDOcho != null)
-        {
             botonDOcho.clicked -= AbrirDNivel8;
-        }
     }
 
     void AbrirDNivel8()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 8);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("DNivel8");
     }
 }

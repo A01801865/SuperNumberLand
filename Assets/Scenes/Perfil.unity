@@ -956,6 +956,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f242befff44d4f18aba510239770514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PerfilController
+  personaje0Sprite: {fileID: -3154150011874791226, guid: 4d701fb8bab94204e92af20e3e7b6a8a, type: 3}
+  personaje1Sprite: {fileID: -8364913047766280116, guid: 4d701fb8bab94204e92af20e3e7b6a8a, type: 3}
+  personaje2Sprite: {fileID: -5908743213997753785, guid: 4d701fb8bab94204e92af20e3e7b6a8a, type: 3}
+  personaje3Sprite: {fileID: 4749904528282777558, guid: 4d701fb8bab94204e92af20e3e7b6a8a, type: 3}
 --- !u!1 &1519152597
 GameObject:
   m_ObjectHideFlags: 0

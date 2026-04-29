@@ -11,25 +11,22 @@ public class DIrANivel4 : MonoBehaviour
     {
         menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
-
         botonDCuatro = root.Q<Button>("DCuatro");
-
         if (botonDCuatro != null)
-        {
             botonDCuatro.clicked += AbrirDNivel4;
-        }
     }
 
     void OnDisable()
     {
         if (botonDCuatro != null)
-        {
             botonDCuatro.clicked -= AbrirDNivel4;
-        }
     }
 
     void AbrirDNivel4()
     {
+        GameManagerProgreso.Instance?.ResetearMapas();
+        PlayerPrefs.SetInt("nivel_seleccionado", 4);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("DNivel4");
     }
 }
