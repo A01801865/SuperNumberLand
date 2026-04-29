@@ -6,10 +6,10 @@ using System.Collections;
 public class PerfilController : MonoBehaviour
 {
     [Header("Sprites de personajes")]
-    public Sprite personaje0Sprite; // Soldado default
-    public Sprite personaje1Sprite; // Caballero
-    public Sprite personaje2Sprite; // Escudero
-    public Sprite personaje3Sprite; // Arquera
+    public Sprite personaje0Sprite;
+    public Sprite personaje1Sprite;
+    public Sprite personaje2Sprite;
+    public Sprite personaje3Sprite;
 
     void Start()
     {
@@ -44,12 +44,12 @@ public class PerfilController : MonoBehaviour
         var genero    = root.Q<TextField>("GeneroJugador");
         var actividad = root.Q<TextField>("ActividadJugador");
 
-        if (apodo != null)    apodo.value     = res.nombre_usuario;
-        if (nombre != null)   nombre.value    = res.nombre_completo;
-        if (alcaldia != null) alcaldia.value  = res.alcaldia;
-        if (edad != null)     edad.value      = res.edad.ToString();
-        if (genero != null)   genero.value    = res.genero;
-        if (actividad != null) actividad.value = res.actividad ?? "Ninguna";
+        if (apodo != null)    apodo.value    = res.nombre_usuario;
+        if (nombre != null)   nombre.value   = res.nombre_completo;
+        if (alcaldia != null) alcaldia.value = res.alcaldia;
+        if (edad != null)     edad.value     = res.edad.ToString();
+        if (genero != null)   genero.value   = res.genero;
+        if (actividad != null) actividad.value = string.IsNullOrEmpty(res.actividad) ? "Ninguna" : res.actividad;
     }
 
     IEnumerator CargarPersonaje(int id_usuario)
@@ -77,7 +77,6 @@ public class PerfilController : MonoBehaviour
             {
                 fotoPerfil.style.backgroundImage = new StyleBackground(sprite);
                 fotoPerfil.style.backgroundSize  = new BackgroundSize(BackgroundSizeType.Contain);
-                // Quitar el tinte naranja para mostrar el sprite limpio
                 fotoPerfil.style.unityBackgroundImageTintColor = Color.white;
             }
         }
