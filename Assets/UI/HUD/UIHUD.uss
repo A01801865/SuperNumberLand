@@ -97,3 +97,7 @@
     width: 100px;
     height: 200px;
 }
+
+#preguntaLabel {
+    -unity-font-definition: resource("PressStart2P");
+}

@@ -36,17 +36,17 @@ public class GameManagerPreguntas : MonoBehaviour
         {
             case TipoOperacion.Suma:
                 respuestaCorrecta = a + b;
-                textoPregunta.text = a + " + " + b + " = ?";
+                textoPregunta.text = a + " mas " + b + " = ?";
                 break;
 
             case TipoOperacion.Resta:
                 respuestaCorrecta = a - b;
-                textoPregunta.text = a + " - " + b + " = ?";
+                textoPregunta.text = a + " menos " + b + " = ?";
                 break;
 
             case TipoOperacion.Multiplicacion:
                 respuestaCorrecta = a * b;
-                textoPregunta.text = a + " × " + b + " = ?";
+                textoPregunta.text = a + " X " + b + " = ?";
                 break;
 
             case TipoOperacion.Division:
@@ -55,7 +55,7 @@ public class GameManagerPreguntas : MonoBehaviour
                 b = Random.Range(1, 10);
                 a = respuestaCorrecta * b;
 
-                textoPregunta.text = a + " ÷ " + b + " = ?";
+                textoPregunta.text = a + " / " + b + " = ?";
                 break;
         }
     }

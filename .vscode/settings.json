@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "SuperNumberLand.slnx"
+    "dotnet.defaultSolution": "SuperNumberLand-e42241226e8f027e79f8b4ee902a6393ccd78310.slnx"
 }
