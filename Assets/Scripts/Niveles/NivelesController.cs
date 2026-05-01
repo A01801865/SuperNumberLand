@@ -16,7 +16,7 @@ public class NivelesController : MonoBehaviour
         string tipo = PlayerPrefs.GetString("tipo_nivel", "suma");
         Debug.Log("NivelesController cargando tipo: " + tipo);
 
-        // 🔥 SINCRONIZAR CON GAME MANAGER
+        //SINCRONIZAR CON GAME MANAGER
         if (GameManagerProgreso.Instance != null)
         {
             switch (tipo)
@@ -36,7 +36,7 @@ public class NivelesController : MonoBehaviour
             }
         }
 
-        // 🔘 BOTONES SEGÚN TIPO
+        //BOTONES SEGÚN TIPO
         switch (tipo)
         {
             case "resta":
@@ -98,7 +98,7 @@ public class NivelesController : MonoBehaviour
             if (e3 != null) e3.style.opacity = estrellas >= 3 ? 1f : 0.2f;
         }
 
-        Debug.Log("✅ Estrellas cargadas correctamente");
+        Debug.Log("Estrellas cargadas correctamente");
     }
 }
 

@@ -100,7 +100,7 @@ public class InventarioController : MonoBehaviour
                 personajeSeleccionado = sel.personaje_seleccionado;
                 fondoSeleccionado     = sel.fondo_seleccionado;
 
-                // ← Actualizar GameManager al cargar
+                //Actualizar GameManager al cargar
                 if (GameManager.instancia != null)
                     GameManager.instancia.personajeSeleccionado = ObtenerIndexPersonaje(personajeSeleccionado);
             }
@@ -164,7 +164,7 @@ public class InventarioController : MonoBehaviour
             {
                 personajeSeleccionado = id_item;
 
-                // ← Actualizar GameManager para que SpawnerJugador use el personaje correcto
+                //Actualizar GameManager para que SpawnerJugador use el personaje correcto
                 if (GameManager.instancia != null)
                     GameManager.instancia.personajeSeleccionado = ObtenerIndexPersonaje(id_item);
 
@@ -175,11 +175,11 @@ public class InventarioController : MonoBehaviour
                 fondoSeleccionado = id_item;
                 LlenarSlots(contenedorFondos, fondosComprados, true);
             }
-            Debug.Log($"✅ {tipo} seleccionado: {id_item}");
+            Debug.Log($"{tipo} seleccionado: {id_item}");
         }
     }
 
-    // ← Convierte id_item del backend al index del array de SpawnerJugador
+    //Convierte id_item del backend al index del array de SpawnerJugador
     int ObtenerIndexPersonaje(int id_item)
     {
         switch (id_item)

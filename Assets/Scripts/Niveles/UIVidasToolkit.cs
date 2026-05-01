@@ -13,7 +13,7 @@ public class UIVidasToolkit : MonoBehaviour
 
     void Start()
     {
-        // 🔧 Sincronizar tipoActual desde PlayerPrefs al inicio de cada mapa
+        //Sincronizar tipoActual desde PlayerPrefs al inicio de cada mapa
         if (GameManagerProgreso.Instance != null)
         {
             string tipoGuardado = PlayerPrefs.GetString("tipo_nivel", "suma").ToLower();
@@ -37,21 +37,21 @@ public class UIVidasToolkit : MonoBehaviour
 
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        // Vidas
+        //Vidas
         vida1 = root.Q<VisualElement>("Vida_1");
         vida2 = root.Q<VisualElement>("Vida_2");
         vida3 = root.Q<VisualElement>("Vida_3");
 
-        // Pantallas
+        //Pantallas
         pantallaPerder = root.Q<VisualElement>("Perder");
         pantallaGanar = root.Q<VisualElement>("Ganar");
 
-        // Estrellas
+        //Estrellas
         estrella1 = root.Q<VisualElement>("Estrella_1");
         estrella2 = root.Q<VisualElement>("Estrella_2");
         estrella3 = root.Q<VisualElement>("Estrella_3");
 
-        // Fondo perder — solo suscribe Reintentar, NO BotonVolver (lo maneja RVolverANiveles/MVolverANiveles/DVolverANiveles)
+        //Fondo perder, solo suscribe Reintentar, NO BotonVolver (lo maneja RVolverANiveles/MVolverANiveles/DVolverANiveles)
         fondoPerder = root.Q<VisualElement>("FondoPerder");
 
         if (fondoPerder != null)
@@ -62,9 +62,8 @@ public class UIVidasToolkit : MonoBehaviour
         }
     }
 
-    // ========================
-    // ❤️ VIDAS
-    // ========================
+  
+    //VIDAS
     public void ActualizarVidas(int vidas)
     {
         if (vida1 != null)
@@ -77,9 +76,7 @@ public class UIVidasToolkit : MonoBehaviour
             vida3.style.display = vidas >= 3 ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
-    // ========================
-    // 💀 PERDER
-    // ========================
+    //PERDER
     public void MostrarPantallaPerder()
     {
         Debug.Log("MOSTRANDO PANTALLA DE PERDER");
@@ -90,9 +87,8 @@ public class UIVidasToolkit : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    // ========================
-    // ⭐ GANAR
-    // ========================
+    //GANAR
+
     public void MostrarPantallaGanar(int estrellas)
     {
         Debug.Log("MOSTRANDO PANTALLA DE GANAR");
@@ -141,9 +137,7 @@ public class UIVidasToolkit : MonoBehaviour
         MostrarPantallaGanar(estrellas);
     }
 
-    // ========================
-    // 🔁 REINTENTAR
-    // ========================
+    //REINTENTAR
     private void Reintentar()
     {
         Time.timeScale = 1f;
@@ -184,9 +178,8 @@ public class UIVidasToolkit : MonoBehaviour
         }
     }
 
-    // ========================
-    // 🌐 BACKEND
-    // ========================
+    //BACKEND
+
     IEnumerator GuardarProgreso(int id_usuario, int id_nivel, string tipo, int estrellas)
     {
         string url = "https://supernumberland-backend.onrender.com/progreso/guardar";

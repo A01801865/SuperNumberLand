@@ -77,14 +77,14 @@ public class ControlTemas : MonoBehaviour
         {
             multiplicacion.SetEnabled(true);
             multiplicacion.style.opacity = 1f;
-            Debug.Log("✅ Multiplicación desbloqueada por rendimiento");
+            Debug.Log("Multiplicación desbloqueada por rendimiento");
         }
 
         if (res.desbloquear_division)
         {
             division.SetEnabled(true);
             division.style.opacity = 1f;
-            Debug.Log("✅ División desbloqueada por rendimiento");
+            Debug.Log("División desbloqueada por rendimiento");
         }
     }
 

@@ -132,7 +132,7 @@ public class LogrosUI : MonoBehaviour
             yield return req.SendWebRequest();
 
             if (req.result == UnityWebRequest.Result.Success)
-                Debug.Log($"✅ Recompensa de {logro.monedasRecompensa} monedas enviada");
+                Debug.Log($"Recompensa de {logro.monedasRecompensa} monedas enviada");
             else
                 Debug.LogError("Error al reclamar recompensa: " + req.error);
         }

@@ -9,10 +9,11 @@ public class UIResultadoController : MonoBehaviour
 
     void OnEnable()
     {
+        // Obtener los botones desde la UI y suscribirlos a sus métodos
         var root = GetComponent<UIDocument>().rootVisualElement;
 
         btnReintentar = root.Q<Button>("BotonReintentar");
-        btnVolver = root.Q<Button>("BotonVolve"); // así se llama en el UXML
+        btnVolver     = root.Q<Button>("BotonVolve"); // nombre definido en el UXML
 
         if (btnReintentar != null)
             btnReintentar.clicked += Reintentar;
@@ -21,11 +22,13 @@ public class UIResultadoController : MonoBehaviour
             btnVolver.clicked += VolverMenu;
     }
 
+    // Recarga la escena actual para volver a intentar el nivel
     void Reintentar()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    // Regresa al menú de niveles correspondiente según el tipo de operación que se estaba jugando
     void VolverMenu()
     {
         string tipo = PlayerPrefs.GetString("tipo_nivel", "suma").ToLower();

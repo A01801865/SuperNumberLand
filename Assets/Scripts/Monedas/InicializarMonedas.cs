@@ -5,7 +5,8 @@ public class InicializarMonedas : MonoBehaviour
 {
     void Start()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
+        // Buscar el label de monedas en la UI y mostrar el saldo actual del jugador
+        var root  = GetComponent<UIDocument>().rootVisualElement;
         var label = root?.Q<Label>("NumeroMonedas");
 
         if (label != null)

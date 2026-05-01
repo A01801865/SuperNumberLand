@@ -9,7 +9,7 @@ public class MostrarPersonajeLobby : MonoBehaviour
 
     void Start()
     {
-        // No spawneamos aqui — LobbyController lo hara despues de cargar la seleccion
+        //No iniciamos aqui, LobbyController lo hara despues de cargar la seleccion
     }
 
     void Update()

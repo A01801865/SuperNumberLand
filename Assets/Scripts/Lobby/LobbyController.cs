@@ -115,7 +115,7 @@ public class LobbyController : MonoBehaviour
         foreach (var logro in res.logros)
             if (logro.desbloqueado == 1) desbloqueados++;
 
-        // Actualizar barra verde
+        //Actualizar barra verde
         if (barraVerde != null && totalLogros > 0)
         {
             float porcentaje = (float)desbloqueados / totalLogros * 100f;
